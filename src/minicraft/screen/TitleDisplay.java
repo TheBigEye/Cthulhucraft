@@ -37,7 +37,7 @@ public class TitleDisplay extends Display {
 		super(true, false, new Menu.Builder(false, 2, RelPos.CENTER,		
 			new BlankEntry(),
 			new BlankEntry(),
-			new SelectEntry("Play", () -> {
+			new SelectEntry("Singleplayer", () -> {
 				if(WorldSelectDisplay.getWorldNames().size() > 0)
 					Game.setMenu(new Display(true, new Menu.Builder(false, 2, RelPos.CENTER,
 						new SelectEntry("Load World", () -> Game.setMenu(new WorldSelectDisplay())),
@@ -46,7 +46,7 @@ public class TitleDisplay extends Display {
 				else
 					Game.setMenu(new WorldGenDisplay());
 			}),
-			new SelectEntry("Join Online World", () -> Game.setMenu(new MultiplayerDisplay())),
+			new SelectEntry("Multiplayer", () -> Game.setMenu(new MultiplayerDisplay())),
 			new SelectEntry("Options", () -> Game.setMenu(new OptionsDisplay())),
 			displayFactory("Help",
 				new SelectEntry("Instructions", () -> Game.setMenu(new BookDisplay(BookData.instructions))),
@@ -55,7 +55,7 @@ public class TitleDisplay extends Display {
 				new BlankEntry(),
 				new SelectEntry("About", () -> Game.setMenu(new BookDisplay(BookData.about)))
 			),
-			new SelectEntry("Quit", Game::quit)
+			new SelectEntry("Exit", Game::quit)
 			)
 			.setPositioning(new Point(Screen.w/2, Screen.h*3/5), RelPos.CENTER)
 			.createMenu()
@@ -162,7 +162,7 @@ public class TitleDisplay extends Display {
 		
 		Font.drawCentered(splashes[rand], screen, 74, splashColor);
 		
-		Font.draw("Version " + "0.02a", screen, 1, 1, Color.get(1, 51));
+		Font.draw("Version " + Game.BUILD, screen, 1, 1, Color.get(1, 51));
 	}
 	
 	private static final String[] splashes = {

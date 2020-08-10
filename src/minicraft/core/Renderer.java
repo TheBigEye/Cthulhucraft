@@ -339,7 +339,7 @@ public class Renderer extends Game {
 			ArrayList<String> info = new ArrayList<>();
 			//info.add("VERSION " + Initializer.VERSION);
 			
-			info.add("VERSION " + "0.02a");
+			info.add("VERSION " + Game.BUILD);
 			info.add(""+time.toLocalDate());
 			info.add(Initializer.fra + " fps");
 			info.add("day tiks " + Updater.tickCount+" ("+Updater.getTime()+")");
