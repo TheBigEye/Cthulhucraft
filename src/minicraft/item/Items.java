@@ -37,16 +37,18 @@ public class Items {
 		addAll(TorchItem.getAllInstances());
 		addAll(BucketItem.getAllInstances());
 		addAll(BookItem.getAllInstances());
+		add(new MapItem());
 		addAll(TileItem.getAllInstances());
+		addAll(FishingRodItem.getAllInstances());
 		addAll(ToolItem.getAllInstances());
-		addAll(SharpSwordI.getAllInstances());
-		addAll(SharpSwordII.getAllInstances());
+		//addAll(Enchanted.getAllInstances());
+		//addAll(SharpSwordI.getAllInstances());
+		//addAll(SharpSwordII.getAllInstances());
 		addAll(FoodItem.getAllInstances());
 		addAll(StackableItem.getAllInstances());
 		addAll(ClothingItem.getAllInstances());
 		addAll(ArmorItem.getAllInstances());
 		addAll(PotionItem.getAllInstances());
-		addAll(FishingRodItem.getAllInstances());
 	}
 	
 	/** fetches an item from the list given its name. */
