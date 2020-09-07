@@ -77,6 +77,20 @@ Armadura de Oro
 Gem Armor
 Armadura de Gema
 
+Prot I Armor
+Armadura con Prot I
+
+Prot II Armor
+Armadura con Prot II
+
+Prot III Armor
+Armadura con Prot III
+
+# BoatItem.java
+
+Boat
+Barco
+
 # BookItem.java
 
 Book
@@ -171,11 +185,23 @@ Generador de Cerdo
 Sheep Spawner
 Generador de Oveja
 
+Cleric Spawner
+Generador de Clerigo
+
+Librarian Spawner
+Generador de Bibliotecario
+
+GuiMan Spawner
+Generador de Hombre Pinguino
+
 Slime Spawner
 Generador de Slime
 
 Zombie Spawner
 Generador de Zombie
+
+Mooshroom Spawner
+Generador de VacaHongo
 
 Creeper Spawner
 Generador de Creeper
@@ -188,6 +214,15 @@ Generador de Serpiente
 
 Knight Spawner
 Generador de Caballero
+
+OldGolem Spawner
+Generador de Golem Viejo
+
+Cthulhu Spawner
+Generador de Leviatan
+
+DeepGuardian Spawner
+Generador de Guardian
 
 AirWizard Spawner
 Generador de MagoAire
@@ -279,6 +314,12 @@ Poder de Guante
 Wood
 Madera
 
+Leaf
+Hoja
+
+Paper
+Papel
+
 Stone
 Piedra
 
@@ -293,6 +334,9 @@ Llave
 
 arrow
 flecha
+
+Stick
+Palo
 
 string
 cuerda
@@ -333,16 +377,49 @@ paño
 gem
 gema
 
+emerald
+esmeralda
+
 Scale
 Escala
 
 Shard
 Élitro
 
+Gear
+Engranaje
+
+Flint
+Pedernal
+
+Flint and Steel
+Mechero
+
+Protection I
+Proteccion I
+
+Protection II
+Proteccion II
+
+Protection III
+Proteccion III
+
+Sharp I
+Afilado I
+
+Sharp II
+Afilado II
+
+Sharp III
+Afilado III
+
 # TileItem.java
 
 Flower
 Flor
+
+Orange Tulip
+Tulipan Naranja
 
 Acorn
 Bellota
@@ -377,32 +454,65 @@ Muro de Obsidiana
 Obsidian Door
 Puerta de Obsidiana
 
-Wool
-Lana
-
-Red Wool
-Lana Roja
-
-Blue Wool
-Lana Azul
-
-Green Wool
-Lana Verde
+Black Wool
+Lana Negra
 
 Yellow Wool
 Lana Amarilla
 
-Black Wool
-Lana Negra
+Green Wool
+Lana Verde
+
+Blue Wool
+Lana Azul
+
+Red Wool
+Lana Roja
+
+Wool
+Lana
+
+Purple Wool
+Lana Purpura
+
+Pink Wool
+Lana Rosa
+
+Dark Green Wool
+Lana Verde Ocuro
+
+Gray Wool
+Lana Gris
+
+Brown Wool
+Lana Marron
+
+Magenta Wool
+Lana Magenta
+
+Light Blue Wool
+Lana Celeste
+
+Cyan Wool
+Lana Cian
+
+Orange Wool
+Lana Naranja
 
 Sand
 Arena
+
+Snow Ball
+Bola de Nieve
 
 Cactus
 Cactus
 
 Seeds
 Semillas
+
+Carrot
+Zanahoria
 
 Grass Seeds
 Semillas de Pasto
@@ -469,6 +579,22 @@ Casa antigua
 
 Torch
 Antorcha
+
+# SharpSwordI.java
+
+Sharp I Sword
+Espada Afilado I
+
+Sharp I Claymore
+Claymore Afilado I
+
+# SharpSwordII.java
+
+Sharp II Sword
+Espada Afilado II
+
+Sharp II Claymore
+Claymore Afilado II
 
 ### item end
 
@@ -620,7 +746,7 @@ Todavía nada... :P
 # CraftingMenu.java
 
 Have:
-Tener:
+Tienes:
 
 Cost:
 Costo:
@@ -644,8 +770,8 @@ Moriste! Aww!
 
 # Displays.java
 
-With the default controls...\n\nMove your character with arrow keys or WSAD. Press C to attack and X to open the inventory, and to use items. Select an item in the inventory to equip it.\n\nKill the air wizard to win the game!
-Con los controles predeterminados...\n\nMueve tu personjado con las flechas o WSAD. Presiona C para atacar y X para abrir el inventario, y usar los objetos. Selecciona un objeto del inventario para equiparlo.\n\nMata el Mago de Aire para ganar el juego!
+With the default controls...\n\nMove your character with arrow keys or WSAD. Press C to attack and X to open the inventory, and to use items. Select an item in the inventory to equip it.\n\nThe Goal: Defeat Cthulhu!
+Con los controles predeterminados...\n\nMueve tu personjado con las flechas o WSAD. Presiona C para atacar y X para abrir el inventario, y usar los objetos. Selecciona un objeto del inventario para equiparlo.\n\nObjetivo: Mata a Cthulhu para ganar el juego!
 
 # EndGameDisplay.java
 
@@ -714,6 +840,12 @@ ESC para Regresar al menú
 
 Loading...
 Cargando...
+
+Melting...
+Moldeando...
+
+Planting...
+Plantando
 
 # MultiplayerMenu.java
 
@@ -844,14 +976,17 @@ Inventario
 Play
 Jugar
 
+Singleplayer
+Un Jugador
+
 Load World
 Cargar Mundo
 
 New World
 Nuevo Mundo
 
-Join Online World
-Entrar en Mundo en línea
+Multiplayer
+Multijugador
 
 Options
 Opciones

@@ -11,4 +11,5 @@
 6,string,2
 3,string
 6,cloth
+1,boat
 :steak,2:wood,7
