@@ -6,7 +6,6 @@ import minicraft.core.Game;
 import minicraft.entity.Direction;
 import minicraft.entity.mob.PassiveMob;
 import minicraft.entity.mob.Player;
-import minicraft.entity.mob.VillagerMob;
 import minicraft.gfx.Color;
 import minicraft.gfx.MobSprite;
 import minicraft.item.Recipe;
@@ -16,7 +15,7 @@ import minicraft.screen.CraftingDisplay;
 import minicraft.screen.Display;
 
 public class Cleric extends VillagerMob {
-	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 34);
+	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 32);
   
   public static ArrayList<Recipe> ClericTrdes = new ArrayList<>();
   

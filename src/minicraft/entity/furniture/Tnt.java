@@ -35,7 +35,7 @@ public class Tnt extends Furniture implements ActionListener {
 	 * Creates a new tnt furniture.
 	 */
 	public Tnt() {
-		super("Tnt", new Sprite(28, 26, 2, 2, 2), 3, 2);
+		super("Tnt", new Sprite(28, 24, 2, 2, 2), 3, 2);
 		fuseLit = false;
 		ftik = 0;
 		

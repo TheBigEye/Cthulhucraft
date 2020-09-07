@@ -59,7 +59,7 @@ public class Spawner extends Furniture {
 	 * @param m Mob which will be spawned.
 	 */
 	public Spawner(MobAi m) {
-		super(getClassName(m.getClass()) + " Spawner", new Sprite(8, 28, 2, 2, 2), 7, 2);
+		super(getClassName(m.getClass()) + " Spawner", new Sprite(8, 26, 2, 2, 2), 7, 2);
 		health = 100;
 		initMob(m);
 		resetSpawnInterval();

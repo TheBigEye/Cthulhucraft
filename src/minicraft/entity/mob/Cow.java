@@ -5,7 +5,7 @@ import minicraft.gfx.MobSprite;
 import minicraft.item.Items;
 
 public class Cow extends PassiveMob {
-	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 26);
+	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 24);
 	
 	/**
 	 * Creates the cow with the right sprites and color.

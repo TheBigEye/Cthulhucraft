@@ -5,14 +5,13 @@ import java.util.ArrayList;
 import minicraft.core.Game;
 import minicraft.entity.mob.PassiveMob;
 import minicraft.entity.mob.Player;
-import minicraft.entity.mob.VillagerMob;
 import minicraft.gfx.MobSprite;
 import minicraft.item.Recipe;
 import minicraft.screen.CraftingDisplay;
 
 
 public class Librarian extends VillagerMob {
-	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 32);
+	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 30);
   
   public static ArrayList<Recipe> LibrarianTrdes = new ArrayList<>();
   

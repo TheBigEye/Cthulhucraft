@@ -14,8 +14,11 @@ import minicraft.level.Level;
 
 public abstract class MobAi extends Mob {
 	
-	int randomWalkTime, randomWalkChance, randomWalkDuration;
-	int xa, ya;
+	protected int randomWalkTime;
+	protected int randomWalkChance;
+	protected int randomWalkDuration;
+	protected int xa;
+	protected int ya;
 	private int lifetime;
 	private int age = 0;
 	

@@ -5,7 +5,7 @@ import minicraft.gfx.MobSprite;
 import minicraft.item.Items;
 
 public class Sheep extends PassiveMob {
-	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 28);
+	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 26);
 	
 	/**
 	 * Creates a sheep entity.

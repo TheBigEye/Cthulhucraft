@@ -25,7 +25,7 @@ public class Lantern extends Furniture {
 	 * @param type Type of lantern.
 	 */
 	public Lantern(Lantern.Type type) {
-		super(type.title, new Sprite(18 + type.offset, 26, 2, 2, 2), 3, 2);
+		super(type.title, new Sprite(18 + type.offset, 24, 2, 2, 2), 3, 2);
 		this.type = type;
 	}
 	

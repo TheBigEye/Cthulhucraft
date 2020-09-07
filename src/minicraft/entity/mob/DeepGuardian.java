@@ -21,7 +21,7 @@ public class DeepGuardian extends EnemyMob {
 	public void tick() {
 		super.tick();
 		
-		if (random.nextInt(2000)==1) {
+		if (random.nextInt(1500)==1) {
 			getLevel().add(new Slime(0), x, y + 5);
 			getLevel().add(new Slime(0), x, y - 5);
 			getLevel().add(new Slime(0), x + 5, y);
