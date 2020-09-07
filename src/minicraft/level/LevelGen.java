@@ -145,11 +145,15 @@ public class LevelGen {
 			if (count[Tiles.get("sand").id & 0xff] < 100) continue;
 			if (count[Tiles.get("grass").id & 0xff] < 100) continue;
 			if (count[Tiles.get("tree").id & 0xff] < 100) continue;
-			if (count[Tiles.get("test").id & 0xff] < 100) continue;
+			if (count[Tiles.get("birch tree").id & 0xff] < 100) continue;
 			if (count[Tiles.get("lawn").id & 0xff] < 100) continue;
 			if (count[Tiles.get("orange tulip").id & 0xff] < 100) continue;
 			if (count[Tiles.get("snow").id & 0xff] < 100) continue;
+			if (count[Tiles.get("giant red mushroom").id & 0xff] < 100) continue;
+			if (count[Tiles.get("giant brown mushroom").id & 0xff] < 100) continue;
+			if (count[Tiles.get("red mushroom").id & 0xff] < 100) continue;
 			if (count[Tiles.get("fir tree").id & 0xff] < 100) continue;
+			if (count[Tiles.get("mycelium").id & 0xff] < 100) continue;
 			if (count[Tiles.get("pine tree").id & 0xff] < 100) continue;
 			if (count[Tiles.get("Stairs Down").id & 0xff] < w / 21)
 				continue; // size 128 = 6 stairs min
@@ -212,6 +216,7 @@ public class LevelGen {
 				count[result[0][i] & 0xff]++;
 			}
 			if (count[Tiles.get("cloud").id & 0xff] < 2000) continue;
+			//if (count[Tiles.get("cloud tree").id & 0xff] < 100) continue;
 			if (count[Tiles.get("Stairs Down").id & 0xff] < w / 64)
 				continue; // size 128 = 2 stairs min
 			
@@ -358,6 +363,30 @@ public class LevelGen {
 			}
 		}
 		
+		if (Settings.get("Theme").equals("Mycelium")) {
+			
+			for (int i = 0; i < w * h / 2800; i++) {
+				int xs = random.nextInt(w);
+				int ys = random.nextInt(h);
+				for (int k = 0; k < 20; k++) {
+					int x = xs + random.nextInt(21) - 10;
+					int y = ys + random.nextInt(21) - 10;
+					for (int j = 0; j < 100; j++) {
+						int xo = x + random.nextInt(5) - random.nextInt(5);
+						int yo = y + random.nextInt(5) - random.nextInt(5);
+						for (int yy = yo - 1; yy <= yo + 1; yy++)
+							for (int xx = xo - 1; xx <= xo + 1; xx++)
+								if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+									if (map[xx + yy * w] == Tiles.get("grass").id) {
+										map[xx + yy * w] = Tiles.get("mycelium").id;
+									}
+								}
+					}
+				}
+			}
+		}
+		
+		
 		if (!Settings.get("Theme").equals("Desert")) {
 			
 			for (int i = 0; i < w * h / 2800; i++) {
@@ -397,6 +426,29 @@ public class LevelGen {
 								if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 									if (map[xx + yy * w] == Tiles.get("grass").id) {
 										map[xx + yy * w] = Tiles.get("snow").id;
+									}
+								}
+					}
+				}
+			}
+		}
+           
+           if (!Settings.get("Theme").equals("Mycelium")) {
+   			
+			for (int i = 0; i < w * h / 2800; i++) {
+				int xs = random.nextInt(w);
+				int ys = random.nextInt(h);
+				for (int k = 0; k < 100; k++) {
+					int x = xs + random.nextInt(21) - 10;
+					int y = ys + random.nextInt(21) - 10;
+					for (int j = 0; j < 200; j++) {
+						int xo = x + random.nextInt(5) - random.nextInt(5);
+						int yo = y + random.nextInt(5) - random.nextInt(5);
+						for (int yy = yo - 1; yy <= yo + 1; yy++)
+							for (int xx = xo - 1; xx <= xo + 1; xx++)
+								if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+									if (map[xx + yy * w] == Tiles.get("grass").id) {
+										map[xx + yy * w] = Tiles.get("mycelium").id;
 									}
 								}
 					}
@@ -467,6 +519,38 @@ public class LevelGen {
 			}
 		}
 		
+		if (Settings.get("Theme").equals("Mycelium")) {
+			for (int i = 0; i < w * h / 100; i++) {
+				int x = random.nextInt(w);
+				int y = random.nextInt(h);
+				for (int j = 0; j < 10; j++) {
+					int xx = x + random.nextInt(15) - random.nextInt(15);
+					int yy = y + random.nextInt(15) - random.nextInt(15);
+					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+							map[xx + yy * w] = Tiles.get("giant red mushroom").id;
+						}
+					}
+				}
+			}
+		}
+		
+		if (Settings.get("Theme").equals("Mycelium")) {
+			for (int i = 0; i < w * h / 100; i++) {
+				int x = random.nextInt(w);
+				int y = random.nextInt(h);
+				for (int j = 0; j < 10; j++) {
+					int xx = x + random.nextInt(15) - random.nextInt(15);
+					int yy = y + random.nextInt(15) - random.nextInt(15);
+					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+							map[xx + yy * w] = Tiles.get("giant brown mushroom").id;
+						}
+					}
+				}
+			}
+		}
+		
 		if (Settings.get("Theme").equals("Plain")) {
 			for (int i = 0; i < w * h / 2800; i++) {
 				int x = random.nextInt(w);
@@ -499,6 +583,7 @@ public class LevelGen {
 			}
 		}
 		
+		
 		if (!Settings.get("Theme").equals("Snow")) {
 			for (int i = 0; i < w * h / 200; i++) {
 				int x = random.nextInt(w);
@@ -509,6 +594,38 @@ public class LevelGen {
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("snow").id) {
 							map[xx + yy * w] = Tiles.get("pine tree").id;
+						}
+					}
+				}
+			}
+		}
+		
+		if (!Settings.get("Theme").equals("Mycelium")) {
+			for (int i = 0; i < w * h / 100; i++) {
+				int x = random.nextInt(w);
+				int y = random.nextInt(h);
+				for (int j = 0; j < 10; j++) {
+					int xx = x + random.nextInt(15) - random.nextInt(15);
+					int yy = y + random.nextInt(15) - random.nextInt(15);
+					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+							map[xx + yy * w] = Tiles.get("giant red mushroom").id;
+						}
+					}
+				}
+			}
+		}
+		
+		if (!Settings.get("Theme").equals("Mycelium")) {
+			for (int i = 0; i < w * h / 100; i++) {
+				int x = random.nextInt(w);
+				int y = random.nextInt(h);
+				for (int j = 0; j < 10; j++) {
+					int xx = x + random.nextInt(15) - random.nextInt(15);
+					int yy = y + random.nextInt(15) - random.nextInt(15);
+					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+							map[xx + yy * w] = Tiles.get("giant brown mushroom").id;
 						}
 					}
 				}
@@ -539,7 +656,8 @@ public class LevelGen {
 					int yy = y + random.nextInt(15) - random.nextInt(15);
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("grass").id) {
-							map[xx + yy * w] = Tiles.get("test").id;
+							map[xx + yy * w] = Tiles.get("birch tree").id;
+							
 						}
 					}
 				}
@@ -573,6 +691,54 @@ public class LevelGen {
 						if (map[xx + yy * w] == Tiles.get("snow").id) {
 							map[xx + yy * w] = Tiles.get("pine tree").id;
 						}
+					}
+				}
+			}
+		}
+		
+		if (!Settings.get("Theme").equals("Mycelium")) {
+			for (int i = 0; i < w * h / 100; i++) {
+				int x = random.nextInt(w);
+				int y = random.nextInt(h);
+				for (int j = 0; j < 10; j++) {
+					int xx = x + random.nextInt(15) - random.nextInt(15);
+					int yy = y + random.nextInt(15) - random.nextInt(15);
+					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+							map[xx + yy * w] = Tiles.get("giant red mushroom").id;
+						}
+					}
+				}
+			}
+		}
+		
+		if (!Settings.get("Theme").equals("Mycelium")) {
+			for (int i = 0; i < w * h / 100; i++) {
+				int x = random.nextInt(w);
+				int y = random.nextInt(h);
+				for (int j = 0; j < 10; j++) {
+					int xx = x + random.nextInt(15) - random.nextInt(15);
+					int yy = y + random.nextInt(15) - random.nextInt(15);
+					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+							map[xx + yy * w] = Tiles.get("giant brown mushroom").id;
+						}
+					}
+				}
+			}
+		}
+		
+		for (int i = 0; i < w * h / 100; i++) {
+			int x = random.nextInt(w);
+			int y = random.nextInt(h);
+			int col = random.nextInt(4);
+			for (int j = 0; j < 15; j++) {
+				int xx = x + random.nextInt(5) - random.nextInt(5);
+				int yy = y + random.nextInt(5) - random.nextInt(5);
+				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+					if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+						map[xx + yy * w] = Tiles.get("red mushroom").id;
+						data[xx + yy * w] = (byte) (col + random.nextInt(4) * 16);
 					}
 				}
 			}
@@ -884,6 +1050,47 @@ public class LevelGen {
 			map[x + y * w] = Tiles.get("Cloud Cactus").id;
 		}
 		
+		stairsLoop:
+		for (int i = 0; i < w * h / 20; i++) {
+			int x = random.nextInt(w - 2) + 1;
+			int y = random.nextInt(h - 2) + 1;
+			
+			for (int yy = y - 1; yy <= y + 1; yy++)
+				for (int xx = x - 1; xx <= x + 1; xx++) {
+					if (map[xx + yy * w] != Tiles.get("cloud").id) continue stairsLoop;
+				}
+			
+			map[x + y * w] = Tiles.get("Cloud Tree").id;
+		}
+		
+		stairsLoop:
+		for (int i = 0; i < w * h / 5; i++) {
+			int x = random.nextInt(w - 2) + 1;
+			int y = random.nextInt(h - 2) + 1;
+			
+			for (int yy = y - 1; yy <= y + 1; yy++)
+				for (int xx = x - 1; xx <= x + 1; xx++) {
+				 if (map[xx + yy * w] != Tiles.get("cloud").id) continue stairsLoop;
+				}
+			
+			map[x + y * w] = Tiles.get("Cloud Tree").id;
+		}
+		
+		
+		stairsLoop:
+		for (int i = 0; i < w * h / 1; i++) {
+			int x = random.nextInt(w - 2) + 1;
+			int y = random.nextInt(h - 2) + 1;
+			
+			for (int yy = y - 1; yy <= y + 1; yy++)
+				for (int xx = x - 1; xx <= x + 1; xx++) {
+					if (map[xx + yy * w] != Tiles.get("cloud").id) continue stairsLoop;
+				}
+			
+			map[x + y * w] = Tiles.get("Cloud Tree").id;
+		}
+		
+		
 		int count = 0;
 		stairsLoop:
 		for (int i = 0; i < w * h; i++) {
@@ -966,8 +1173,12 @@ public class LevelGen {
 					if (map[i] == Tiles.get("dirt").id) pixels[i] = 0x604040;
 					if (map[i] == Tiles.get("sand").id) pixels[i] = 0xa0a040;
 					if (map[i] == Tiles.get("snow").id) pixels[i] = 0xffffff;
+					if (map[i] == Tiles.get("giant red mushroom").id) pixels[i] = 0x739323;
+					if (map[i] == Tiles.get("giant brown mushroom").id) pixels[i] = 0x769626;
+					if (map[i] == Tiles.get("red mushroom").id) pixels[i] = 0x769626;
+					if (map[i] == Tiles.get("mycelium").id) pixels[i] = 0x304030;
 					if (map[i] == Tiles.get("Stone Bricks").id) pixels[i] = 0xa0a040;
-					if (map[i] == Tiles.get("tree").id) pixels[i] = 0x003000;
+					if (map[i] == Tiles.get("birch tree").id) pixels[i] = 0x003000;
 					if (map[i] == Tiles.get("fir tree").id) pixels[i] = 0x606060;
 					if (map[i] == Tiles.get("pine tree").id) pixels[i] = 0x616161;
 					if (map[i] == Tiles.get("test").id) pixels[i] = 0x003030;

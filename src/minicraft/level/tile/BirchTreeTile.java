@@ -17,15 +17,15 @@ import minicraft.item.ToolItem;
 import minicraft.item.ToolType;
 import minicraft.level.Level;
 
-public class PineTreeTile extends Tile {
+public class BirchTreeTile extends Tile {
 	
-	protected PineTreeTile(String name) {
+	protected BirchTreeTile(String name) {
 		super(name, (ConnectorSprite)null);
-		connectsToSnow = true;
+		connectsToGrass = true;
 	}
 	
 	public void render(Screen screen, Level level, int x, int y) {
-		Tiles.get("snow").render(screen, level, x, y);
+		Tiles.get("grass").render(screen, level, x, y);
 		
 		boolean u = level.getTile(x, y - 1) == this;
 		boolean l = level.getTile(x - 1, y) == this;
@@ -37,26 +37,29 @@ public class PineTreeTile extends Tile {
 		boolean dr = level.getTile(x + 1, y + 1) == this;
 
 		if (u && ul && l) {
-			screen.render(x * 16 + 0, y * 16 + 0, 7 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 0, 1 + 29 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 0, y * 16 + 0, 6 + 28 * 32, 0, 1);//v
+			screen.render(x * 16 + 0, y * 16 + 0, 0 + 28 * 32, 0, 1);//v
 		}
 		if (u && ur && r) {
-			screen.render(x * 16 + 8, y * 16 + 0, 7 + 30 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 0, 1 + 30 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 8, y * 16 + 0, 7 + 28 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 0, 1 + 28 * 32, 0, 1);
 		}
 		if (d && dl && l) {
-			screen.render(x * 16 + 0, y * 16 + 8, 7 + 30 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 8, 1 + 30 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 0, y * 16 + 8, 6 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 8, 0 + 29 * 32, 0, 1);
 		}
 		if (d && dr && r) {
-			screen.render(x * 16 + 8, y * 16 + 8, 7 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 8, 1 + 29 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 8, y * 16 + 8, 7 + 31 * 32, 0, 1);//V
+			screen.render(x * 16 + 8, y * 16 + 8, 1 + 31 * 32, 0, 1);//V
 		}
 	}
+	
+	//6 grass
+	//1 + 29
 
 	public void tick(Level level, int xt, int yt) {
 		int damage = level.getData(xt, yt);
@@ -103,10 +106,12 @@ public class PineTreeTile extends Tile {
 		level.add(new TextParticle("" + dmg, x*16+8, y*16+8, Color.RED));
 		if (damage >= treeHealth) {
 			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Wood"));
-			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Acorn"));
-			level.setTile(x, y, Tiles.get("snow"));
+			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Leaf"));
+			level.setTile(x, y, Tiles.get("grass"));
 		} else {
 			level.setData(x, y, damage);
 		}
 	}
 }
+
+

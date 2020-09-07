@@ -27,14 +27,18 @@ public abstract class Tile {
 	public byte id;
 	
 	public boolean connectsToGrass = false;
+	public boolean connectsToCloud = false;
 	public boolean connectsToSand = false;
 	public boolean connectsToFluid = false;
+	public boolean connectsToMycelium = false;
+	protected boolean connectsToLava = false;
 	public int light;
 	protected boolean maySpawn;
 	
 	protected Sprite sprite;
 	protected ConnectorSprite csprite;
 	protected boolean connectsToSnow = false;
+	
 	
 	{
 		light = 1;

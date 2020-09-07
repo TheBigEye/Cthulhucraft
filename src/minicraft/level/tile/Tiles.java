@@ -38,7 +38,7 @@ public final class Tiles {
 		tiles.set(13, new OreTile(OreTile.OreType.Iron));
 		tiles.set(14, new OreTile(OreTile.OreType.Gold));
 		tiles.set(15, new OreTile(OreTile.OreType.Gem));
-		tiles.set(16, new OreTile(OreTile.OreType.Lapis));
+		tiles.set(16, new OreTile(OreTile.OreType.Lapis));	
 		tiles.set(18, new LavaBrickTile("Lava Brick"));
 		tiles.set(19, new ExplodedTile("Explode"));
 		tiles.set(20, new FarmTile("Farmland"));
@@ -72,14 +72,19 @@ public final class Tiles {
 		tiles.set(48, new LightBlueWoolTile("Light Blue Wool"));
 		tiles.set(49, new CianWoolTile("Cyan Wool"));
 		tiles.set(50, new OrangeWoolTile("Orange Wool"));
-		tiles.set(51, new TestTile("Test"));
+		tiles.set(51, new BirchTreeTile("Birch Tree"));
 		tiles.set(52, new CarrotTile("Carrot"));
 		tiles.set(53, new LawnTile("Lawn"));
 		tiles.set(54, new OrangeTulipTile("Orange Tulip"));
 		tiles.set(55, new SnowTile("Snow"));
-		tiles.set(56, new FirTreeTile("Fir Tree"));
-		tiles.set(57, new PineTreeTile("Pine Tree"));
-		tiles.set(58, new DeadBushTile("Dead Bush"));
+		tiles.set(56, new MyceliumTile("Mycelium"));
+		tiles.set(57, new FirTreeTile("Fir Tree"));
+		tiles.set(58, new PineTreeTile("Pine Tree"));
+		tiles.set(59, new RedMushroomTile("Giant Red Mushroom"));
+		tiles.set(60, new BrownMushroomTile("Giant Brown Mushroom"));
+		tiles.set(61, new MushroomRedTile("Red Mushroom"));
+		
+		tiles.set(62, new CloudTreeTile("Cloud Tree"));
 		
 		for(int i = 0; i < tiles.size(); i++) {
 			if(tiles.get(i) == null) continue;
@@ -152,6 +157,11 @@ public final class Tiles {
 		oldids.set(137, "cyan wool");
 		oldids.set(138, "orange wool");
 		oldids.set(139, "snow");
+		oldids.set(140, "mycelium");
+		oldids.set(141, "giant red mushroom");
+		oldids.set(142, "giant brown mushroom");
+		oldids.set(143, "red mushroom");
+		oldids.set(144, "cloud tree");
 		
 		// light/torch versions, for compatibility with before 1.9.4-dev3. (were removed in making dev3)
 		oldids.set(100, "grass");
@@ -191,8 +201,13 @@ public final class Tiles {
 		oldids.set(167, "cyan wool");
 		oldids.set(168, "orange wool");
 		oldids.set(169, "snow");
-		oldids.set(170, "fir tree");
-		oldids.set(171, "pine tree");
+		oldids.set(170, "mycelium");
+		oldids.set(171, "fir tree");
+		oldids.set(172, "pine tree");
+		oldids.set(173, "giant red mushroom");
+		oldids.set(174, "giant brown mushroom");
+		oldids.set(175, "red mushroom");
+		oldids.set(176, "cloud tree");
 		
 		oldids.set(44, "torch grass");
 		oldids.set(40, "torch sand");
@@ -216,6 +231,7 @@ public final class Tiles {
 		oldids.set(197, "torch cyan wool");
 		oldids.set(198, "torch orange wool");
 		oldids.set(199, "torch snow");
+		oldids.set(200, "torch mycelium");
 	}
 	
 	private static int overflowCheck = 0;

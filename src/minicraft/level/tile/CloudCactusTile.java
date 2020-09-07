@@ -11,6 +11,7 @@ import minicraft.entity.mob.Player;
 import minicraft.entity.particle.SmashParticle;
 import minicraft.entity.particle.TextParticle;
 import minicraft.gfx.Color;
+import minicraft.gfx.Screen;
 import minicraft.gfx.Sprite;
 import minicraft.item.Item;
 import minicraft.item.ToolItem;
@@ -60,6 +61,13 @@ public class CloudCactusTile extends Tile {
 			level.setTile(x, y, Tiles.get("cloud"));
 		} else
 			level.setData(x, y, damage);
+	}
+	
+	@Override
+	public void render(Screen screen, Level level, int x, int y) {
+		Tiles.get("Cloud").render(screen, level, x, y);
+
+		sprite.render(screen, x<<4, y<<4);
 	}
 
 	public void bumpedInto(Level level, int x, int y, Entity entity) {

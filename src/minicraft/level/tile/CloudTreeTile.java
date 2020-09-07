@@ -4,6 +4,7 @@ import minicraft.core.Game;
 import minicraft.core.io.Sound;
 import minicraft.entity.Direction;
 import minicraft.entity.Entity;
+import minicraft.entity.mob.AirWizard;
 import minicraft.entity.mob.Mob;
 import minicraft.entity.mob.Player;
 import minicraft.entity.particle.SmashParticle;
@@ -17,15 +18,16 @@ import minicraft.item.ToolItem;
 import minicraft.item.ToolType;
 import minicraft.level.Level;
 
-public class PineTreeTile extends Tile {
+public class CloudTreeTile extends Tile {
 	
-	protected PineTreeTile(String name) {
+	protected CloudTreeTile(String name) {
 		super(name, (ConnectorSprite)null);
-		connectsToSnow = true;
+		connectsToCloud = true;
 	}
 	
+	
 	public void render(Screen screen, Level level, int x, int y) {
-		Tiles.get("snow").render(screen, level, x, y);
+		Tiles.get("cloud").render(screen, level, x, y);
 		
 		boolean u = level.getTile(x, y - 1) == this;
 		boolean l = level.getTile(x - 1, y) == this;
@@ -37,26 +39,27 @@ public class PineTreeTile extends Tile {
 		boolean dr = level.getTile(x + 1, y + 1) == this;
 
 		if (u && ul && l) {
-			screen.render(x * 16 + 0, y * 16 + 0, 7 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 0, 9 + 29 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 0, y * 16 + 0, 6 + 28 * 32, 0, 1);//v
+			screen.render(x * 16 + 0, y * 16 + 0, 8 + 28 * 32, 0, 1);//v
 		}
 		if (u && ur && r) {
-			screen.render(x * 16 + 8, y * 16 + 0, 7 + 30 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 0, 9 + 30 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 8, y * 16 + 0, 7 + 28 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 0, 9 + 28 * 32, 0, 1);
 		}
 		if (d && dl && l) {
-			screen.render(x * 16 + 0, y * 16 + 8, 7 + 30 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 8, 9 + 30 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 0, y * 16 + 8, 6 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 8, 8 + 29 * 32, 0, 1);
 		}
 		if (d && dr && r) {
-			screen.render(x * 16 + 8, y * 16 + 8, 7 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 8, 9 + 29 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 8, y * 16 + 8, 7 + 31 * 32, 0, 1);//V
+			screen.render(x * 16 + 8, y * 16 + 8, 9 + 31 * 32, 0, 1);//V
 		}
 	}
+	
 
 	public void tick(Level level, int xt, int yt) {
 		int damage = level.getData(xt, yt);
@@ -64,7 +67,7 @@ public class PineTreeTile extends Tile {
 	}
 
 	public boolean mayPass(Level level, int x, int y, Entity e) {
-		return false;
+		return e instanceof AirWizard;
 	}
 	
 	@Override
@@ -103,10 +106,13 @@ public class PineTreeTile extends Tile {
 		level.add(new TextParticle("" + dmg, x*16+8, y*16+8, Color.RED));
 		if (damage >= treeHealth) {
 			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Wood"));
-			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Acorn"));
-			level.setTile(x, y, Tiles.get("snow"));
+			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Leaf"));
+			level.setTile(x, y, Tiles.get("cloud"));
 		} else {
 			level.setData(x, y, damage);
 		}
 	}
 }
+
+
+

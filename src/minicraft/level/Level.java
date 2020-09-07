@@ -16,6 +16,8 @@ import minicraft.entity.furniture.Spawner;
 import minicraft.entity.mob.*;
 import minicraft.entity.mob.villager.Cleric;
 import minicraft.entity.mob.villager.Librarian;
+import minicraft.entity.mob.villager.OldGolem;
+import minicraft.entity.mob.villager.VillagerMob;
 import minicraft.entity.particle.Particle;
 import minicraft.gfx.Point;
 import minicraft.gfx.Rectangle;
@@ -574,6 +576,7 @@ public class Level {
 				if(depth != -4) { // normal mobs
 					if (rnd <= 40) add((new Slime(lvl)), nx, ny);
 					else if (rnd <= 75) add((new Zombie(lvl)), nx, ny);
+					else if (rnd >= 85) add((new OldGolem(lvl)), nx, ny);
 					else if (rnd >= 85) add((new Skeleton(lvl)), nx, ny);
 					else add((new Creeper(lvl)), nx, ny);
 				} else { // special dungeon mobs

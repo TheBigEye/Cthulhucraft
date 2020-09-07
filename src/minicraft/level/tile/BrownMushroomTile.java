@@ -17,15 +17,15 @@ import minicraft.item.ToolItem;
 import minicraft.item.ToolType;
 import minicraft.level.Level;
 
-public class PineTreeTile extends Tile {
+public class BrownMushroomTile extends Tile {
 	
-	protected PineTreeTile(String name) {
+	protected BrownMushroomTile(String name) {
 		super(name, (ConnectorSprite)null);
-		connectsToSnow = true;
+		connectsToMycelium = true;
 	}
 	
 	public void render(Screen screen, Level level, int x, int y) {
-		Tiles.get("snow").render(screen, level, x, y);
+		Tiles.get("mycelium").render(screen, level, x, y);
 		
 		boolean u = level.getTile(x, y - 1) == this;
 		boolean l = level.getTile(x - 1, y) == this;
@@ -37,30 +37,42 @@ public class PineTreeTile extends Tile {
 		boolean dr = level.getTile(x + 1, y + 1) == this;
 
 		if (u && ul && l) {
-			screen.render(x * 16 + 0, y * 16 + 0, 7 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 0, 11 + 29 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 0, y * 16 + 0, 6 + 28 * 32, 0, 1);//v
+			screen.render(x * 16 + 0, y * 16 + 0, 10 + 28 * 32, 0, 1);//v
 		}
 		if (u && ur && r) {
-			screen.render(x * 16 + 8, y * 16 + 0, 7 + 30 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 0, 11 + 30 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 8, y * 16 + 0, 7 + 28 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 0, 11 + 28 * 32, 0, 1);
 		}
 		if (d && dl && l) {
-			screen.render(x * 16 + 0, y * 16 + 8, 7 + 30 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 8, 11 + 30 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 0, y * 16 + 8, 6 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 0, y * 16 + 8, 10 + 29 * 32, 0, 1);
 		}
 		if (d && dr && r) {
-			screen.render(x * 16 + 8, y * 16 + 8, 7 + 29 * 32, 0, 1);
+			screen.render(x * 16 + 8, y * 16 + 8, 11 + 29 * 32, 0, 1);
 		} else {
-			screen.render(x * 16 + 8, y * 16 + 8, 7 + 31 * 32, 0, 1);//V
+			screen.render(x * 16 + 8, y * 16 + 8, 11 + 31 * 32, 0, 1);//V
 		}
 	}
 
 	public void tick(Level level, int xt, int yt) {
 		int damage = level.getData(xt, yt);
 		if (damage > 0) level.setData(xt, yt, damage - 1);
+		
+		if (random.nextInt(40) != 0) return;
+		
+		int xn = xt;
+		int yn = yt;
+		
+		if (random.nextBoolean()) xn += random.nextInt(2) * 2 - 1;
+		else yn += random.nextInt(2) * 2 - 1;
+		
+		if (level.getTile(xn, yn) == Tiles.get("Tree")) {
+			level.setTile(xn, yn, this);
+		}
 	}
 
 	public boolean mayPass(Level level, int x, int y, Entity e) {
@@ -104,9 +116,10 @@ public class PineTreeTile extends Tile {
 		if (damage >= treeHealth) {
 			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Wood"));
 			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Acorn"));
-			level.setTile(x, y, Tiles.get("snow"));
+			level.setTile(x, y, Tiles.get("mycelium"));
 		} else {
 			level.setData(x, y, damage);
 		}
 	}
 }
+
