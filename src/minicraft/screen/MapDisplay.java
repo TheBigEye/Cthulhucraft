@@ -109,7 +109,7 @@ public class MapDisplay extends Display {
                     }
                 }
                 // by drawing with only one pixel at a time we can draw with much more precision
-                screen.render(i + menuBounds.getLeft() + 6, c + menuBounds.getTop() + 6, 3 + 16 * 16, Color.get(color, color, color, color), 0);
+                screen.setPixel(i + menuBounds.getLeft() + 6, c + menuBounds.getTop() + 6, color);
             }
         }
         /*if (arrows[0]) {

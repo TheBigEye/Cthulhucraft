@@ -538,6 +538,10 @@ public class Menu {
 			
 			return b;
 		}
+		public Builder setFrame(int i, int j, int k) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
 	
 	public String toString() {
