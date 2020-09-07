@@ -25,6 +25,8 @@ public class Recipes {
 		workbenchRecipes.add(new Recipe("Lantern_1", "Wood_8", "slime_4", "glass_3"));
 		workbenchRecipes.add(new Recipe("Paper_3", "Leaf_3", "Wood_3"));
 		workbenchRecipes.add(new Recipe("Book_1", "Leather_5", "Paper_5"));
+		workbenchRecipes.add(new Recipe("Map book_1", "Book_10", "Paper_5", "Lapis_2"));
+		workbenchRecipes.add(new Recipe("Boat_1", "Wood_30", "Leather_5", "Wood Shovel_2"));
 		workbenchRecipes.add(new Recipe("Stone Brick_2", "Stone_2"));
 		workbenchRecipes.add(new Recipe("Stone Wall_1", "Stone Brick_3"));
 		workbenchRecipes.add(new Recipe("Stone Door_1", "Stone Brick_5"));
@@ -42,7 +44,7 @@ public class Recipes {
 		workbenchRecipes.add(new Recipe("Gold Fishing Rod_1", "Gold_10", "String_3"));
 		workbenchRecipes.add(new Recipe("Gem Fishing Rod_1", "Gem_10", "String_3"));
 
-		loomRecipes.add(new Recipe("String_2", "Wool_1"));
+		loomRecipes.add(new Recipe("String_3", "Wool_1"));
 		loomRecipes.add(new Recipe("red wool_1", "Wool_1", "rose_1"));
 		loomRecipes.add(new Recipe("blue wool_1", "Wool_1", "Lapis_1"));
 		loomRecipes.add(new Recipe("green wool_1", "Wool_1", "Cactus_1"));
@@ -60,12 +62,14 @@ public class Recipes {
 		loomRecipes.add(new Recipe("reg clothes_1", "cloth_5"));
 		
 		workbenchRecipes.add(new Recipe("Wood Sword_1", "Stick_1", "Wood_2"));
+		workbenchRecipes.add(new Recipe("Wood Spear_1", "Stick_1", "Flint_2", "Wood_3"));
 		workbenchRecipes.add(new Recipe("Wood Axe_1", "Stick_2", "Wood_3"));
 		workbenchRecipes.add(new Recipe("Wood Hoe_1", "Stick_2", "Wood_2"));
 		workbenchRecipes.add(new Recipe("Wood Pickaxe_1", "Stick_2", "Wood_3"));
 		workbenchRecipes.add(new Recipe("Wood Shovel_1", "Stick_2", "Wood_1"));
 		workbenchRecipes.add(new Recipe("Wood Bow_1", "Stick_3", "string_3"));
 		workbenchRecipes.add(new Recipe("Rock Sword_1", "Stick_1", "Stone_2"));
+		workbenchRecipes.add(new Recipe("Rock Spear_1", "Stick_1", "Stone_2", "Wood Spear_1"));
 		workbenchRecipes.add(new Recipe("Rock Axe_1", "Stick_2", "Stone_3"));
 		workbenchRecipes.add(new Recipe("Rock Hoe_1", "Stick_2", "Stone_2"));
 		workbenchRecipes.add(new Recipe("Rock Pickaxe_1", "Stick_2", "Stone_3"));
@@ -88,6 +92,7 @@ public class Recipes {
 		anvilRecipes.add(new Recipe("Iron Lantern_1", "iron_8", "slime_5", "glass_4"));
 		anvilRecipes.add(new Recipe("Gold Lantern_1", "gold_10", "slime_5", "glass_4"));
 		anvilRecipes.add(new Recipe("Iron Sword_1", "Stick_1", "iron_2"));
+		anvilRecipes.add(new Recipe("Iron Spear_1", "Stick_1", "iron_2", "Rock Spear_1"));
 		anvilRecipes.add(new Recipe("Iron Claymore_1", "Iron Sword_1", "shard_15"));
 		anvilRecipes.add(new Recipe("Iron Axe_1", "Stick_2", "iron_5"));
 		anvilRecipes.add(new Recipe("Iron Hoe_1", "Stick_2", "iron_5"));
@@ -95,6 +100,7 @@ public class Recipes {
 		anvilRecipes.add(new Recipe("Iron Shovel_1", "Stick_2", "iron_5"));
 		anvilRecipes.add(new Recipe("Iron Bow_1", "Stick_3", "iron_5", "string_3"));
 		anvilRecipes.add(new Recipe("Gold Sword_1", "Stick_1", "gold_2"));
+		anvilRecipes.add(new Recipe("Gold Spear_1", "Stick_1", "gold_2", "Iron Spear_1"));
 		anvilRecipes.add(new Recipe("Gold Claymore_1", "Gold Sword_1", "shard_15"));
 		anvilRecipes.add(new Recipe("Gold Axe_1", "Stick_2", "gold_5"));
 		anvilRecipes.add(new Recipe("Gold Hoe_1", "Stick_2", "gold_5"));
@@ -102,6 +108,7 @@ public class Recipes {
 		anvilRecipes.add(new Recipe("Gold Shovel_1", "Stick_2", "gold_5"));
 		anvilRecipes.add(new Recipe("Gold Bow_1", "Stick_3", "gold_5", "string_3"));
 		anvilRecipes.add(new Recipe("Gem Sword_1", "Stick_4", "gem_50"));
+		anvilRecipes.add(new Recipe("Gem Spear_1", "Stick_4", "gem_40", "Gold Spear_2"));
 		anvilRecipes.add(new Recipe("Gem Claymore_1", "Gem Sword_1", "shard_15"));
 		anvilRecipes.add(new Recipe("Gem Axe_1", "Stick_4", "gem_50"));
 		anvilRecipes.add(new Recipe("Gem Hoe_1", "Stick_4", "gem_50"));
@@ -117,6 +124,7 @@ public class Recipes {
 		furnaceRecipes.add(new Recipe("iron_1", "iron Ore_4", "coal_1"));
 		furnaceRecipes.add(new Recipe("gold_1", "gold Ore_4", "coal_1"));
 		furnaceRecipes.add(new Recipe("glass_1", "sand_4", "coal_1"));
+		furnaceRecipes.add(new Recipe("Flint_1", "stone_10", "coal_1"));
 		
 		ovenRecipes.add(new Recipe("cooked pork_1", "raw pork_1", "coal_1"));
 		ovenRecipes.add(new Recipe("steak_1", "raw beef_1", "coal_1"));

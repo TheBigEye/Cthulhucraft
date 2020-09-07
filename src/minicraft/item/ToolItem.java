@@ -73,6 +73,9 @@ public class ToolItem extends Item {
 			if (type == ToolType.Sword) {
 				return (level + 1) * 3 + random.nextInt(2 + level * level); // wood: 3-5 damage; gem: 15-32 damage.
 			}
+			if (type == ToolType.Spear) {
+				return (level + 1) * 3 + random.nextInt(2 + level * level); // wood: 3-5 damage; gem: 15-32 damage.
+			}
 			if (type == ToolType.Claymore) {
 				return (level + 1) * 3 + random.nextInt(4 + level * level * 3); // wood: 3-6 damage; gem: 15-66 damage.
 			}

@@ -6,6 +6,7 @@ import minicraft.core.Game;
 import minicraft.entity.Direction;
 import minicraft.entity.furniture.*;
 import minicraft.entity.mob.*;
+import minicraft.entity.mob.infected.Mooshroom;
 import minicraft.entity.mob.villager.Cleric;
 import minicraft.entity.mob.villager.Golem;
 import minicraft.entity.mob.villager.Librarian;
@@ -29,6 +30,7 @@ public class FurnitureItem extends Item {
 		items.add(new FurnitureItem(new Spawner(new Golem())));
 		items.add(new FurnitureItem(new Spawner(new Slime(1))));
 		items.add(new FurnitureItem(new Spawner(new Zombie(1))));
+		items.add(new FurnitureItem(new Spawner(new Mooshroom())));
 		items.add(new FurnitureItem(new Spawner(new Creeper(1))));
 		items.add(new FurnitureItem(new Spawner(new Skeleton(1))));
 		items.add(new FurnitureItem(new Spawner(new Snake(1))));

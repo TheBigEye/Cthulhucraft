@@ -4,6 +4,7 @@ public enum ToolType {
 	Shovel (0, 24), // if there's a second number, it specifies durability.
 	Hoe (1, 20),
 	Sword (2, 42),
+	Spear (7, 32),
 	Pickaxe (3, 28),
 	Axe (4, 24),
 	Bow (5, 20),
