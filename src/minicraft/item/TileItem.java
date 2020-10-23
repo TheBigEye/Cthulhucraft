@@ -21,12 +21,24 @@ public class TileItem extends StackableItem {
 		/// TileItem sprites all have 1x1 sprites.
 		items.add(new TileItem("Flower", (new Sprite(4, 0, 0)), "flower", "grass"));
 		items.add(new TileItem("Orange Tulip", (new Sprite(20, 0, 0)), "orange tulip", "grass"));
+		items.add(new TileItem("Red Mushroom", (new Sprite(22, 0, 0)), "red mushroom", "mycelium"));
+		items.add(new TileItem("Brown Mushroom", (new Sprite(23, 0, 0)), "brown mushroom", "mycelium"));
+		items.add(new TileItem("Cordyceps", (new Sprite(24, 0, 0)), "mycelium", "grass"));
 		items.add(new TileItem("Acorn", (new Sprite(1, 3, 0)), "tree Sapling", "grass"));
 		items.add(new TileItem("Dirt", (new Sprite(0, 0, 0)), "dirt", "hole", "water", "lava"));
 		
 		items.add(new TileItem("Plank", (new Sprite(0, 5, 0)), "Wood Planks", "hole", "water", "cloud", "lava"));
 		items.add(new TileItem("Plank Wall", (new Sprite(1, 5, 0)), "Wood Wall", "Wood Planks"));
 		items.add(new TileItem("Wood Door", (new Sprite(2, 5, 0)), "Wood Door", "Wood Planks"));
+		
+		items.add(new TileItem("Spruce Plank", (new Sprite(9, 5, 0)), "Spruce Planks", "hole", "water", "cloud", "lava"));
+		items.add(new TileItem("Spruce Wall", (new Sprite(10, 5, 0)), "Spruce Wall", "Spruce Planks"));
+		items.add(new TileItem("Spruce Door", (new Sprite(11, 5, 0)), "Spruce Door", "Spruce Planks"));	
+		
+		items.add(new TileItem("Birch Plank", (new Sprite(12, 5, 0)), "Birch Planks", "hole", "water", "cloud", "lava"));
+		items.add(new TileItem("Birch Wall", (new Sprite(13, 5, 0)), "Birch Wall", "Birch Planks"));
+		items.add(new TileItem("Birch Door", (new Sprite(14, 5, 0)), "Birch Door", "Birch Planks"));	
+		
 		items.add(new TileItem("Stone Brick", (new Sprite(3, 5, 0)), "Stone Bricks", "hole", "water", "cloud", "lava"));
 		items.add(new TileItem("Stone Wall", (new Sprite(4, 5, 0)), "Stone Wall", "Stone Bricks"));
 		items.add(new TileItem("Stone Door", (new Sprite(5, 5, 0)), "Stone Door", "Stone Bricks"));
@@ -52,6 +64,7 @@ public class TileItem extends StackableItem {
 		items.add(new TileItem("Orange Wool", (new Sprite(14, 21, 0)), "Orange Wool", "hole", "water", "lava"));
 		
 		items.add(new TileItem("Sand", (new Sprite(0, 3, 0)), "sand", "hole", "water", "lava"));
+		items.add(new TileItem("Mycelium", (new Sprite(12, 3, 0)), "mycelium", "grass", "dirt"));
 		items.add(new TileItem("Snow Ball", (new Sprite(10, 3, 0)), "snow", "grass"));
 		items.add(new TileItem("Cactus", (new Sprite(2, 3, 0)), "cactus Sapling", "sand"));
 		items.add(new TileItem("Seeds", (new Sprite(3, 0, 0)), "wheat", "farmland"));

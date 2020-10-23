@@ -14,6 +14,8 @@ public class StackableItem extends Item {
 		ArrayList<Item> items = new ArrayList<>();
 	
 		items.add(new StackableItem("Wood", new Sprite(1, 0, 0)));
+		items.add(new StackableItem("Spruce Wood", new Sprite(1, 1, 0)));
+		items.add(new StackableItem("Birch Wood", new Sprite(0, 1, 0)));
 		items.add(new StackableItem("Leaf", new Sprite(21, 0, 0)));
 		items.add(new StackableItem("Paper", new Sprite(3, 8, 0)));
 		items.add(new StackableItem("Stone", new Sprite(2, 0, 0)));
@@ -23,7 +25,21 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("Key", new Sprite(0, 4, 0)));
 		items.add(new StackableItem("arrow", new Sprite(0, 2, 0)));
 		items.add(new StackableItem("Stick", new Sprite(9, 3, 0)));
+		items.add(new StackableItem("Bowl", new Sprite(13, 3, 0)));
 		items.add(new StackableItem("string", new Sprite(1, 4, 0)));
+		items.add(new StackableItem("feather", new Sprite(15, 3, 0)));
+		items.add(new StackableItem("egg", new Sprite(14, 3, 0)));
+		
+		items.add(new StackableItem("Ink sac", new Sprite(0, 22, 0)));
+		items.add(new StackableItem("Yellow dye", new Sprite(1, 22, 0)));
+		items.add(new StackableItem("Green dye", new Sprite(2, 22, 0)));
+		items.add(new StackableItem("Red dye", new Sprite(4, 22, 0)));
+		items.add(new StackableItem("Bone powder", new Sprite(5, 22, 0)));
+		items.add(new StackableItem("Purple dye", new Sprite(6, 22, 0)));
+		items.add(new StackableItem("Pink dye", new Sprite(7, 22, 0)));
+		items.add(new StackableItem("Dark green dye", new Sprite(8, 22, 0)));
+		items.add(new StackableItem("Orange dye", new Sprite(14, 22, 0)));
+		
 		items.add(new StackableItem("Coal", new Sprite(2, 4, 0)));
 		items.add(new StackableItem("Iron Ore", new Sprite(3, 4, 0)));
 		items.add(new StackableItem("Lapis", new Sprite(4, 4, 0)));
@@ -41,6 +57,7 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("Scale", new Sprite(13, 4, 0)));
 		items.add(new StackableItem("Shard", new Sprite(14, 4, 0)));
 		items.add(new StackableItem("Gear", new Sprite(15, 4, 0)));
+		items.add(new StackableItem("Spring", new Sprite(16, 3, 0)));
 		items.add(new StackableItem("Flint", new Sprite(8, 3, 0)));
 		items.add(new StackableItem("Flint and Steel", new Sprite(7, 3, 0)));
 		items.add(new StackableItem("Protection I", new Sprite(2, 8, 0)));
@@ -49,6 +66,11 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("Sharp I", new Sprite(2, 8, 0)));
 		items.add(new StackableItem("Sharp II", new Sprite(2, 8, 0)));
 		items.add(new StackableItem("Sharp III", new Sprite(2, 8, 0)));
+		
+		items.add(new StackableItem("Cordyceps essence", new Sprite(1, 7, 0)));
+		items.add(new StackableItem("Sticky essence", new Sprite(2, 7, 0)));
+		items.add(new StackableItem("Gaseous essence", new Sprite(3, 7, 0)));
+		items.add(new StackableItem("Master essence", new Sprite(4, 7, 0)));
 		
 		return items;
 	}

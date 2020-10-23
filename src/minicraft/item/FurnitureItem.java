@@ -6,6 +6,8 @@ import minicraft.core.Game;
 import minicraft.entity.Direction;
 import minicraft.entity.furniture.*;
 import minicraft.entity.mob.*;
+import minicraft.entity.mob.boss.AirWizard;
+import minicraft.entity.mob.boss.KingZombie;
 import minicraft.entity.mob.infected.Mooshroom;
 import minicraft.entity.mob.villager.Cleric;
 import minicraft.entity.mob.villager.Golem;
@@ -14,6 +16,7 @@ import minicraft.entity.mob.villager.OldGolem;
 import minicraft.gfx.Sprite;
 import minicraft.level.Level;
 import minicraft.level.tile.Tile;
+import minicraft.screen.entry.BlankEntry;
 
 public class FurnitureItem extends Item {
 	
@@ -21,9 +24,11 @@ public class FurnitureItem extends Item {
 		ArrayList<Item> items = new ArrayList<>();
 		
 		/// there should be a spawner for each level of mob, or at least make the level able to be changed.
+		items.add(new FurnitureItem(new Spawner(new KingZombie(1))));
 		items.add(new FurnitureItem(new Spawner(new Cow())));
 		items.add(new FurnitureItem(new Spawner(new Pig())));
 		items.add(new FurnitureItem(new Spawner(new Sheep())));
+		items.add(new FurnitureItem(new Spawner(new Chicken())));
 		items.add(new FurnitureItem(new Spawner(new Cleric())));
 		items.add(new FurnitureItem(new Spawner(new Librarian())));
 		items.add(new FurnitureItem(new Spawner(new GuiMan())));
@@ -36,9 +41,11 @@ public class FurnitureItem extends Item {
 		items.add(new FurnitureItem(new Spawner(new Snake(1))));
 		items.add(new FurnitureItem(new Spawner(new Knight(1))));
 		items.add(new FurnitureItem(new Spawner(new OldGolem(1))));
+		//Air Bosses
+		items.add(new FurnitureItem(new Spawner(new AirWizard(false))));
+        //Principal Bosses
 		items.add(new FurnitureItem(new Spawner(new Cthulhu(1))));
 		items.add(new FurnitureItem(new Spawner(new DeepGuardian(1))));
-		items.add(new FurnitureItem(new Spawner(new AirWizard(false))));
 		
 		items.add(new FurnitureItem(new Chest()));
 		// add the various types of crafting furniture

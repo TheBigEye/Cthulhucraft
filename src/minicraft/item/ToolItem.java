@@ -37,7 +37,7 @@ public class ToolItem extends Item {
 		this.type = type;
 		this.level = level;
 		
-		dur = type.durability * (level+1); // initial durability fetched from the ToolType
+		dur = (int) (type.durability * (level+1)); // initial durability fetched from the ToolType
 	}
 	
 	/** Gets the name of this tool (and it's type) as a display string. */
