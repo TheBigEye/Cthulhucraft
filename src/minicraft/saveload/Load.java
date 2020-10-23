@@ -25,6 +25,8 @@ import minicraft.entity.ItemEntity;
 import minicraft.entity.Spark;
 import minicraft.entity.furniture.*;
 import minicraft.entity.mob.*;
+import minicraft.entity.mob.boss.AirWizard;
+import minicraft.entity.mob.infected.Mooshroom;
 import minicraft.entity.mob.villager.Cleric;
 import minicraft.entity.mob.villager.Golem;
 import minicraft.entity.mob.villager.Librarian;
@@ -773,7 +775,9 @@ public class Load {
 			case "Player": return null;
 			case "RemotePlayer": return null;
 			case "Cow": return new Cow();
+			case "Mooshroom": return new Mooshroom();
 			case "Sheep": return new Sheep();
+			case "Chicken": return new Chicken();
 			case "Pig": return new Pig();
 			case "Cleric": return new Cleric();
 			case "Librarian": return new Librarian();
@@ -797,6 +801,9 @@ public class Load {
 			case "DungeonChest": return new DungeonChest(false);
 			case "Anvil": return new Crafter(Crafter.Type.Anvil);
 			case "Enchanter": return new Crafter(Crafter.Type.Enchanter);
+			case "Stonecutter": return new Crafter(Crafter.Type.Stonecutter);
+			case "Assembler": return new Crafter(Crafter.Type.Assembler);
+			case "Brewery": return new Crafter(Crafter.Type.Brewery);
 			case "Loom": return new Crafter(Crafter.Type.Loom);
 			case "Furnace": return new Crafter(Crafter.Type.Furnace);
 			case "Oven": return new Crafter(Crafter.Type.Oven);

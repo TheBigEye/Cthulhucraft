@@ -15,6 +15,7 @@ import minicraft.core.io.Settings;
 import minicraft.entity.Entity;
 import minicraft.entity.furniture.*;
 import minicraft.entity.mob.*;
+import minicraft.entity.mob.boss.AirWizard;
 import minicraft.item.ArmorItem;
 import minicraft.item.Inventory;
 import minicraft.item.Item;
