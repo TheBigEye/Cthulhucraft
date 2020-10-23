@@ -33,8 +33,8 @@ public class Game {
 	public static boolean HAS_GUI = true;
 	
 	public static final String NAME = "CthulhuCraft"; // This is the name on the application window
-	public static final String BUILD = "0.05_1a";
-	public static final Version VERSION = new Version("2.0.6");
+	public static final String BUILD = "0.05_3a"; //Cthulhucraft version
+	public static final Version VERSION = new Version("2.0.6");//Minicraft mod base version
 	
 	public static InputHandler input; // input used in Game, Player, and just about all the *Menu classes.
 	public static Player player;

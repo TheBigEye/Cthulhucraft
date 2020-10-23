@@ -25,7 +25,7 @@ public class FileHandler extends Game {
 	static {
 		OS = System.getProperty("os.name").toLowerCase();
 		//System.out.println("os name: \"" +os + "\"");
-		String local = "playminicraft/mods/Minicraft_Plus";
+		String local = "playminicraft/mods/Cthulhucraft";
 		
 		if(OS.contains("windows")) // windows
 			systemGameDir = System.getenv("APPDATA");
@@ -48,7 +48,7 @@ public class FileHandler extends Game {
 		File testFile = new File(gameDir);
 		testFile.mkdirs();
 		
-		File oldFolder = new File(saveDir + "/.playminicraft/mods/Minicraft Plus");
+		File oldFolder = new File(saveDir + "/.playminicraft/mods/Cthulhucraft");
 		if(oldFolder.exists()) {
 			try {
 				copyFolderContents(oldFolder.toPath(), testFile.toPath(), RENAME_COPY, true);
