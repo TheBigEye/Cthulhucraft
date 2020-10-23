@@ -4,23 +4,25 @@ import java.util.List;
 
 import minicraft.entity.mob.Mob;
 import minicraft.entity.mob.boss.AirWizard;
+import minicraft.entity.mob.boss.AirWizardPhase2;
+import minicraft.entity.mob.boss.AirWizardPhase3;
 import minicraft.gfx.Rectangle;
 import minicraft.gfx.Screen;
 
-public class Spark extends Entity {
+public class Spark2 extends Entity {
 	private int lifeTime; // how much time until the spark disappears
 	private double xa, ya; // the x and y acceleration
 	private double xx, yy; // the x and y positions
 	private int time; // the amount of time that has passed
-	private AirWizard owner; // the AirWizard that created this spark
+	private AirWizardPhase2 owner; // the AirWizard that created this spark
 	
 	/**
-	 * Creates a new spark. Owner is the AirWizard which is spawning this spark.
+	 * Creates a new spark. Owner is the AirWizard 2 which is spawning this spark.
 	 * @param owner The AirWizard spawning the spark.
 	 * @param xa X velocity.
 	 * @param ya Y velocity.
 	 */
-	public Spark(AirWizard owner, double xa, double ya) {
+	public Spark2(AirWizardPhase2 owner, double xa, double ya) {
 		super(0, 0);
 		
 		this.owner = owner;
@@ -48,7 +50,7 @@ public class Spark extends Entity {
 		List<Entity> toHit = level.getEntitiesInRect(new Rectangle(x, y, 0, 0, Rectangle.CENTER_DIMS)); // gets the entities in the current position to hit.
 		for (int i = 0; i < toHit.size(); i++) {
 			Entity e = toHit.get(i);
-			if (e instanceof Mob && !(e instanceof AirWizard)) {
+			if (e instanceof Mob && !(e instanceof AirWizardPhase2 )) {
 				 // if the entity is a mob, but not a Air Wizard, then hurt the mob with 1 damage.
 				((Mob)e).hurt(owner, 1);
 			}
@@ -80,3 +82,4 @@ public class Spark extends Entity {
 		return owner.eid+"";
 	}
 }
+

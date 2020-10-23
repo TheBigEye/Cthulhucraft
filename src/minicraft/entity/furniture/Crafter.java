@@ -17,6 +17,9 @@ public class Crafter extends Furniture {
 		Furnace (new Sprite(14, 24, 2, 2, 2), 3, 2, Recipes.furnaceRecipes),
 		Anvil (new Sprite(8, 24, 2, 2, 2), 3, 2, Recipes.anvilRecipes),
 		Enchanter (new Sprite(24, 24, 2, 2, 2), 7, 2, Recipes.enchantRecipes),
+        Assembler (new Sprite(10, 26, 2, 2, 2), 7, 2, Recipes.assemblerRecipes),
+		Stonecutter (new Sprite(12, 26, 2, 2, 2), 7, 2, Recipes.stonecutterRecipes),
+		Brewery (new Sprite(14, 26, 2, 2, 2), 7, 2, Recipes.breweryRecipes),
 		Loom (new Sprite(26, 24, 2, 2, 2), 7, 2, Recipes.loomRecipes);
 		
 		public ArrayList<Recipe> recipes;

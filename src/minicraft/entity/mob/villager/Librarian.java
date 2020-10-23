@@ -11,7 +11,7 @@ import minicraft.screen.CraftingDisplay;
 
 
 public class Librarian extends VillagerMob {
-	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 30);
+	private static MobSprite[][] sprites = MobSprite.compileMobSpriteAnimations(0, 44);
   
   public static ArrayList<Recipe> LibrarianTrdes = new ArrayList<>();
   

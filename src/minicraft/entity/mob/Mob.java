@@ -22,8 +22,8 @@ public abstract class Mob extends Entity {
 	int hurtTime = 0; // A delay after being hurt, that temporarily prevents further damage for a short time
 	private int xKnockback, yKnockback; // The amount of vertical/horizontal knockback that needs to be inflicted, if it's not 0, it will be moved one pixel at a time.
 	public int health;
-	final int maxHealth; // The amount of health we currently have, and the maximum.
-	int walkTime;
+	protected final int maxHealth; // The amount of health we currently have, and the maximum.
+	protected int walkTime;
 	public int speed;
 	int tickTime = 0; // Incremented whenever tick() is called, is effectively the age in ticks
 	

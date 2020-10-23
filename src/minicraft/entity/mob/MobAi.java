@@ -20,7 +20,7 @@ public abstract class MobAi extends Mob {
 	protected int xa;
 	protected int ya;
 	private int lifetime;
-	private int age = 0;
+	protected int age = 0; // Not private because it is used in Sheep.java.
 	
 	private boolean slowtick = false;
 	

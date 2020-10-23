@@ -11,7 +11,7 @@ public class DeepGuardian extends EnemyMob {
     private static final MobSprite[][][] sprites = new MobSprite[2][2][2];
 
     static {
-        sprites[0][0][0] = new MobSprite(16, 8, 6, 6, 0);
+        sprites[0][0][0] = new MobSprite(52, 9, 6, 6, 0);
     }
 
     public DeepGuardian(int lvl) {
@@ -59,13 +59,13 @@ public class DeepGuardian extends EnemyMob {
     	Font.draw(h, screen, (x - textwidth/2) + 1, y -40, textcol2);
     	Font.draw(h, screen, (x - textwidth/2), y -41, textcol);
     	
-    	//String txt = "I KILL YOU!!";
-        //int w = Font.textWidth(txt) / 2;
-        //Font.drawCompleteBackground(txt, screen, x - w, y - 45 - Font.textHeight());
+    	String txt = "";
+        int w = Font.textWidth(txt) / 2;
+        Font.drawCompleteBackground(txt, screen, x - w, y - 45 - Font.textHeight());
     }
 	
     public boolean canSwim() {
-		return true;
+		return false;
 	}
 
     
@@ -75,9 +75,10 @@ public class DeepGuardian extends EnemyMob {
 		if (Settings.get("diff").equals("Normal")) {min = 1; max = 2;}
 		if (Settings.get("diff").equals("Hard")) {min = 0; max = 2;}
 		
-        Game.unlockableRecipes.getRecipe("Boat").unlock();
+        //Game.unlockableRecipes.getRecipe("Boat").unlock(); //in development
 		
 		super.die();
+		level.add(new SlimyWizard(1), x, y);
 	}
 
 }

@@ -23,7 +23,7 @@ public class InfectedMob extends MobAi {
 	}
 	
 	/**
-	 * Constructor for a non-hostile (passive) mob.
+	 * Constructor for a non-hostile (Infected) mob.
 	 * @param sprites The mob's sprites.
 	 * @param healthFactor Determines the mobs health. Will be multiplied by the difficulty
 	 * and then added with 5.

@@ -10,7 +10,7 @@ public class Cthulhu extends EnemyMob {
     private static final MobSprite[][][] sprites = new MobSprite[2][2][2];
 
     static {
-        sprites[0][0][0] = new MobSprite(16, 14, 12, 8, 0);
+        sprites[0][0][0] = new MobSprite(52, 0, 12, 8, 0);
     }
 
     public Cthulhu(int lvl) {
@@ -28,7 +28,7 @@ public class Cthulhu extends EnemyMob {
 		}
 		
 		Player player = getClosestPlayer();
-		if (player != null && player != null) { // checks if player is on zombies level and if there is no time left on randonimity timer
+		if (player != null) { // checks if player is on zombies level and if there is no time left on randonimity timer
 			int xd = player.x - x;
 			int yd = player.y - y;
 				/// if player is less than 6.25 tiles away, then set move dir towards player
