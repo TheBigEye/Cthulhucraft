@@ -72,8 +72,28 @@ public class Screen {
 
     public void render(int xp, int yp, int tile, int bits, int sheet, int whiteTint) { render(xp, yp, tile, bits, sheet, whiteTint, false); }
 
+	public void render(int xp, int yp, int tile, int bits, int sheet, int whiteTint, boolean fullbright) {
+		render(xp, yp, tile % 32, tile / 32, bits, sheet, whiteTint, fullbright);
+	}
+
+	public void render(int xp, int yp, Pixel pixel) {
+		render(xp, yp, pixel, -1);
+	}
+
+	public void render(int xp, int yp, Pixel pixel, int whiteTint) {
+		render(xp, yp, pixel, whiteTint, false);
+	}
+
+	public void render(int xp, int yp, Pixel pixel, int whiteTint, boolean fullbright) {
+		render(xp, yp, pixel.getX(), pixel.getY(), pixel.getMirror(), pixel.getIndex(), whiteTint, fullbright);
+	}
+
+	public void render(int xp, int yp, Pixel pixel, int bits, int whiteTint, boolean fullbright) {
+		render(xp, yp, pixel.getX(), pixel.getY(), bits, pixel.getIndex(), whiteTint, fullbright);
+	}
+
     /** Renders an object from the sprite sheet based on screen coordinates, tile (SpriteSheet location), colors, and bits (for mirroring). I believe that xp and yp refer to the desired position of the upper-left-most pixel. */
-    public void render(int xp, int yp, int tile, int bits, int sheet, int whiteTint, boolean fullbright) {
+    private void render(int xp, int yp, int xTile, int yTile, int bits, int sheet, int whiteTint, boolean fullbright) {
         // xp and yp are originally in level coordinates, but offset turns them to screen coordinates.
         xp -= xOffset; //account for screen offset
         yp -= yOffset;
@@ -90,8 +110,8 @@ public class Screen {
 			currentSheet = sheets[sheet];
 		}
 
-        int xTile = tile % 32; // gets x position of the spritesheet "tile"
-        int yTile = tile / 32; // gets y position
+		xTile %= currentSheet.width; // to avoid out of bounds
+		yTile %= currentSheet.height; // ^
         int toffs = xTile * 8 + yTile * 8 * currentSheet.width; // Gets the offset of the sprite into the spritesheet pixel array, the 8's represent the size of the box. (8 by 8 pixel sprite boxes)
 
         /// THIS LOOPS FOR EVERY LITTLE PIXEL
@@ -110,15 +130,17 @@ public class Screen {
                 boolean isTransparent = (col >> 24 == 0);
 
                 if (!isTransparent) {
+                	int position = (x + xp) + (y + yp) * w;
+
                     if (whiteTint != -1 && col == 0x1FFFFFF) {
                         // if this is white, write the whiteTint over it
-                        pixels[(x + xp) + (y + yp) * w] = Color.upgrade(whiteTint);
+                        pixels[position] = Color.upgrade(whiteTint);
                     } else {
                         // Inserts the colors into the image
                         if (fullbright) {
-                            pixels[(x + xp) + (y + yp) * w] = Color.WHITE;
+                            pixels[position] = Color.WHITE;
                         } else {
-							pixels[(x + xp) + (y + yp) * w] = Color.upgrade(col);
+							pixels[position] = Color.upgrade(col);
 						}
                     }
                 }
