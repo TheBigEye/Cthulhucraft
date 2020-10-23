@@ -14,6 +14,9 @@ import minicraft.entity.furniture.Chest;
 import minicraft.entity.furniture.DungeonChest;
 import minicraft.entity.furniture.Spawner;
 import minicraft.entity.mob.*;
+import minicraft.entity.mob.boss.AirWizard;
+import minicraft.entity.mob.infected.InfectedMob;
+import minicraft.entity.mob.infected.Mooshroom;
 import minicraft.entity.mob.villager.Cleric;
 import minicraft.entity.mob.villager.Librarian;
 import minicraft.entity.mob.villager.OldGolem;
@@ -592,6 +595,7 @@ public class Level {
 			if(depth == 0 && PassiveMob.checkStartPos(this, nx, ny)) {
 				// spawns the friendly mobs.
 				if (rnd <= (Updater.getTime()==Updater.Time.Night?22:33)) add((new Cow()), nx, ny);
+				if (rnd <= (Updater.getTime()==Updater.Time.Night?22:33)) add((new Chicken()), nx, ny);
 				else if (rnd >= 68) add((new Pig()), nx, ny);
 				else add((new Sheep()), nx, ny);
 				
@@ -623,6 +627,15 @@ public class Level {
 				else if (rnd >= 68) add((new GuiMan()), nx, ny);
 				else add((new GuiMan()), nx, ny);
 				if (rnd <= 75) add((new GuiMan()), nx, ny);
+				
+				spawned = true;
+			}
+			if(depth == 0 && InfectedMob.checkStartPos(this, nx, ny)) {
+				// spawns the villagers.
+				if (rnd <= (Updater.getTime()==Updater.Time.Night?22:33)) add((new Mooshroom()), nx, ny);
+				else if (rnd >= 68) add((new Mooshroom()), nx, ny);
+				else add((new Mooshroom()), nx, ny);
+				if (rnd <= 75) add((new Mooshroom()), nx, ny);
 				
 				spawned = true;
 			}

@@ -17,7 +17,7 @@ public class FloorTile extends Tile {
 	protected Material type;
 	
 	protected FloorTile(Material type) {
-		super((type == Material.Wood ? "Wood Planks" : type == Material.Obsidian ? "Obsidian" : type.name()+" Bricks"), (Sprite)null);
+		super((type == Material.Wood ? "Wood Planks" : type == Material.Spruce ? "Spruce Planks" : type == Material.Birch ? "Birch Planks" : type == Material.Obsidian ? "Obsidian" : type.name()+" Bricks"), (Sprite)null);
 		this.type = type;
 		maySpawn = true;
 		switch(type) {
@@ -29,6 +29,12 @@ public class FloorTile extends Tile {
 				break;
 			case Obsidian:
 				sprite = new Sprite(25, 14, 2, 2, 1, 0);
+				break;
+			case Spruce:
+				sprite = new Sprite(35, 14, 2, 2, 1, 0);
+				break;
+			case Birch:
+				sprite = new Sprite(45, 14, 2, 2, 1, 0);
 				break;
 		}
 		super.sprite = sprite;
@@ -47,6 +53,8 @@ public class FloorTile extends Tile {
 					Item drop;
 					switch(type) {
 						case Wood: drop = Items.get("Plank"); break;
+						case Spruce: drop = Items.get("Spruce Plank"); break;
+						case Birch: drop = Items.get("Birch Plank"); break;
 						default: drop = Items.get(type.name()+" Brick"); break;
 					}
 					Sound.monsterHurt.play();

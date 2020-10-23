@@ -2,8 +2,8 @@ package minicraft.level.tile;
 
 import minicraft.core.Game;
 import minicraft.entity.Entity;
-import minicraft.entity.mob.AirWizard;
 import minicraft.entity.mob.Player;
+import minicraft.entity.mob.boss.AirWizard;
 import minicraft.gfx.Screen;
 import minicraft.gfx.Sprite;
 import minicraft.level.Level;

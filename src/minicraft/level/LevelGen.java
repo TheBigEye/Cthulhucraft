@@ -152,6 +152,7 @@ public class LevelGen {
 			if (count[Tiles.get("giant red mushroom").id & 0xff] < 100) continue;
 			if (count[Tiles.get("giant brown mushroom").id & 0xff] < 100) continue;
 			if (count[Tiles.get("red mushroom").id & 0xff] < 100) continue;
+			if (count[Tiles.get("brown mushroom").id & 0xff] < 100) continue;
 			if (count[Tiles.get("fir tree").id & 0xff] < 100) continue;
 			if (count[Tiles.get("mycelium").id & 0xff] < 100) continue;
 			if (count[Tiles.get("pine tree").id & 0xff] < 100) continue;
@@ -744,6 +745,22 @@ public class LevelGen {
 			}
 		}
 		
+		for (int i = 0; i < w * h / 100; i++) {
+			int x = random.nextInt(w);
+			int y = random.nextInt(h);
+			int col = random.nextInt(4);
+			for (int j = 0; j < 15; j++) {
+				int xx = x + random.nextInt(5) - random.nextInt(5);
+				int yy = y + random.nextInt(5) - random.nextInt(5);
+				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+					if (map[xx + yy * w] == Tiles.get("mycelium").id) {
+						map[xx + yy * w] = Tiles.get("brown mushroom").id;
+						data[xx + yy * w] = (byte) (col + random.nextInt(4) * 16);
+					}
+				}
+			}
+		}
+		
 		for (int i = 0; i < w * h / 400; i++) {
 			int x = random.nextInt(w);
 			int y = random.nextInt(h);
@@ -798,6 +815,16 @@ public class LevelGen {
 			if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 				if (map[xx + yy * w] == Tiles.get("sand").id) {
 					map[xx + yy * w] = Tiles.get("cactus").id;
+				}
+			}
+		}
+		
+		for (int i = 0; i < w * h / 100; i++) {
+			int xx = random.nextInt(w);
+			int yy = random.nextInt(h);
+			if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+				if (map[xx + yy * w] == Tiles.get("snow").id) {
+					map[xx + yy * w] = Tiles.get("ice spike").id;
 				}
 			}
 		}
@@ -1175,7 +1202,8 @@ public class LevelGen {
 					if (map[i] == Tiles.get("snow").id) pixels[i] = 0xffffff;
 					if (map[i] == Tiles.get("giant red mushroom").id) pixels[i] = 0x739323;
 					if (map[i] == Tiles.get("giant brown mushroom").id) pixels[i] = 0x769626;
-					if (map[i] == Tiles.get("red mushroom").id) pixels[i] = 0x769626;
+					if (map[i] == Tiles.get("red mushroom").id) pixels[i] = 0x799929;
+					if (map[i] == Tiles.get("brown mushroom").id) pixels[i] = 0x799929;
 					if (map[i] == Tiles.get("mycelium").id) pixels[i] = 0x304030;
 					if (map[i] == Tiles.get("Stone Bricks").id) pixels[i] = 0xa0a040;
 					if (map[i] == Tiles.get("birch tree").id) pixels[i] = 0x003000;

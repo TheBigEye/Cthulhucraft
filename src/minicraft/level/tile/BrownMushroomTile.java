@@ -103,7 +103,7 @@ public class BrownMushroomTile extends Tile {
 
 	public void hurt(Level level, int x, int y, int dmg) {
 		if(random.nextInt(100) == 0)
-			level.dropItem(x*16+8, y*16+8, Items.get("Apple"));
+			level.dropItem(x*16+8, y*16+8, Items.get("Cordyceps"));
 		
 		int damage = level.getData(x, y) + dmg;
 		int treeHealth = 20;
@@ -114,8 +114,7 @@ public class BrownMushroomTile extends Tile {
 
 		level.add(new TextParticle("" + dmg, x*16+8, y*16+8, Color.RED));
 		if (damage >= treeHealth) {
-			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Wood"));
-			level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Acorn"));
+			level.dropItem(x*16+8, y*16+8, 1, 1, Items.get("Brown Mushroom"));
 			level.setTile(x, y, Tiles.get("mycelium"));
 		} else {
 			level.setData(x, y, damage);

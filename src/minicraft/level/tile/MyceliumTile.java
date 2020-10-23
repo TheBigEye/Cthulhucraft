@@ -63,7 +63,7 @@ public class MyceliumTile extends Tile {
 					level.setTile(xt, yt, Tiles.get("dirt"));
 					Sound.monsterHurt.play();
 					if (random.nextInt(5) == 0) { // 20% chance to drop Mycelium item
-						level.dropItem(xt*16+8, yt*16+8, 2, Items.get("dirt"));
+						level.dropItem(xt*16+8, yt*16+8, 2, Items.get("Cordyceps"));
 					}
 					return true;
 				}

@@ -13,10 +13,10 @@ import minicraft.item.ToolItem;
 import minicraft.item.ToolType;
 import minicraft.level.Level;
 
-public class MushroomRedTile extends Tile {
-	private static Sprite flowerSprite = new Sprite(9, 12, 1);
+public class MushroomBrownTile extends Tile {
+	private static Sprite flowerSprite = new Sprite(10, 12, 1);
 	
-	protected MushroomRedTile(String name) {
+	protected MushroomBrownTile(String name) {
 		super(name, (ConnectorSprite)null);
 		connectsToMycelium = true;
 		maySpawn = true;
@@ -57,7 +57,7 @@ public class MushroomRedTile extends Tile {
 				if (player.payStamina(2 - tool.level) && tool.payDurability()) {
 					level.setTile(x, y, Tiles.get("Mycelium"));
 					Sound.monsterHurt.play();
-					level.dropItem(x*16+8, y*16+8, Items.get("Red Mushroom"));
+					level.dropItem(x*16+8, y*16+8, Items.get("Brown Mushroom"));
 					return true;
 				}
 			}
@@ -66,9 +66,10 @@ public class MushroomRedTile extends Tile {
 	}
 
 	public boolean hurt(Level level, int x, int y, Mob source, int dmg, Direction attackDir) {
-		level.dropItem(x*16+8, y*16+8, 0, 1, Items.get("Red Mushroom"));
+		level.dropItem(x*16+8, y*16+8, 0, 1, Items.get("Brown Mushroom"));
 		level.setTile(x, y, Tiles.get("Mycelium"));
 		return true;
 	}
 }
+
 

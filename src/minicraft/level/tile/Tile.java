@@ -18,7 +18,7 @@ public abstract class Tile {
 	protected Random random = new Random();
 	
 	protected enum Material {
-		Wood, Stone, Obsidian;
+		Wood, Spruce, Birch, Stone, Obsidian;
 		public static final Material[] values = Material.values();
 	}
 	

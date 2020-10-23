@@ -35,6 +35,14 @@ public class DoorTile extends Tile {
 				closedSprite = new Sprite(25, 16, 2, 2, 1);
 				openSprite = new Sprite(23, 16, 2, 2, 1);
 				break;
+			case Spruce:
+				closedSprite = new Sprite(35, 16, 2, 2, 1);
+				openSprite = new Sprite(33, 16, 2, 2, 1);
+				break;
+			case Birch:
+				closedSprite = new Sprite(45, 16, 2, 2, 1);
+				openSprite = new Sprite(43, 16, 2, 2, 1);
+				break;
 		}
 		sprite = closedSprite;
 	}

@@ -4,9 +4,9 @@ import minicraft.core.Game;
 import minicraft.core.io.Sound;
 import minicraft.entity.Direction;
 import minicraft.entity.Entity;
-import minicraft.entity.mob.AirWizard;
 import minicraft.entity.mob.Mob;
 import minicraft.entity.mob.Player;
+import minicraft.entity.mob.boss.AirWizard;
 import minicraft.entity.particle.SmashParticle;
 import minicraft.entity.particle.TextParticle;
 import minicraft.gfx.Color;
@@ -38,6 +38,12 @@ public class WallTile extends Tile {
 				break;
 			case Obsidian:
 				sprite = new ConnectorSprite(WallTile.class, new Sprite(20, 14, 3, 3, 1, 3), new Sprite(23, 14, 2, 2, 1, 3), new Sprite(21, 15, 2, 2, 1, 0, true));
+				break;
+			case Spruce:
+				sprite = new ConnectorSprite(WallTile.class, new Sprite(30, 14, 3, 3, 1, 3), new Sprite(33, 14, 2, 2, 1, 3), new Sprite(31, 15, 2, 2, 1, 0, true));
+				break;
+			case Birch:
+				sprite = new ConnectorSprite(WallTile.class, new Sprite(40, 14, 3, 3, 1, 3), new Sprite(43, 14, 2, 2, 1, 3), new Sprite(41, 15, 2, 2, 1, 0, true));
 				break;
 		}
 		csprite = sprite;
@@ -90,11 +96,13 @@ public class WallTile extends Tile {
 			String itemName = "", tilename = "";
 			switch(type) {
 				case Wood: itemName = "Plank"; tilename = "Wood Planks"; break;
+				case Spruce: itemName = "Spruce Plank"; tilename = "Spruce Planks"; break;
+				case Birch: itemName = "Birch Plank"; tilename = "Birch Planks"; break;
 				case Stone: itemName = "Stone Brick"; tilename = "Stone Bricks"; break;
 				case Obsidian: itemName = "Obsidian Brick"; tilename = "Obsidian"; break;
 			}
 			
-			level.dropItem(x*16+8, y*16+8, 1, 3-type.ordinal(), Items.get(itemName));
+			level.dropItem(x*16+8, y*16+8, 1, 5-type.ordinal(), Items.get(itemName));
 			level.setTile(x, y, Tiles.get(tilename));
 		}
 		else {
