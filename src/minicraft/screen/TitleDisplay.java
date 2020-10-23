@@ -1,5 +1,8 @@
 package minicraft.screen;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.Random;
@@ -34,9 +37,8 @@ public class TitleDisplay extends Display {
 	private Object timer;
 	
 	public TitleDisplay() {
-		super(true, false, new Menu.Builder(false, 2, RelPos.CENTER,		
-			new BlankEntry(),
-			new BlankEntry(),
+		super(true, false, new Menu.Builder(false, 2, RelPos.CENTER,
+			new StringEntry(""),			
 			new SelectEntry("Singleplayer", () -> {
 				if(WorldSelectDisplay.getWorldNames().size() > 0)
 					Game.setMenu(new Display(true, new Menu.Builder(false, 2, RelPos.CENTER,
@@ -84,13 +86,46 @@ public class TitleDisplay extends Display {
 		}
 		Game.ISONLINE = false;
 
+		
+		//events
 		LocalDateTime time = LocalDateTime.now();
 		if (time.getMonth() == Month.DECEMBER) {
 			if (time.getDayOfMonth() == 19) rand = 1;
 			if (time.getDayOfMonth() == 25) rand = 2;
 		} else {
 			rand = random.nextInt(splashes.length - 3) + 3;
+			
 		}
+		
+		if (time.getMonth() == Month.FEBRUARY) {
+			if (time.getDayOfMonth() == 14) rand = 0;
+			if (time.getDayOfMonth() == 15) rand = 0;
+			if (time.getDayOfMonth() == 16) rand = 0;
+		} else {
+			rand = random.nextInt(splashes.length - 3) + 3;
+			
+		}
+		
+		if (time.getMonth() == Month.JULY) {
+			if (time.getDayOfMonth() == 6) rand = 3;
+		} else {
+			rand = random.nextInt(splashes.length - 3) + 3;
+			
+		}
+		if (time.getMonth() == Month.SEPTEMBER) {
+			if (time.getDayOfMonth() == 18) rand = 4;
+		} else {
+			rand = random.nextInt(splashes.length - 3) + 3;
+			
+		}
+		if (time.getMonth() == Month.AUGUST) {
+			if (time.getDayOfMonth() == 29) rand = 5;
+			if (time.getDayOfMonth() == 10) rand = 6;
+		} else {
+			rand = random.nextInt(splashes.length - 3) + 3;
+			
+		}
+		
 		
 		World.levels = new Level[World.levels.length];
 		
@@ -108,7 +143,7 @@ public class TitleDisplay extends Display {
 			if(Game.debug) System.out.println("latest version = "+latestVersion.version);
 			if(latestVersion.version.compareTo(Game.VERSION) > 0) { // link new version
 				menus[0].updateEntry(0, new StringEntry("New: "+latestVersion.releaseName, Color.GREEN));
-				menus[0].updateEntry(1, new LinkEntry(Color.CYAN, "--Select here to Download--", latestVersion.releaseUrl, "Direct link to latest version: " + latestVersion.releaseUrl + "\nCan also be found here with change log: https://www.github.com/chrisj42/minicraft-plus-revived/releases"));
+				menus[0].updateEntry(1, new LinkEntry(Color.GREEN, "--Select here to Download--", latestVersion.releaseUrl, "Direct link to latest version: " + latestVersion.releaseUrl + "\nCan also be found here with change log: https://www.github.com/TheBigEye/Cthulhucraft/releases"));
 			}
 			else if(latestVersion.releaseName.length() > 0)
 				menus[0].updateEntry(0, new StringEntry("You have the latest version.", Color.DARK_GRAY));
@@ -161,22 +196,33 @@ public class TitleDisplay extends Display {
 		int splashColor = isblue ? Color.BLUE : isRed ? Color.RED : isGreen ? Color.GREEN : Color.get(1, bcol*51, bcol*51, bcol*25);
 
 		
-		Font.drawCentered(splashes[rand], screen, 74, splashColor);
+		Font.drawCentered(splashes[rand], screen, 70, splashColor);
 		
-		Font.draw("Version " + Game.BUILD, screen, 1, 1, Color.get(1, 51));
+		//Font.draw("Version " + Game.BUILD, screen, 1, 1, Color.get(1, 51));
+		Font.draw(Game.BUILD, screen, 1, 1, Color.get(1, 51));
+		
+		Font.drawCentered("Mod by TheBigEye", screen, Screen.h - 12, Color.get(1, 51));
 	}
 	
 	private static final String[] splashes = {
-		"Secret Splash!",
+		"I love A.",
 		"Happy birthday Minicraft!",
 		"Happy XMAS!",
-		"Multiplayer Now Included!",
+		"Happy birthday BigEye :)",
+		"Happy birthday Zaq :)",
+		"Happy birthday A.L.I.C.E :)",
+		
+        "Bye ben :(",
+		
+        //Also play 
 		"Also play InfinityTale!",
 		"Also play Minicraft Deluxe!",
 		"Also play Alecraft!",
 		"Also play Hackcraft!",
 		"Also play MiniCrate!",
 		"Also play MiniCraft Mob Overload!",
+		
+		
 		"Now with better fishing!",
 		"Now with better tools!",
 		"Now with better chests!",
@@ -187,17 +233,22 @@ public class TitleDisplay extends Display {
 		"MinicraftPlus on Youtube",
 		"Join the Forums!",
 		"The Wiki is weak! Help it!",
+		
 		"Notch is Awesome!",
 		"Dillyg10 is cool as Ice!",
 		"Shylor is the man!",
 		"Chris J is great with portals!",
 		"AntVenom loves cows! Honest!",
+		"TheBigEye.... Cake rain!",
+		
 		"You should read Antidious Venomi!",
 		"Oh Hi Mark",
 		"Use the force!",
 		"Keep calm!",
 		"Get him, Steve!",
 		"Forty-Two!",
+		
+		//kill
 		"Kill Creeper, get Gunpowder!",
 		"Kill Cow, get Beef!",
 		"Kill Zombie, get Cloth!",
@@ -205,34 +256,63 @@ public class TitleDisplay extends Display {
 		"Kill Skeleton, get Bones!",
 		"Kill Sheep, get Wool!",
 		"Kill Pig, get Porkchop!",
+		"Kill Chicken, get Feathers!",
+		
+		//mineral levels
 		"Gold > Iron",
 		"Gem > Gold",
+		
 		"Test == InDev!",
 		"Story? Uhh...",
+		
+		//What's that?
 		"Infinite terrain? What's that?",
 		"Redstone? What's that?",
 		"Minecarts? What are those?",
 		"Windows? I prefer Doors!",
 		"2.5D FTW!",
-		"3rd dimension not included!",
+		"Grab your friends!",
+		
+		//Not Included
 		"Null not included",
+		"Herobine not included",
 		"Mouse not included!",
 		"No spiders included!",
 		"No Endermen included!",
-		"No chickens included!",
-		"Grab your friends!",
+		"3rd dimension not included!",
+		
+		//Included
+		"Villagers included!",
 		"Creepers included!",
 		"Skeletons included!",
 		"Knights included!",
 		"Snakes included!",
 		"Cows included!",
 		"Sheep included!",
+		"Chickens included!",
 		"Pigs included!",
+		"Cthulhu included!",
+		"Enchantments Now Included!",
+		"Multiplayer Now Included!",
+		"Carrots Now Included!",
+		"Boats Now Included!",
+		"Maps Now Included!",
+	  //"Nether Now Included?",
+		
+		//Worlds
 		"Bigger Worlds!",
 		"World types!",
 		"World themes!",
+		"Mushroom Biome!",
+		"Desert Biome!",
+		"Forest Biome!",
+		"Snow Biome!",
+		
+		//Ideas
 		"Sugarcane is a Idea!",
 		"Milk is an idea!",
+		"Cakes is an idea!",
+		
 		"Creeper, aw man",
 		"So we back in the mine,",
 		"pickaxe swinging from side to side",
@@ -281,5 +361,6 @@ public class TitleDisplay extends Display {
 		"001100010011000000110001!",
 		"011010000110110101101101?",
 		"...zzz...",
+		"The cake is a lie!",
 	};
 }

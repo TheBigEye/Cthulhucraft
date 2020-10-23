@@ -14,6 +14,7 @@ public class BookData {
 	
 	public static final String antVenomBook = loadBook("antidous");
 	public static final String storylineGuide = loadBook("story_guide");
+	public static final String NecroBook = loadBook("necronomicon");
 	
 	private static final String loadBook(String bookTitle) {
 		String book;

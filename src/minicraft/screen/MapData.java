@@ -1,27 +1,30 @@
 package minicraft.screen;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import minicraft.gfx.Color;
 import minicraft.level.tile.Tiles;
 
 public enum MapData {
 	
 	GRASS(Tiles.get("Grass").id, Color.get(1, 58, 198, 30)),
-	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 89, 86, 86)),
+	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 58, 198, 30)),
     LAWN(Tiles.get("Lawn").id, Color.get(1, 57, 191, 30)),
-    DIRT(Tiles.get("Dirt").id, Color.get(1, 132, 116, 0)),
+    DIRT(Tiles.get("Dirt").id, Color.get(1, 157, 91, 41)),
     FLOWER(Tiles.get("Flower").id, Color.YELLOW),
     HOLE(Tiles.get("Hole").id, Color.get(1, 61, 47, 8)),
-    WATER(Tiles.get("Water").id, Color.get(1, 0, 178, 240)),
+    WATER(Tiles.get("Water").id, Color.get(1, 63, 63, 245)),
     LAVA(Tiles.get("Lava").id, Color.RED),
     ROCK(Tiles.get("Rock").id, Color.get(1, 145, 143, 122)),
     HARD_ROCK(Tiles.get("Hard Rock").id, Color.get(1, 127, 126, 107)),
-    CACTUS(Tiles.get("Cactus").id, Color.GREEN),
+    CACTUS(Tiles.get("Cactus").id, Color.get(1, 0,85, 0)),
     TREE(Tiles.get("Tree").id, Color.get(1, 0, 113, 0)),
     FIR_TREE(Tiles.get("Fir Tree").id, Color.get(1, 19, 139, 98)),
     PINE_TREE(Tiles.get("Pine Tree").id, Color.get(1, 17, 127, 89)),
-    //GIANT_RED_MUSHROOM(Tiles.get("Giant Red Mushroom").id, Color.get(1, 209, 20, 10)),
-    //GIANT_BROWN_MUSHROOM(Tiles.get("Giant Brown Mushroom").id, Color.get(1, 175, 122, 96)),
-    SAND(Tiles.get("Sand").id, Color.get(1, 232, 201, 0)),
+    GIANT_RED_MUSHROOM(Tiles.get("Giant Red Mushroom").id, Color.get(1, 57, 191, 30)),
+    //GIANT_BROWN_MUSHROOM(Tiles.get("Giant Brown Mushroom").id, Color.get(1, 175, 122, 96)), //Blocked for errors
+    SAND(Tiles.get("Sand").id, Color.get(1, 247, 233, 163)),
     SNOW(Tiles.get("Snow").id, Color.get(1, 240, 240, 240)),
     STAIRS_UP(Tiles.get("Stairs Up").id, 0xffffff),
     STAIRS_DOWN(Tiles.get("Stairs Down").id, 0xffffff),
@@ -35,19 +38,19 @@ public enum MapData {
     OBSIDIAN_WALL(Tiles.get("Obsidian Wall").id, Color.get(1, 46, 24, 118)),
     OBSIDIAN_DOOR(Tiles.get("Obsidian Door").id, Color.get(1, 44, 21, 67)),
     
-    WOOL(Tiles.get("Wool").id, Color.get(1, 239, 239, 236)),
-    BLACK_WOOL(Tiles.get("Black Wool").id, Color.get(1, 23, 19, 18)),
-    YELLOW_WOOL(Tiles.get("Yellow Wool").id, Color.get(1, 186, 175, 49)),
+    WOOL(Tiles.get("Wool").id, Color.get(1, 220, 220, 220)),
+    BLACK_WOOL(Tiles.get("Black Wool").id, Color.get(1, 21, 21, 21)),
+    YELLOW_WOOL(Tiles.get("Yellow Wool").id, Color.get(1, 197, 197, 44)),
     GREEN_WOOL(Tiles.get("Green Wool").id, Color.get(1, 71, 178, 59)),
     BLUE_WOOL(Tiles.get("Blue Wool").id, Color.get(1, 51, 75, 160)),
-    RED_WOOL(Tiles.get("Red Wool").id, Color.get(1, 146, 48, 47)),
+    RED_WOOL(Tiles.get("Red Wool").id, Color.get(1, 132, 44, 44)),
     PURPLE_WOOL(Tiles.get("Purple Wool").id, Color.get(1, 127, 63, 180)),
     PINK_WOOL(Tiles.get("Pink Wool").id, Color.get(1, 224, 175, 198)),
     DARK_GREEN_WOOL(Tiles.get("Dark Green Wool").id, Color.get(1, 53, 70, 29)),
     BROWN_WOOL(Tiles.get("Brown Wool").id, Color.get(1, 91, 56, 36)),
     MAGENTA_WOOL(Tiles.get("Magenta Wool").id, Color.get(1, 184, 87, 194)),
     LIGHT_BLUE_WOOL(Tiles.get("Light Blue Wool").id, Color.get(1, 111, 155, 220)),
-    CYAN_WOOL(Tiles.get("Cyan Wool").id, Color.get(1, 48, 114, 138)),
+    CYAN_WOOL(Tiles.get("Cyan Wool").id, Color.get(1, 65, 109, 132)),
     ORANGE_WOOL(Tiles.get("Orange Wool").id, Color.get(1, 229, 110, 71)),
     
     FARMLAND(Tiles.get("Farmland").id, Color.get(1, 145, 75, 75)),
@@ -56,13 +59,26 @@ public enum MapData {
     CLOUD(Tiles.get("cloud").id, Color.WHITE),
     CLOUD_CACTUS(Tiles.get("Cloud Cactus").id, Color.GREEN);
     
+    private static final Map<Integer, MapData> BY_ID = new HashMap<Integer, MapData>();
+	
+    static {
+    	for (MapData mapData : MapData.values()) {
+    		MapData.BY_ID.put(mapData.tileID, mapData);
+    	}
+    }
     
+	
     public int tileID;
     public int color;
 
     MapData(int id, int color) {
         tileID = id;
         this.color = color;
+    }
+    
+    public static MapData getById(int id){
+		return MapData.BY_ID.get(id);
+    	
     }
 
 }

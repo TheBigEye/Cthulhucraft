@@ -102,11 +102,10 @@ public class MapDisplay extends Display {
             for (int c = 1; c < 128; c++) {
                 int color = 1;
                 Tile tile = level.getTile(i + (offset[0] * 128), c + (offset[1] * 128));
-                for (int e = 1; e < MapData.values().length; e++) {
-                    if (MapData.values()[e].tileID == tile.id) {
-                        color = MapData.values()[e].color;
-                        break;
-                    }
+                
+                MapData mapData = MapData.getById(tile.id);
+                if (mapData != null) {
+                	color = mapData.color;
                 }
                 // by drawing with only one pixel at a time we can draw with much more precision
                 screen.setPixel(i + menuBounds.getLeft() + 6, c + menuBounds.getTop() + 6, color);
