@@ -1,5 +1,5 @@
 # Cthulhucraft
-After dedicating 2 months to Aircraft and its alpha ... here is the beta ..., Cthulhucraft is a mod in which you expand your adventure within Minicraft, add new bosses, challenges, new objects and new toys lol, new graphics and options..etc. watch out for cthulhu
+After spending 2 months developing the Alpha phase of Aircraft ... here is the beta ..., Cthulhucraft add new bosses, challenges, new objects and new toys lol, new graphics and options in order to have a good gameplay
 
 The goal is to add features that extend the game and story, improve the graphics by taking advantage of the RGB color and resolution engine Minicraft + "2.0.6", enhance the textures as best as possible, and also add improvements to the interface. texts, menus. etc.
 
