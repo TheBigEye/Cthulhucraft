@@ -3,7 +3,9 @@ After dedicating 2 months to Aircraft and its alpha ... here is the beta ..., Ct
 
 The goal is to add features that extend the game and story, improve the graphics by taking advantage of the RGB color and resolution engine Minicraft + "2.0.6", enhance the textures as best as possible, and also add improvements to the interface. texts, menus. etc.
 
-- in short, try to make a more complete version of Minicraft
+- in short, try to make a more complete version of Minicraft, and make Minicraft more interesting
+
+
 
 # Features to implement
 - New boss diversity
