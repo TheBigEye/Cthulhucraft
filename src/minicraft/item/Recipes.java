@@ -2,6 +2,8 @@ package minicraft.item;
 
 import java.util.ArrayList;
 
+import minicraft.gfx.Sprite;
+
 public class Recipes {
 	
 	public static final ArrayList<Recipe> anvilRecipes = new ArrayList<>();
@@ -17,13 +19,14 @@ public class Recipes {
 	
 	static {
 		craftRecipes.add(new Recipe("Workbench_1", "Wood_4"));
-		craftRecipes.add(new Recipe("Workbench_1", "Spruce Wood_4"));
-		craftRecipes.add(new Recipe("Workbench_1", "Birch Wood_4"));
+		//craftRecipes.add(new Recipe("Workbench_1", "Spruce Wood_4"));
+		//craftRecipes.add(new Recipe("Workbench_1", "Birch Wood_4"));
 		craftRecipes.add(new Recipe("Stick_4", "Wood_2"));
-		craftRecipes.add(new Recipe("Stick_4", "Spruce Wood_2"));
-		craftRecipes.add(new Recipe("Stick_4", "Birch Wood_2"));
+		//craftRecipes.add(new Recipe("Stick_4", "Spruce Wood_2"));
+		//craftRecipes.add(new Recipe("Stick_4", "Birch Wood_2"));
 		craftRecipes.add(new Recipe("Torch_4", "Stick_2", "coal_1"));
 		craftRecipes.add(new Recipe("Grass Seeds_1", "seeds_1", "Flower_2"));
+		craftRecipes.add(new Recipe("Bone powder_3", "bone_1"));
 		craftRecipes.add(new Recipe("plank_2", "Wood_1"));
 		craftRecipes.add(new Recipe("Plank Wall_1", "plank_3"));
 		craftRecipes.add(new Recipe("Wood Door_1", "plank_5"));
@@ -60,12 +63,27 @@ public class Recipes {
 		workbenchRecipes.add(new Recipe("Gold Fishing Rod_1", "Gold_10", "String_3"));
 		workbenchRecipes.add(new Recipe("Gem Fishing Rod_1", "Gem_10", "String_3"));
 
+		loomRecipes.add(new Recipe("red dye_1", "rose_1"));
+		loomRecipes.add(new Recipe("green dye_1", "Cactus_1"));
+		loomRecipes.add(new Recipe("yellow dye_1", "Flower_1"));
+		loomRecipes.add(new Recipe("pink dye_1", "red dye_1", "Bone powder_1"));
+		loomRecipes.add(new Recipe("dark green dye_1", "green dye_1", "Ink sac_1"));
+		loomRecipes.add(new Recipe("orange dye_1", "Orange tulip_1"));
+		loomRecipes.add(new Recipe("purple dye_1", "Lapis_1", "Ink sac_1"));
+		
 		loomRecipes.add(new Recipe("String_3", "Wool_1"));
-		loomRecipes.add(new Recipe("red wool_1", "Wool_1", "rose_1"));
+		loomRecipes.add(new Recipe("Wool_1", "String_3"));
+		loomRecipes.add(new Recipe("black wool_1", "Wool_1", "Ink sac_1"));
+		loomRecipes.add(new Recipe("yellow wool_1", "Wool_1", "yellow dye_1"));
+		loomRecipes.add(new Recipe("green wool_1", "Wool_1", "green dye_1"));
 		loomRecipes.add(new Recipe("blue wool_1", "Wool_1", "Lapis_1"));
-		loomRecipes.add(new Recipe("green wool_1", "Wool_1", "Cactus_1"));
-		loomRecipes.add(new Recipe("yellow wool_1", "Wool_1", "Flower_1"));
-		loomRecipes.add(new Recipe("black wool_1", "Wool_1", "coal_1"));
+		loomRecipes.add(new Recipe("red wool_1", "Wool_1", "red dye_1"));
+		loomRecipes.add(new Recipe("purple wool_1", "Wool_1", "purple dye_1"));
+		loomRecipes.add(new Recipe("pink wool_1", "Wool_1", "pink dye_1"));
+		loomRecipes.add(new Recipe("dark green wool_1", "Wool_1", "dark green dye_1"));
+		loomRecipes.add(new Recipe("gray wool_1", "Wool_1", "Ink sac_1", "Bone powder_1"));
+		loomRecipes.add(new Recipe("red wool_1", "Wool_1", "red dye_1"));
+
 		loomRecipes.add(new Recipe("Bed_1", "Wood_5", "Wool_3"));
 		
 		loomRecipes.add(new Recipe("blue clothes_1", "cloth_5", "Lapis_1"));

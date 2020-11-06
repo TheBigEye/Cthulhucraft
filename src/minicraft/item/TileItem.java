@@ -63,7 +63,7 @@ public class TileItem extends StackableItem {
 		items.add(new TileItem("Cyan Wool", (new Sprite(13, 21, 0)), "Cyan Wool", "hole", "water", "lava"));
 		items.add(new TileItem("Orange Wool", (new Sprite(14, 21, 0)), "Orange Wool", "hole", "water", "lava"));
 		
-		items.add(new TileItem("Sand", (new Sprite(0, 3, 0)), "sand", "hole", "water", "lava"));
+		items.add(new TileItem("Sand", (new Sprite(0, 3, 0)), "sand", "dirt", "water", "lava"));
 		items.add(new TileItem("Mycelium", (new Sprite(12, 3, 0)), "mycelium", "grass", "dirt"));
 		items.add(new TileItem("Snow Ball", (new Sprite(10, 3, 0)), "snow", "grass"));
 		items.add(new TileItem("Cactus", (new Sprite(2, 3, 0)), "cactus Sapling", "sand"));
@@ -71,6 +71,7 @@ public class TileItem extends StackableItem {
 		items.add(new TileItem("Carrot", (new Sprite(18, 0, 0)), "carrot", "farmland"));
 		items.add(new TileItem("Grass Seeds", (new Sprite(3, 0, 0)), "grass", "dirt"));
 		items.add(new TileItem("Bone", (new Sprite(3, 3, 0)), "tree", "tree Sapling"));
+		items.add(new TileItem("Bone powder", (new Sprite(5, 22, 0)), "lawn", "grass"));
 		items.add(new TileItem("Cloud", (new Sprite(4, 3, 0)), "cloud", "Infinite Fall", "hole"));
 		
 		return items;

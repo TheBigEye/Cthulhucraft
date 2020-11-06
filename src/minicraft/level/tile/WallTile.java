@@ -96,10 +96,10 @@ public class WallTile extends Tile {
 			String itemName = "", tilename = "";
 			switch(type) {
 				case Wood: itemName = "Plank"; tilename = "Wood Planks"; break;
-				case Spruce: itemName = "Spruce Plank"; tilename = "Spruce Planks"; break;
-				case Birch: itemName = "Birch Plank"; tilename = "Birch Planks"; break;
 				case Stone: itemName = "Stone Brick"; tilename = "Stone Bricks"; break;
 				case Obsidian: itemName = "Obsidian Brick"; tilename = "Obsidian"; break;
+				case Spruce: itemName = "Spruce Plank"; tilename = "Spruce Planks"; break;
+				case Birch: itemName = "Birch Plank"; tilename = "Birch Planks"; break;
 			}
 			
 			level.dropItem(x*16+8, y*16+8, 1, 5-type.ordinal(), Items.get(itemName));
