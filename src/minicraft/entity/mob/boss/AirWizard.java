@@ -32,7 +32,7 @@ public class AirWizard extends EnemyMob {
 	private int attackType = 0;
 	
 	/**
-	 * Constructor for the AirWizard. Will spawn as secondary form if lvl>1.
+	 * Constructor for the AirWizard. Will spawn as secondary form if lvl>1
 	 * @param lvl The AirWizard level.
 	 */
 	public AirWizard(int lvl) { 
