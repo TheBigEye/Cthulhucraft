@@ -13,7 +13,7 @@ The goal is to add features that extend the game and story, improve the graphics
 - Notable graphics improvement (Aircraft- Rcraft 2.0)
 - A.i improvement of mobs and entities
 - More mobs, enemies and animals
-- Reimplementation of old Aircraft features (Snowy biome, wolves / dogs, cats, ice tools, woods and vegetation)
+- Reimplementation of old Aircraft mod features (Snowy biome, wolves / dogs, cats, ice tools, woods and vegetation)
 - Story mode
 - Implementation of Enchantment Books and enchanted tools
 - Villages added with Villagers and iron golems, in addition to rusty Golems as Mini-bosses, the celestial dungeon was also added
