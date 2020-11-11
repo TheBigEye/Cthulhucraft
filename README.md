@@ -4,6 +4,7 @@ After spending 2 months developing the Alpha phase of Aircraft ... here is the b
 The goal is to add features that extend the game and story, improve the graphics by taking advantage of the RGB color and resolution engine Minicraft + "2.0.6", enhance the textures as best as possible, and also add improvements to the interface. texts, menus. etc.
 
 - in short, try to make a more complete version of Minicraft, and make Minicraft more interesting
+-The mod has compatibility with Minicraft plus 2.0.6 (you can load worlds of that version in the mod, but not load worlds from Cthulhucraft to Minicraft)
 
 
 
@@ -19,6 +20,4 @@ The goal is to add features that extend the game and story, improve the graphics
 - Villages added with Villagers and iron golems, in addition to rusty Golems as Mini-bosses, the celestial dungeon was also added
 
 
-- Cthulhucraft is largely based on Minicraft plus and also the first version of Minicraft
-
-# The mod has compatibility with Minicraft plus 2.0.6 (you can load worlds of that version in the mod, but not load worlds from Cthulhucraft to Minicraft)
+Cthulhucraft is largely based on Minicraft plus and also the first version of Minicraft
