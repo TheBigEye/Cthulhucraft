@@ -17,3 +17,8 @@ The goal is to add features that extend the game and story, improve the graphics
 - Story mode
 - Implementation of Enchantment Books and enchanted tools
 - Villages added with Villagers and iron golems, in addition to rusty Golems as Mini-bosses, the celestial dungeon was also added
+
+
+- Cthulhucraft is largely based on Minicraft plus and also the first version of Minicraft
+
+# The mod has compatibility with Minicraft plus 2.0.6 (you can load worlds of that version in the mod, but not load worlds from Cthulhucraft to Minicraft)
