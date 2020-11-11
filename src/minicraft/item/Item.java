@@ -42,6 +42,14 @@ public abstract class Item {
 			Font.draw(dispName, screen, x + 8, y, Color.get(0, 555));
 	}
 	
+	
+	/** Renders an item on the HUD */
+	public void renderHUD(Screen screen, int x, int y, int fontColor) {
+		String dispName = getDisplayName();
+		sprite.render(screen, x, y);
+		Font.drawBackground(dispName, screen, x + 8, y, fontColor);
+	}
+	
 	/** Determines what happens when the player interacts with an entity */
 	// TODO I want to move this to the individual entity classes.
 	public boolean interact(Player player, Entity entity, Direction attackDir) { return false; }

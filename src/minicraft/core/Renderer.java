@@ -168,9 +168,19 @@ public class Renderer extends Game {
 	/** Renders the main game GUI (hearts, Stamina bolts, name of the current item, etc.) */
 	private static void renderGui() {
 		// AH-HA! THIS DRAWS THE BLACK SQUARE!!
-		if (!isMode("creative") || player.activeItem != null)
-			for (int x = 12; x < 29; x++)
-				screen.render(x * 7, Screen.h - 8, 30 + 30 * 32, 0, 3);
+		if (!isMode("creative") || player.activeItem != null) {
+			for (int x = 10; x < 26; x++) {
+				screen.render(x * 8, Screen.h - 8, 30 + 30 * 32, 0, 3);
+			}
+		}
+		
+		
+		// Shows active item sprite and name in bottom toolbar.
+				if (player.activeItem != null) {
+					player.activeItem.renderHUD(screen, 10 * 8, Screen.h - 8, Color.WHITE);
+				}
+
+		
 
 		// This checks if the player is holding a bow, and shows the arrow counter accordingly.
 		if (player.activeItem instanceof ToolItem) {
@@ -328,8 +338,8 @@ public class Renderer extends Game {
 		
 		/// CURRENT ITEM
 		if (player.activeItem != null) // shows active item sprite and name in bottom toolbar, if one exists.
-			player.activeItem.renderInventory(screen, 12 * 7, Screen.h - 8, false);
-	}
+			player.activeItem.renderHUD(screen, 10 * 8, Screen.h - 8, Color.WHITE);
+		}
 	
 	static LocalDateTime time = LocalDateTime.now();
 	
