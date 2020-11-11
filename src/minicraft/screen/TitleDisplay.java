@@ -60,6 +60,7 @@ public class TitleDisplay extends Display {
 			),
 			new SelectEntry("Exit", Game::quit)
 			)
+				
 			.setPositioning(new Point(Screen.w/2, Screen.h*3/5), RelPos.CENTER)
 			.createMenu()
 		);
@@ -190,10 +191,12 @@ public class TitleDisplay extends Display {
 		boolean isblue = splashes[rand].contains("blue");
 		boolean isGreen = splashes[rand].contains("Green");
 		boolean isRed = splashes[rand].contains("Red");
+		boolean isOrange = splashes[rand].contains("Orange");
+		boolean isYellow = splashes[rand].contains("Yellow");
 		
 		/// this isn't as complicated as it looks. It just gets a color based off of count, which oscilates between 0 and 25.
 		int bcol = 5 - count / 5; // this number ends up being between 1 and 5, inclusive.
-		int splashColor = isblue ? Color.BLUE : isRed ? Color.RED : isGreen ? Color.GREEN : Color.get(1, bcol*51, bcol*51, bcol*25);
+		int splashColor = isblue ? Color.BLUE : isRed ? Color.RED : isGreen ? Color.GREEN : isOrange ? Color.ORANGE : isYellow ? Color.YELLOW : Color.get(1, bcol*51, bcol*51, bcol*25);
 
 		
 		Font.drawCentered(splashes[rand], screen, 70, splashColor);
@@ -339,6 +342,8 @@ public class TitleDisplay extends Display {
 		"Why is this blue?",
 		"Green is a nice color!",
 		"Red is my favorite color!",
+		"Hmmmm Orange!",
+		"Yellow = Happy!",
 		"Y U NO BOAT!?",
 		"Made with 10000% Vitamin Z!",
 		"Too much DP!",
