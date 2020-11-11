@@ -45,9 +45,9 @@ public class WheatTile extends Tile {
 
 		int age = level.getData(xt, yt);
 		if (!IfWater(level, xt, yt)) {
-			if (age < 50) level.setData(xt, yt, age + 1);
+			if (age < 50) level.setData(xt, yt, age + 0);
 		} else if (IfWater(level, xt, yt)) {
-			if (age < 50) level.setData(xt, yt, age + 2);
+			if (age < 50) level.setData(xt, yt, age + 1);
 		}
 	}
 	

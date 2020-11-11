@@ -45,9 +45,9 @@ public class CarrotTile extends Tile {
 
 		int age = level.getData(xt, yt);
 		if (!IfWater(level, xt, yt)) {
-			if (age < 50) level.setData(xt, yt, age + 1);
+			if (age < 50) level.setData(xt, yt, age + 0);
 		} else if (IfWater(level, xt, yt)) {
-			if (age < 50) level.setData(xt, yt, age + 2);
+			if (age < 50) level.setData(xt, yt, age + 1);
 		}
 	}
 	
@@ -80,13 +80,13 @@ public class CarrotTile extends Tile {
 	private void harvest(Level level, int x, int y, Entity entity) {
 		int age = level.getData(x, y);
 		
-		level.dropItem(x*16+8, y*16+8, 1, 2, Items.get("Carrot"));
+		level.dropItem(x*16+8, y*16+8, 0, 1, Items.get("Carrot"));
 		
 		int count = 0;
 		if (age >= 50) {
-			count = random.nextInt(3) + 2;
+			count = random.nextInt(3) + 1;
 		} else if (age >= 40) {
-			count = random.nextInt(2) + 1;
+			count = random.nextInt(2) + 0;
 		}
 		
 		level.dropItem(x*16+8, y*16+8, count, Items.get("Carrot"));
