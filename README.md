@@ -19,6 +19,7 @@ The goal is to add features that extend the game and story, improve the graphics
 
 
 # To clarify...
+- Cthulhucraft is the rewrite of Aircraft in order to avoid bigger mistakes than the alpha versions had and to considerably improve the concept
 - Cthulhucraft is largely based on Minicraft plus and also the first version of Minicraft, in addition to containing various things from Aircraft (in short a Frankenstein)
 - The mod has compatibility with Minicraft plus 2.0.6 (you can load worlds of that version in the mod, but not load worlds from Cthulhucraft to Minicraft).
 - The mod is in Beta phase, it is continuously updated to clean most of the bugs, do maintenance, and add features
