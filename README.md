@@ -20,4 +20,5 @@ The goal is to add features that extend the game and story, improve the graphics
 - Villages added with Villagers and iron golems, in addition to rusty Golems as Mini-bosses, the celestial dungeon was also added
 
 
-Cthulhucraft is largely based on Minicraft plus and also the first version of Minicraft
+
+Cthulhucraft is largely based on Minicraft plus and also the first version of Minicraft, in addition to containing various things from Aircraft (in short a Frankenstein)
