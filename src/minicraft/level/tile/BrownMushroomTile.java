@@ -58,7 +58,7 @@ public class BrownMushroomTile extends Tile {
 		}
 	}
 
-	public void tick(Level level, int xt, int yt) {
+	/**public void tick(Level level, int xt, int yt) {
 		int damage = level.getData(xt, yt);
 		if (damage > 0) level.setData(xt, yt, damage - 1);
 		
@@ -73,7 +73,7 @@ public class BrownMushroomTile extends Tile {
 		if (level.getTile(xn, yn) == Tiles.get("Tree")) {
 			level.setTile(xn, yn, this);
 		}
-	}
+	}**/
 
 	public boolean mayPass(Level level, int x, int y, Entity e) {
 		return false;

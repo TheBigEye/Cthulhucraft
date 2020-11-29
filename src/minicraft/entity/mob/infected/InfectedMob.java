@@ -14,12 +14,12 @@ public class InfectedMob extends MobAi {
 	protected int color;
 	
 	/**
-	 * Constructor for a non-hostile (passive) mob.
-	 * healthFactor = 3.
+	 * Constructor for a non-hostile (Infected) mob.
+	 * healthFactor = 6.
 	 * @param sprites The mob's sprites.
 	 */
 	public InfectedMob(MobSprite[][] sprites) {
-		this(sprites, 3);
+		this(sprites, 6);
 	}
 	
 	/**

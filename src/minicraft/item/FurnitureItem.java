@@ -45,7 +45,7 @@ public class FurnitureItem extends Item {
 		items.add(new FurnitureItem(new Spawner(new AirWizard(false))));
         //Principal Bosses
 		items.add(new FurnitureItem(new Spawner(new Cthulhu(1))));
-		items.add(new FurnitureItem(new Spawner(new DeepGuardian(1))));
+		items.add(new FurnitureItem(new Spawner(new Keeper(1))));
 		
 		items.add(new FurnitureItem(new Chest()));
 		// add the various types of crafting furniture

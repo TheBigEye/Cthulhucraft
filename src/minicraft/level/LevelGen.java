@@ -436,7 +436,7 @@ public class LevelGen {
            
            if (!Settings.get("Theme").equals("Mycelium")) {
    			
-			for (int i = 0; i < w * h / 2800; i++) {
+			for (int i = 0; i < w * h / 1200; i++) {
 				int xs = random.nextInt(w);
 				int ys = random.nextInt(h);
 				for (int k = 0; k < 100; k++) {

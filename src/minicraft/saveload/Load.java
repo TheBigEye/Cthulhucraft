@@ -791,7 +791,8 @@ public class Load {
 			case "OldGolem": return new OldGolem(moblvl);
 			case "Snake": return new Snake(moblvl);
 			case "Cthulhu": return new Cthulhu(moblvl);
-			case "DeepGuardian": return new DeepGuardian(moblvl);
+			case "DeepGuardian": return new Keeper(moblvl);
+			case "Keeper": return new Keeper(moblvl);
 			case "AirWizard": return new AirWizard(moblvl>1);
 			case "Boat": return new Boat();
 			case "Spawner": return new Spawner(new Zombie(1));
