@@ -13,6 +13,7 @@ import minicraft.core.Renderer;
 import minicraft.core.VersionInfo;
 import minicraft.core.World;
 import minicraft.core.io.InputHandler;
+import minicraft.core.io.Sound;
 import minicraft.entity.mob.RemotePlayer;
 import minicraft.gfx.Color;
 import minicraft.gfx.Font;
@@ -70,6 +71,8 @@ public class TitleDisplay extends Display {
 	public void init(Display parent) {
 		super.init(null); // The TitleScreen never has a parent.
 		Renderer.readyToRenderGameplay = false;
+		
+		Sound.Intro.loop(true);
 
 		// check version
 		checkVersion();
@@ -171,7 +174,11 @@ public class TitleDisplay extends Display {
 		}
 		
 		super.tick(input);
-	}	
+		
+		
+	}
+		
+		
 	
 	@Override
 	public void render(Screen screen) {
@@ -187,6 +194,8 @@ public class TitleDisplay extends Display {
 				screen.render(xo + x * 8, yo + y * 8, x + (y + 7) * 32, 0, 3);
 			}
 		}
+		
+		
 		
 		boolean isblue = splashes[rand].contains("blue");
 		boolean isGreen = splashes[rand].contains("Green");

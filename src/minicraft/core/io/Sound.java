@@ -20,6 +20,7 @@ public class Sound {
 	public static final Sound back = new Sound("/resources/sound/craft.wav");
 	public static final Sound select = new Sound("/resources/sound/select.wav");
 	public static final Sound confirm = new Sound("/resources/sound/confirm.wav");
+	public static final Sound Intro = new Sound("/resources/sound/title/Intro.wav");
 	
 	private Clip clip; // Creates a audio clip to be played
 	
@@ -91,6 +92,7 @@ public class Sound {
 		clip.start();
 	}
 	
+
 	public void loop(boolean start) {
 		if (!(boolean)Settings.get("sound") || clip == null) return;
 		
@@ -98,5 +100,10 @@ public class Sound {
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
 		else
 			clip.stop();
+	}
+	
+	public void stop() {
+		clip.stop();
+		
 	}
 }

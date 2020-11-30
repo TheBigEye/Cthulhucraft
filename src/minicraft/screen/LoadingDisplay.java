@@ -5,6 +5,7 @@ import javax.swing.Timer;
 import minicraft.core.Game;
 import minicraft.core.World;
 import minicraft.core.io.Localization;
+import minicraft.core.io.Sound;
 import minicraft.gfx.Color;
 import minicraft.gfx.Ellipsis;
 import minicraft.gfx.Ellipsis.DotUpdater.TimeUpdater;
@@ -75,5 +76,8 @@ public class LoadingDisplay extends Display {
 			Localization.getLocalized(msg)+ ellipsis.updateAndGet(),
 			percent+"%"
 		);
+		{
+			Sound.Intro.stop();
+		}
 	}
 }
