@@ -15,13 +15,13 @@ public class FoodItem extends StackableItem {
 		
 		items.add(new FoodItem("Bread", new Sprite(7, 0, 0), 2));
 		items.add(new FoodItem("Apple", new Sprite(16, 0, 0), 1));
-		items.add(new FoodItem("Mushroom Soup", new Sprite(25, 0, 0), 2));
-		items.add(new FoodItem("Carrot Soup", new Sprite(26, 0, 0), 3));
-		items.add(new FoodItem("Raw Chicken", new Sprite(27, 0, 0), 1));
+		items.add(new FoodItem("Mushroom Soup", new Sprite(27, 0, 0), 2));
+		items.add(new FoodItem("Carrot Soup", new Sprite(28, 0, 0), 3));
+		items.add(new FoodItem("Raw Chicken", new Sprite(29, 0, 0), 1));
 		items.add(new FoodItem("Raw Pork", new Sprite(10, 0, 0), 1));
 		items.add(new FoodItem("Raw Fish", new Sprite(14, 0, 0), 1));
 		items.add(new FoodItem("Raw Beef", new Sprite(12, 0, 0), 1));
-		items.add(new FoodItem("Cooked Chicken", new Sprite(28, 0, 0), 4));
+		items.add(new FoodItem("Cooked Chicken", new Sprite(30, 0, 0), 4));
 		items.add(new FoodItem("Cooked Fish", new Sprite(15, 0, 0), 3));
 		items.add(new FoodItem("Cooked Pork", new Sprite(11, 0, 0), 3));
 		items.add(new FoodItem("Steak", new Sprite(13, 0, 0), 3));

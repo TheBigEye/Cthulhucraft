@@ -12,8 +12,8 @@
 3,string
 6,cloth
 1,emerald,1
-1,emerald,2
+2,emerald,2
 1,Flint,1
 1,Flint,2
-1,Boat,1
+10,Boat,1
 :steak,2:wood,7

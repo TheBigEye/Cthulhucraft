@@ -20,10 +20,10 @@ public class TileItem extends StackableItem {
 		
 		/// TileItem sprites all have 1x1 sprites.
 		items.add(new TileItem("Flower", (new Sprite(4, 0, 0)), "flower", "grass"));
-		items.add(new TileItem("Orange Tulip", (new Sprite(20, 0, 0)), "orange tulip", "grass"));
-		items.add(new TileItem("Red Mushroom", (new Sprite(22, 0, 0)), "red mushroom", "mycelium"));
-		items.add(new TileItem("Brown Mushroom", (new Sprite(23, 0, 0)), "brown mushroom", "mycelium"));
-		items.add(new TileItem("Cordyceps", (new Sprite(24, 0, 0)), "mycelium", "grass"));
+		items.add(new TileItem("Orange Tulip", (new Sprite(22, 0, 0)), "orange tulip", "grass"));
+		items.add(new TileItem("Red Mushroom", (new Sprite(24, 0, 0)), "red mushroom", "mycelium"));
+		items.add(new TileItem("Brown Mushroom", (new Sprite(25, 0, 0)), "brown mushroom", "mycelium"));
+		items.add(new TileItem("Cordyceps", (new Sprite(26, 0, 0)), "mycelium", "grass"));
 		items.add(new TileItem("Acorn", (new Sprite(1, 3, 0)), "tree Sapling", "grass"));
 		items.add(new TileItem("Dirt", (new Sprite(0, 0, 0)), "dirt", "hole", "water", "lava"));
 		

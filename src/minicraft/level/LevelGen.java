@@ -369,7 +369,7 @@ public class LevelGen {
 			for (int i = 0; i < w * h / 200; i++) {
 				int xs = random.nextInt(w);
 				int ys = random.nextInt(h);
-				for (int k = 0; k < 20; k++) {
+				for (int k = 0; k < 10; k++) {
 					int x = xs + random.nextInt(21) - 10;
 					int y = ys + random.nextInt(21) - 10;
 					for (int j = 0; j < 200; j++) {
@@ -439,10 +439,10 @@ public class LevelGen {
 			for (int i = 0; i < w * h / 1200; i++) {
 				int xs = random.nextInt(w);
 				int ys = random.nextInt(h);
-				for (int k = 0; k < 100; k++) {
+				for (int k = 0; k < 10; k++) {
 					int x = xs + random.nextInt(21) - 10;
 					int y = ys + random.nextInt(21) - 10;
-					for (int j = 0; j < 200; j++) {
+					for (int j = 0; j < 20; j++) {
 						int xo = x + random.nextInt(5) - random.nextInt(5);
 						int yo = y + random.nextInt(5) - random.nextInt(5);
 						for (int yy = yo - 1; yy <= yo + 1; yy++)
@@ -502,7 +502,7 @@ public class LevelGen {
 					}
 				}
 			}
-		}
+		} 
 		
 		if (Settings.get("Theme").equals("Snow")) {
 			for (int i = 0; i < w * h / 200; i++) {
@@ -733,7 +733,7 @@ public class LevelGen {
 			int x = random.nextInt(w);
 			int y = random.nextInt(h);
 			int col = random.nextInt(4);
-			for (int j = 0; j < 15; j++) {
+			for (int j = 0; j < 10; j++) {
 				int xx = x + random.nextInt(5) - random.nextInt(5);
 				int yy = y + random.nextInt(5) - random.nextInt(5);
 				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
@@ -749,7 +749,7 @@ public class LevelGen {
 			int x = random.nextInt(w);
 			int y = random.nextInt(h);
 			int col = random.nextInt(4);
-			for (int j = 0; j < 15; j++) {
+			for (int j = 0; j < 10; j++) {
 				int xx = x + random.nextInt(5) - random.nextInt(5);
 				int yy = y + random.nextInt(5) - random.nextInt(5);
 				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
@@ -1078,44 +1078,18 @@ public class LevelGen {
 		}
 		
 		stairsLoop:
-		for (int i = 0; i < w * h / 20; i++) {
-			int x = random.nextInt(w - 2) + 1;
-			int y = random.nextInt(h - 2) + 1;
-			
-			for (int yy = y - 1; yy <= y + 1; yy++)
-				for (int xx = x - 1; xx <= x + 1; xx++) {
-					if (map[xx + yy * w] != Tiles.get("cloud").id) continue stairsLoop;
-				}
-			
-			map[x + y * w] = Tiles.get("Cloud Tree").id;
-		}
-		
-		stairsLoop:
-		for (int i = 0; i < w * h / 5; i++) {
-			int x = random.nextInt(w - 2) + 1;
-			int y = random.nextInt(h - 2) + 1;
-			
-			for (int yy = y - 1; yy <= y + 1; yy++)
-				for (int xx = x - 1; xx <= x + 1; xx++) {
-				 if (map[xx + yy * w] != Tiles.get("cloud").id) continue stairsLoop;
-				}
-			
-			map[x + y * w] = Tiles.get("Cloud Tree").id;
-		}
-		
-		
-		stairsLoop:
-		for (int i = 0; i < w * h / 1; i++) {
-			int x = random.nextInt(w - 2) + 1;
-			int y = random.nextInt(h - 2) + 1;
-			
-			for (int yy = y - 1; yy <= y + 1; yy++)
-				for (int xx = x - 1; xx <= x + 1; xx++) {
-					if (map[xx + yy * w] != Tiles.get("cloud").id) continue stairsLoop;
-				}
-			
-			map[x + y * w] = Tiles.get("Cloud Tree").id;
-		}
+			for (int i = 0; i < w * h / 50; i++) {
+				int x = random.nextInt(w - 2) + 1;
+				int y = random.nextInt(h - 2) + 1;
+				
+				for (int yy = y - 1; yy <= y + 1; yy++)
+					for (int xx = x - 1; xx <= x + 1; xx++) {
+						if (map[xx + yy * w] != Tiles.get("cloud").id) continue stairsLoop;
+					}
+				
+				map[x + y * w] = Tiles.get("Cloud tree").id;			
+			}
+				
 		
 		
 		int count = 0;

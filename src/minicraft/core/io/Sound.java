@@ -81,7 +81,9 @@ public class Sound {
 			e.printStackTrace();
 		}
 	}
-	
+	// clip = music/sound name
+
+    // This plays the clip only once, Syntax: Sound.clip.play();
 	public void play() {
 		if (!(boolean)Settings.get("sound") || clip == null) return;
 		if(Game.isValidServer()) return;
@@ -93,6 +95,7 @@ public class Sound {
 	}
 	
 
+	// This repeats the same clip over and over again, Syntax: Sound.clip.loop(true);
 	public void loop(boolean start) {
 		if (!(boolean)Settings.get("sound") || clip == null) return;
 		
@@ -102,6 +105,7 @@ public class Sound {
 			clip.stop();
 	}
 	
+	// This stops the clip, Syntax: Sound.clip.stop();
 	public void stop() {
 		clip.stop();
 		

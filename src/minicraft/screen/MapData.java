@@ -8,21 +8,28 @@ import minicraft.level.tile.Tiles;
 
 public enum MapData {
 	
-	GRASS(Tiles.get("Grass").id, Color.get(1, 58, 198, 30)),
-	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 58, 198, 30)),
-    LAWN(Tiles.get("Lawn").id, Color.get(1, 57, 191, 30)),
-    DIRT(Tiles.get("Dirt").id, Color.get(1, 157, 91, 41)),
-    FLOWER(Tiles.get("Flower").id, Color.YELLOW),
+	GRASS(Tiles.get("Grass").id, Color.get(1, 96, 195, 96)),	
+	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 58, 198, 30)),	
+    LAWN(Tiles.get("Lawn").id, Color.get(1, 56, 181, 28)),
+   
+    DIRT(Tiles.get("Dirt").id, Color.get(1, 157, 91, 41)),  
+    FLOWER(Tiles.get("Flower").id, Color.YELLOW),   
     HOLE(Tiles.get("Hole").id, Color.get(1, 61, 47, 8)),
-    WATER(Tiles.get("Water").id, Color.get(1, 63, 63, 245)),
+    
+    WATER(Tiles.get("Water").id, Color.get(1, 37, 56, 198)),    
     LAVA(Tiles.get("Lava").id, Color.RED),
-    ROCK(Tiles.get("Rock").id, Color.get(1, 145, 143, 122)),
+    
+    ROCK(Tiles.get("Rock").id, Color.get(1, 145, 143, 122)),   
     HARD_ROCK(Tiles.get("Hard Rock").id, Color.get(1, 127, 126, 107)),
-    CACTUS(Tiles.get("Cactus").id, Color.get(1, 0,85, 0)),
+    
+    CACTUS(Tiles.get("Cactus").id, Color.get(1, 198, 226, 111)),
+    
     TREE(Tiles.get("Tree").id, Color.get(1, 0, 113, 0)),
-    FIR_TREE(Tiles.get("Fir Tree").id, Color.get(1, 19, 139, 98)),
+    BIRCH_TREE(Tiles.get("Birch Tree").id, Color.get(1, 12, 117, 12)),   
+    FIR_TREE(Tiles.get("Fir Tree").id, Color.get(1, 19, 139, 98)),  
     PINE_TREE(Tiles.get("Pine Tree").id, Color.get(1, 17, 127, 89)),
-    GIANT_RED_MUSHROOM(Tiles.get("Giant Red Mushroom").id, Color.get(1, 57, 191, 30)),
+    
+    GIANT_RED_MUSHROOM(Tiles.get("Giant Red Mushroom").id, Color.get(1, 0, 93, 0)),
     //GIANT_BROWN_MUSHROOM(Tiles.get("Giant Brown Mushroom").id, Color.get(1, 175, 122, 96)), //Blocked for errors
     SAND(Tiles.get("Sand").id, Color.get(1, 247, 233, 163)),
     SNOW(Tiles.get("Snow").id, Color.get(1, 240, 240, 240)),

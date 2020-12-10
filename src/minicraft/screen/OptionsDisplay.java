@@ -21,6 +21,7 @@ public class OptionsDisplay extends Display {
 				Settings.getEntry("sound"),
 				Settings.getEntry("autosave"),
 				Settings.getEntry("skinon"),
+				new BlankEntry(),
 				new SelectEntry("Change Key Bindings", () -> Game.setMenu(new KeyInputDisplay())),
 				Settings.getEntry("language"),
 				Settings.getEntry("textures"),

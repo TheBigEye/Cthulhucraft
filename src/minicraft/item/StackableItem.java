@@ -13,10 +13,10 @@ public class StackableItem extends Item {
 	protected static ArrayList<Item> getAllInstances() {
 		ArrayList<Item> items = new ArrayList<>();
 	
-		items.add(new StackableItem("Wood", new Sprite(1, 0, 0)));
+		items.add(new StackableItem("Wood", new Sprite(2, 1, 0)));
 		items.add(new StackableItem("Spruce Wood", new Sprite(1, 1, 0)));
 		items.add(new StackableItem("Birch Wood", new Sprite(0, 1, 0)));
-		items.add(new StackableItem("Leaf", new Sprite(21, 0, 0)));
+		items.add(new StackableItem("Leaf", new Sprite(23, 0, 0)));
 		items.add(new StackableItem("Paper", new Sprite(3, 8, 0)));
 		items.add(new StackableItem("Stone", new Sprite(2, 0, 0)));
 		items.add(new StackableItem("Leather", new Sprite(8, 0, 0)));
