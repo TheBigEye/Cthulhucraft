@@ -9,7 +9,7 @@ The goal is to add features that extend the game and story, improve the graphics
 # Features to implement
 - New boss diversity
 - New vegetation
-- Notable graphics improvement (Aircraft- Rcraft 2.0)
+- Notable graphics improvement (Based in Rcraft)
 - A.i improvement of mobs and entities
 - More mobs, enemies and animals
 - Reimplementation of old Aircraft mod features (Snowy biome, wolves / dogs, cats, ice tools, woods and vegetation)
