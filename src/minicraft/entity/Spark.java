@@ -30,7 +30,7 @@ public class Spark extends Entity {
 		this.ya = ya;
 		
 		// Max time = 629 ticks. Min time = 600 ticks.
-		lifeTime = 60 * 10 + random.nextInt(30);
+		lifeTime = 30 * 10 + random.nextInt(30);
 	}
 	
 	@Override
