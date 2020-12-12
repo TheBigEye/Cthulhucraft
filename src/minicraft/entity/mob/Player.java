@@ -889,7 +889,25 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 	
 	/** What happens when the player interacts with a itemEntity */
 	public void pickupItem(ItemEntity itemEntity) {
-		Sound.pickup.play();
+		//Sound.pickup.play();
+		
+		if (random.nextInt(3) == 0) {
+			Sound.pickup.play();
+		}
+		if (random.nextInt(3) == 1) {
+			Sound.pickup.play();
+		}
+		if (random.nextInt(3) == 2) {
+			Sound.pickup3.play();
+		}
+		if (random.nextInt(3) == 3) {
+			Sound.pickup4.play();
+		}
+		if (random.nextInt(3) == 4) {
+			Sound.pickup4.play();
+		}
+
+		
 		itemEntity.remove();
 		addScore(1);
 		if(Game.isMode("creative")) return; // we shall not bother the inventory on creative mode.

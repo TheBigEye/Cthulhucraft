@@ -16,12 +16,11 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("Wood", new Sprite(2, 1, 0)));
 		items.add(new StackableItem("Spruce Wood", new Sprite(1, 1, 0)));
 		items.add(new StackableItem("Birch Wood", new Sprite(0, 1, 0)));
+		
 		items.add(new StackableItem("Leaf", new Sprite(23, 0, 0)));
 		items.add(new StackableItem("Paper", new Sprite(3, 8, 0)));
-		items.add(new StackableItem("Stone", new Sprite(2, 0, 0)));
 		items.add(new StackableItem("Leather", new Sprite(8, 0, 0)));
 		items.add(new StackableItem("Wheat", new Sprite(6, 0, 0)));
-		//items.add(new StackableItem("Carrot", new Sprite(18, 0, 0)));
 		items.add(new StackableItem("Key", new Sprite(0, 4, 0)));
 		items.add(new StackableItem("arrow", new Sprite(0, 2, 0)));
 		items.add(new StackableItem("Stick", new Sprite(9, 3, 0)));
@@ -30,6 +29,18 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("feather", new Sprite(15, 3, 0)));
 		items.add(new StackableItem("egg", new Sprite(14, 3, 0)));
 		
+		// Elements
+		items.add(new StackableItem("Stone", new Sprite(2, 0, 0)));
+		
+		items.add(new StackableItem("Andesite", new Sprite(0, 38, 0)));
+		items.add(new StackableItem("Diorite", new Sprite(1, 38, 0)));
+		items.add(new StackableItem("Granite", new Sprite(2, 38, 0)));
+		items.add(new StackableItem("Silicon", new Sprite(3, 38, 0)));
+		items.add(new StackableItem("Basalt", new Sprite(4, 38, 0)));
+		items.add(new StackableItem("Quartzite", new Sprite(5, 38, 0)));
+		
+		
+		// Dyes
 		items.add(new StackableItem("Ink sac", new Sprite(0, 22, 0)));
 		items.add(new StackableItem("Yellow dye", new Sprite(1, 22, 0)));
 		items.add(new StackableItem("Green dye", new Sprite(2, 22, 0)));
@@ -40,6 +51,7 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("Dark green dye", new Sprite(8, 22, 0)));
 		items.add(new StackableItem("Orange dye", new Sprite(14, 22, 0)));
 		
+		// Ores
 		items.add(new StackableItem("Coal", new Sprite(2, 4, 0)));
 		items.add(new StackableItem("Iron Ore", new Sprite(3, 4, 0)));
 		items.add(new StackableItem("Lapis", new Sprite(4, 4, 0)));
@@ -67,6 +79,7 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("Sharp II", new Sprite(2, 8, 0)));
 		items.add(new StackableItem("Sharp III", new Sprite(2, 8, 0)));
 		
+		// Essences
 		items.add(new StackableItem("Cordyceps essence", new Sprite(1, 7, 0)));
 		items.add(new StackableItem("Sticky essence", new Sprite(2, 7, 0)));
 		items.add(new StackableItem("Gaseous essence", new Sprite(3, 7, 0)));

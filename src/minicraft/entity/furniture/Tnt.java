@@ -68,7 +68,25 @@ public class Tnt extends Furniture implements ActionListener {
 					}
 				}
 				
-				Sound.explode.play();
+				//Sound.explode.play();
+
+					if (random.nextInt(4) == 0) {
+						Sound.explode.play();
+					}
+					if (random.nextInt(4) == 1) {
+						Sound.explode2.play();
+					}
+					if (random.nextInt(4) == 2) {
+						Sound.explode3.play();
+					}
+					if (random.nextInt(4) == 3) {
+						Sound.explode4.play();
+					}
+					if (random.nextInt(4) == 4) {
+						Sound.explode4.play();
+					}
+
+											
 				
 				int xt = x >> 4;
 				int yt = (y - 2) >> 4;

@@ -43,23 +43,38 @@ public class SnowTile extends Tile {
 	public void render(Screen screen, Level level, int x, int y) {
 		boolean steppedOn = level.getData(x, y) > 0;
 		
-		if(steppedOn) csprite.full = SnowTile.steppedOn;
+		if(steppedOn) csprite.full = SnowTile.steppedOn;			
 		else csprite.full = SnowTile.normal;
 
 		csprite.sparse.color = DirtTile.dCol(level.depth);
 		
 		csprite.render(screen, level, x, y);
+		
+
 	}
+	
 
 	public void tick(Level level, int x, int y) {
 		int d = level.getData(x, y);
 		if (d > 0) level.setData(x, y, d - 1);
+		
+		
 	}
 
 	public void steppedOn(Level level, int x, int y, Entity entity) {
 		if (entity instanceof Mob) {
 			level.setData(x, y, 10);
 		}
+		if (entity instanceof Player) {
+			level.setData(x, y, 10);
+			
+			if (random.nextInt(12) == 0) {
+				Sound.Snow.play();
+			}
+			if (random.nextInt(12) == 1) {
+				Sound.Snow3.play();
+			}
+		}				
 	}
 
 	public boolean interact(Level level, int xt, int yt, Player player, Item item, Direction attackDir) {

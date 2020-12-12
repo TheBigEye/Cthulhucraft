@@ -12,15 +12,38 @@ public class Sound {
 	public static final Sound playerHurt = new Sound("/resources/sound/playerhurt.wav");
 	public static final Sound playerDeath = new Sound("/resources/sound/death.wav");
 	public static final Sound monsterHurt = new Sound("/resources/sound/monsterhurt.wav");
+	
+	public static final Sound DestroySpawner = new Sound("/resources/sound/DestroySpawner.wav");
+	public static final Sound DestroySpawner2 = new Sound("/resources/sound/DestroySpawner 2.wav");
+	public static final Sound DestroySpawner3 = new Sound("/resources/sound/DestroySpawner 3.wav");	
+	
 	public static final Sound bossDeath = new Sound("/resources/sound/bossdeath.wav");
 	public static final Sound fuse = new Sound("/resources/sound/fuse.wav");
+	
 	public static final Sound explode = new Sound("/resources/sound/explode.wav");
+	public static final Sound explode2 = new Sound("/resources/sound/explode 2.wav");
+	public static final Sound explode3 = new Sound("/resources/sound/explode 3.wav");
+	public static final Sound explode4 = new Sound("/resources/sound/explode 4.wav");
+	
 	public static final Sound pickup = new Sound("/resources/sound/pickup.wav");
+	public static final Sound pickup2 = new Sound("/resources/sound/pickup 2.wav");
+	public static final Sound pickup3 = new Sound("/resources/sound/pickup 3.wav");
+	public static final Sound pickup4 = new Sound("/resources/sound/pickup 4.wav");
+	
 	public static final Sound craft = new Sound("/resources/sound/craft.wav");
 	public static final Sound back = new Sound("/resources/sound/craft.wav");
 	public static final Sound select = new Sound("/resources/sound/select.wav");
 	public static final Sound confirm = new Sound("/resources/sound/confirm.wav");
-	public static final Sound Intro = new Sound("/resources/sound/title/Intro.wav");
+	
+	public static final Sound Intro = new Sound("/resources/sound/Music/Intro.wav");
+	public static final Sound Intro2 = new Sound("/resources/sound/Music/Intro 2.wav");
+	public static final Sound Intro3 = new Sound("/resources/sound/Music/Intro 3.wav");
+	
+	public static final Sound Snow = new Sound("/resources/sound/Tile/Snow.wav");
+	public static final Sound Snow2 = new Sound("/resources/sound/Tile/Snow 2.wav");
+	public static final Sound Snow3 = new Sound("/resources/sound/Tile/Snow 3.wav");
+	public static final Sound Snow4 = new Sound("/resources/sound/Tile/Snow 4.wav");
+
 	
 	private Clip clip; // Creates a audio clip to be played
 	

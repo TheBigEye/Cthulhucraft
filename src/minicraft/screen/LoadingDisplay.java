@@ -78,6 +78,8 @@ public class LoadingDisplay extends Display {
 		);
 		{
 			Sound.Intro.stop();
+			Sound.Intro2.stop();
+			Sound.Intro3.stop();
 		}
 	}
 }

@@ -72,7 +72,17 @@ public class TitleDisplay extends Display {
 		super.init(null); // The TitleScreen never has a parent.
 		Renderer.readyToRenderGameplay = false;
 		
-		Sound.Intro.loop(true);
+		
+		if (random.nextInt(3) == 0) {
+			Sound.Intro.loop(true);
+		}
+		if (random.nextInt(3) == 1) {
+			Sound.Intro2.loop(true);
+		}
+		if (random.nextInt(3) == 2) {
+			Sound.Intro3.loop(true);
+		}
+
 
 		// check version
 		checkVersion();

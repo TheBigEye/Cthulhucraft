@@ -153,6 +153,7 @@ public class Spawner extends Furniture {
 			
 			Sound.monsterHurt.play();
 			
+			
 			int dmg;
 			if(Game.isMode("creative"))
 				dmg = health;
@@ -170,7 +171,23 @@ public class Spawner extends Furniture {
 			level.add(new TextParticle("" + dmg, x, y, Color.get(-1, 200, 300, 400)));
 			if(health <= 0) {
 				level.remove(this);
-				Sound.playerDeath.play();
+				
+
+				if (random.nextInt(4) == 0) {
+					Sound.playerHurt.play();
+				}
+				if (random.nextInt(4) == 1) {
+					Sound.DestroySpawner.play();
+				}
+				if (random.nextInt(4) == 2) {
+					Sound.DestroySpawner2.play();
+				}
+				if (random.nextInt(4) == 3) {
+					Sound.DestroySpawner3.play();
+				}
+					
+						
+				//Sound.playerDeath.play();
 				player.addScore(500);
 			}
 			
