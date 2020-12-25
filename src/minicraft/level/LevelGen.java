@@ -404,8 +404,8 @@ public class LevelGen {
 								if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 									if (map[xx + yy * w] == Tiles.get("grass").id) {
 										map[xx + yy * w] = Tiles.get("sand").id;
-									}
-								}
+							}
+						}
 					}
 				}
 			}
@@ -427,8 +427,8 @@ public class LevelGen {
 								if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 									if (map[xx + yy * w] == Tiles.get("grass").id) {
 										map[xx + yy * w] = Tiles.get("snow").id;
-									}
-								}
+						     }
+						}
 					}
 				}
 			}
@@ -450,8 +450,8 @@ public class LevelGen {
 								if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 									if (map[xx + yy * w] == Tiles.get("grass").id) {
 										map[xx + yy * w] = Tiles.get("mycelium").id;
-									}
-								}
+							}
+						}
 					}
 				}
 			}
@@ -906,7 +906,7 @@ public class LevelGen {
 				}
 			
 			Structure.lavaPool.draw(map, x, y, w);
-		}
+		 }
 		
 		return new byte[][]{map, data};
 	}
@@ -967,6 +967,7 @@ public class LevelGen {
 				}
 			}
 		}
+		
 		{
 			int r = 2;
 			for (int i = 0; i < w * h / 400; i++) {
@@ -1028,7 +1029,7 @@ public class LevelGen {
 				count++;
 				if (count >= w / 32) break;
 			}
-		}
+		 }
 		
 		return new byte[][]{map, data};
 	}
@@ -1195,6 +1196,7 @@ public class LevelGen {
 					if (map[i] == Tiles.get("Cloud Cactus").id) pixels[i] = 0xff00ff;
 				}
 			}
+			
 			img.setRGB(0, 0, w, h, pixels, 0, w);
 			JOptionPane.showMessageDialog(null, null, "Another Map", JOptionPane.PLAIN_MESSAGE, new ImageIcon(img.getScaledInstance(w * 4, h * 4, Image.SCALE_AREA_AVERAGING)));
 			if (LevelGen.worldSeed == 0x100)
