@@ -239,6 +239,19 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 	
 	@Override
 	public void tick() {
+		
+		if (Game.player.health == 3) {
+			Sound.Heart.stop();
+		}
+		
+		if (Game.player.health == 2) {
+			Sound.Heart.loop(true);
+		}
+		
+		if (Game.player.health == 0) {
+			Sound.Heart.stop();
+		}
+		
 		if(level == null || isRemoved()) return;
 		
 		if(Game.getMenu() != null && !Game.ISONLINE) return; // don't tick player when menu is open
@@ -1087,6 +1100,7 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 		else
 			Sound.monsterHurt.play();
 		
+		
 		if(healthDam > 0 || !fullPlayer) {
 			level.add(new TextParticle("" + damage, x, y, Color.get(-1, 504)));
 			if(fullPlayer) super.doHurt(healthDam, attackDir); // sets knockback, and takes away health.
@@ -1174,8 +1188,12 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 		return playerdata.toString();
 	}
 	
+	
+	
 	@Override
 	public Inventory getInventory() {
 		return inventory;
 	}
+	
+	
 }

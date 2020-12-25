@@ -11,6 +11,7 @@ public class Sound {
 	//creates sounds from their respective files
 	public static final Sound playerHurt = new Sound("/resources/sound/playerhurt.wav");
 	public static final Sound playerDeath = new Sound("/resources/sound/death.wav");
+	public static final Sound Heart = new Sound("/resources/sound/hearth.wav");
 	public static final Sound monsterHurt = new Sound("/resources/sound/monsterhurt.wav");
 	
 	public static final Sound DestroySpawner = new Sound("/resources/sound/DestroySpawner.wav");
@@ -34,6 +35,7 @@ public class Sound {
 	public static final Sound back = new Sound("/resources/sound/craft.wav");
 	public static final Sound select = new Sound("/resources/sound/select.wav");
 	public static final Sound confirm = new Sound("/resources/sound/confirm.wav");
+	public static final Sound PageUp = new Sound("/resources/sound/Page Up.wav");
 	
 	public static final Sound Intro = new Sound("/resources/sound/Music/Intro.wav");
 	public static final Sound Intro2 = new Sound("/resources/sound/Music/Intro 2.wav");
@@ -133,4 +135,5 @@ public class Sound {
 		clip.stop();
 		
 	}
+	
 }
