@@ -8,7 +8,7 @@ Air Wizard: Defeated!
 Mago de Aire: Derrotado!
 
 The Dungeon is now open!
-El calabozo está abierto ahora
+El calabozo esta abierto ahora
 
 A costume lies on the ground...
 Un disfraz descansa en el suelo...
@@ -40,7 +40,7 @@ Set your home!
 Establece tu casa!
 
 Can't set home here!
-No puedes establecer la casa aquí!
+No puedes establecer la casa aqui!
 
 Home Sweet Home!
 Hogar Dulce Hogar!
@@ -52,7 +52,7 @@ You don't have a home!
 No tienes una casa!
 
 You can't go home from here!
-No puedes ir a casa desde aquí!
+No puedes ir a casa desde aqui!
  
 ### entity end
 
@@ -68,6 +68,9 @@ Armadura de Cuero
 Snake Armor
 Armadura de Serpiente
 
+ChainMail Armor
+Armadura Cota de malla
+
 Iron Armor
 Armadura de Hierro
 
@@ -77,18 +80,23 @@ Armadura de Oro
 Gem Armor
 Armadura de Gema
 
+# BoatItem.java
+
+Boat
+Barco
+
 # BookItem.java
 
 Book
 Libro
 
 Antidious
-Antídoto
+Antidoto
 
 # BucketItem.java
 
 Empty Bucket
-Cubo vacío
+Cubo vacio
 
 Water Bucket
 Cubo de Agua
@@ -136,6 +144,15 @@ Pan
 Apple
 Manzana
 
+Mushroom Soup
+Sopa de hongos
+
+Carrot Soup
+Sopa de Zanahoria
+
+Raw Chicken
+Pollo crudo
+
 Raw Pork
 Cerdo crudo
 
@@ -162,6 +179,9 @@ Manzana Dorada
 
 # FurnitureItem.java
 
+KingZombie Spawner
+Generador de Rey Zombie
+
 Cow Spawner
 Generador de Vaca
 
@@ -171,11 +191,29 @@ Generador de Cerdo
 Sheep Spawner
 Generador de Oveja
 
+Chicken Spawner
+Generador de Pollo
+
+Cleric Spawner
+Generador de Clerigo
+
+Librarian Spawner
+Generador de Bibliotecario
+
+GuiMan Spawner
+Generador de Pinguino
+
+Golem Spawner
+Generador de Golem
+
 Slime Spawner
 Generador de Slime
 
 Zombie Spawner
 Generador de Zombie
+
+Mooshroom Spawner
+Generador de Vacahongo
 
 Creeper Spawner
 Generador de Creeper
@@ -189,11 +227,20 @@ Generador de Serpiente
 Knight Spawner
 Generador de Caballero
 
+OldGolem Spawner
+Generador de Golem viejo
+
 AirWizard Spawner
 Generador de MagoAire
 
+Cthulhu Spawner
+Generador de Cthulhu
+
+Keeper Spawner
+Generador de Guardian
+
 Workbench
-Mesa de Elaboración
+Mesa de Crafteo
 
 Oven
 Horno
@@ -206,6 +253,15 @@ Yunque
 
 Enchanter
 Encantador
+
+Assembler
+Ensamblador
+
+Stonecutter
+Cortapiedra
+
+Brewery
+Destilador
 
 Loom
 Telar
@@ -228,59 +284,97 @@ Cama
 Chest
 Cofre
 
+# MapItem.java
+
+Map book
+Libro de mapas
+
 # PotionType.java
 
 None Potion
 Ninguna Poción
 
 Speed Potion
-Poción de Velocidad
+Pocion de Velocidad
+
+xSpeed Potion
+Pocion de Velocidad X
 
 Light Potion
-Poción de Luz
+Pocion de Luz
+
+xLight Potion
+Pocion de Luz X
 
 Swim Potion
-Poción de Nadar
+Pocion de Nadar
+
+xSwim Potion
+Pocion de Nadar X
 
 Energy Potion
-Poción de Energía
+Pocion de Energia
+
+xEnergy Potion
+Pocion de Energia X
 
 Regen Potion
-Poción de Reneg
+Pocion de Regeneracion
+
+xRegen Potion
+Pocion de Regen X
 
 Health Potion
-Poción de Vida
+Pocion de Vida
+
+xHealth Potion
+Pocion de Vida X
 
 Time Potion
-Poción de Tiempo
+Pocion de Tiempo
 
 Lava Potion
-Poción de Lava
+Pocion de Lava
+
+xLava Potion
+Pocion de Lava X
 
 Shield Potion
-Poción de Escudo
+Pocion de Escudo
+
+xShield Potion
+Pocion de Escudo X
 
 Haste Potion
-Poción de Prisa
+Pocion de Prisa
 
 Escape Potion
-Poción de Escapar
+Pocion de Escapar
 
 Potion
-Poción
+Pocion
 
 # PowerGloveItem.java
 
 Power Glove
-Poder de Guante
+Guante
 
 # StackableItem.java
 
 Wood
 Madera
 
-Stone
-Piedra
+Spruce Wood
+Madera de Abeto
+
+Birch Wood
+Madera de Abedul
+
+Leaf
+Hoja
+
+Paper
+Papel
 
 Leather
 Cuero
@@ -294,11 +388,68 @@ Llave
 arrow
 flecha
 
+Stick
+Palo
+
+Bowl
+Tazon
+
 string
 cuerda
 
+feather
+Pluma
+
+egg
+Huevo
+
+Stone
+Piedra
+
+Andesite
+Andesita
+
+Diorite
+Diorita
+
+Granite
+Granito
+
+Silicon
+Silicio
+
+Basalt
+Basalto
+
+Quartzite
+Cuarcita
+
+Ink sac
+Saco de tinta
+
+Yellow dye
+Tinte amarillo
+
+Green dye
+Tinte verde
+
+Red dye
+Tinte rojo
+
+Purple dye
+Tinte Morado
+
+Pink dye
+Tinte rosa
+
+Dark green dye
+Tinte verde oscuro
+
+Orange dye
+Tinte naranja
+
 Coal
-Carbón
+Carbon
 
 Iron Ore
 Mena de Hierro
@@ -319,7 +470,7 @@ Rose
 Rosa
 
 GunPowder
-Pólvora
+Polvora
 
 Slime
 Slime
@@ -328,21 +479,75 @@ glass
 cristal
 
 cloth
-paño
+tela
 
 gem
 gema
 
+emerald
+esmeralda
+
 Scale
-Escala
+Escama
 
 Shard
-Élitro
+elitro
+
+Gear
+Engranaje
+
+Spring
+Resorte
+
+Flint
+Pedernal
+
+Flint and Steel
+Mechero
+
+Protection I
+Proteccion I
+
+Protection II
+Proteccion II
+
+Protection III
+Proteccion III
+
+Sharp I
+Filo I
+
+Sharp II
+Filo II
+
+Sharp III
+Filo III
+
+Cordyceps essence
+Esencia de cordyceps
+
+Sticky essence
+Esencia pegajosa
+
+Gaseous essence
+Esencia gaseosa
+
+Master essence
+Esencia maestra
 
 # TileItem.java
 
 Flower
 Flor
+
+Orange Tulip
+Tulipan naranja
+
+Red Mushroom
+Hongo rojo
+
+Brown Mushroom
+Hongo cafe
 
 Acorn
 Bellota
@@ -351,13 +556,31 @@ Dirt
 Tierra
 
 Plank
-Tablón
+Tablon
+
+Spruce Plank
+Tablon de Abeto
+
+Birch Plank
+Tablon de Abedul
 
 Plank Wall
-Muro de Tablón
+Muro de Tablon
+
+Spruce Wall
+Muro de Abeto
+
+Birch Wall
+Muro de Abedul
 
 Wood Door
 Puerta de Madera
+
+Spruce Door
+Puerta de Abeto
+
+Birch Door
+Puerta de Abedul
 
 Stone Brick
 Ladrillo de Piedra
@@ -377,26 +600,32 @@ Muro de Obsidiana
 Obsidian Door
 Puerta de Obsidiana
 
-Wool
-Lana
-
-Red Wool
-Lana Roja
-
-Blue Wool
-Lana Azul
-
-Green Wool
-Lana Verde
+Black Wool
+Lana Negra
 
 Yellow Wool
 Lana Amarilla
 
-Black Wool
-Lana Negra
+Green Wool
+Lana Verde
+
+Blue Wool
+Lana Azul
+
+Red Wool
+Lana Roja
+
+Wool
+Lana
 
 Sand
 Arena
+
+Mycelium
+Micelio
+
+Snow Ball
+Bola de Nieve
 
 Cactus
 Cactus
@@ -404,11 +633,17 @@ Cactus
 Seeds
 Semillas
 
+Carrot
+Zanahoria
+
 Grass Seeds
 Semillas de Pasto
 
 Bone
 Hueso
+
+Bone powder
+Polvo de hueso
 
 Cloud
 Nube
@@ -441,14 +676,17 @@ Caña de Pescar
 
 # ToolType.java
 
-Shovel
-Pala
-
 Hoe
 Azada
 
+Shovel
+Pala
+
 Sword
 Espada
+
+Spear
+Lanza
 
 Pickaxe
 Pico
@@ -460,7 +698,7 @@ Bow
 Arco
 
 FishingRod
-CañaDePescar
+Caña De Pescar
 
 Claymore
 Casa antigua
@@ -484,6 +722,12 @@ Mena de Gema
 Wood Planks
 Tablón de Madera
 
+Spruce Planks
+Tablón de abeto
+
+Birch Planks
+Tablón de abedul
+
 Stone Bricks
 Ladrillo de piedra
 
@@ -493,8 +737,17 @@ Obsidiana
 Wood Wall
 Muro de Madera
 
+Spruce Wall
+Muro de abeto
+
+Birch Wall
+Muro de abedul
+
 Grass
 Pasto
+
+Mycelium
+Micelio
 
 Dirt
 Tierra
@@ -547,6 +800,10 @@ Tierras de cultivo
 Wheat
 Trigo
 
+
+Carrot
+Zanahoria
+
 Hard Rock
 Roca Dura
 
@@ -588,7 +845,7 @@ host not found
 alojamiento no encontrado
 
 unable to get localhost address
-incapaz de obtener la dirección localhost
+incapaz de obtener la direccion localhost
 
 ### network end
 
@@ -612,7 +869,7 @@ Off
 # BookDisplay.java
 
 There is nothing of use here.
-No hay nada de uso aquí.
+No hay nada de uso aqui.
 
 Still nothing... :P
 Todavía nada... :P
@@ -653,7 +910,7 @@ Player Score:
 Puntos del Jugador: 
 
 <Bonuses>
-<Bonús>
+<Bonus>
 
 Final Score: 
 Puntos final: 
@@ -715,6 +972,12 @@ ESC para Regresar al menú
 Loading...
 Cargando...
 
+Melting...
+Moldeando...
+
+Planting...
+Plantando...
+
 # MultiplayerMenu.java
 
 waiting...
@@ -769,7 +1032,7 @@ field is blank
 el campo esta en blanco
 
 get an account at:
-obtener una cuenta en:
+obtenga una cuenta en:
 
 Loading 
 Cargando 
@@ -789,7 +1052,7 @@ Presione
 # OptionsMenu.java
 
 Change Key Bindings
-Cambiar Atajos de Teclado
+Cambiar Atajos
 
 Options
 Opciones
@@ -804,6 +1067,9 @@ Regresar al Juego
 
 Options
 Opciones
+
+Info
+Informacion
 
 Make World Multiplayer
 Hacer Mundo Multijugador
@@ -824,12 +1090,12 @@ Paused
 Pausado
 
 Main Menu
-Menú Principal
+Menu Principal
 
 # PauseDisplay.java
 
 Yes
-Sí
+Si
 
 No
 No
@@ -841,8 +1107,8 @@ Inventario
 
 # TitleMenu.java
 
-Play
-Jugar
+Singleplayer
+Un jugador
 
 Load World
 Cargar Mundo
@@ -850,11 +1116,14 @@ Cargar Mundo
 New World
 Nuevo Mundo
 
-Join Online World
-Entrar en Mundo en línea
+Multiplayer
+Multijugador
 
 Options
 Opciones
+
+Credits
+Creditos
 
 Help
 Ayuda
@@ -886,7 +1155,7 @@ New World Name:
 Nuevo Nombre del Mundo:
 
 Are you sure you want to delete
-Estás seguro que quieres eliminarlo
+Estas seguro que quieres eliminarlo
 
 This can not be undone!
 ¡Esto no se puede deshacer!
@@ -928,11 +1197,11 @@ Renombrar
 Delete
 Eliminar
 
- to confirm
+to confirm
  para confirmar
  
- to return
- para regresar
+to return
+para regresar
  
 Select World
 Seleccionar Mundo
@@ -964,13 +1233,13 @@ Difficulty
 Dificultad
 
 Easy
-Facíl
+Facil
 
 Normal
 Normal
 
 Hard
-Difícil
+Dificil
 
 Game Mode
 Modo de Juego
