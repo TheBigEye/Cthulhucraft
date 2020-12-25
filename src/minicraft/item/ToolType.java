@@ -1,8 +1,8 @@
 package minicraft.item;
 
 public enum ToolType {
-	Shovel (0, 85), // if there's a second number, it specifies durability.
-	Hoe (1, 71),
+	Hoe (1, 71), // if there's a second number, it specifies durability.
+	Shovel (0, 85),
 	Sword (2, 103),
 	Spear (7, 93),
 	Pickaxe (3, 89),
