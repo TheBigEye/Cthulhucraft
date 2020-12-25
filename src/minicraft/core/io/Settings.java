@@ -43,7 +43,7 @@ public class Settings {
 			options.get("skinon").setVisible((boolean)value)
 		);
 
-		options.put("textures", new ArrayEntry<>("Textures", "Aircraft 2.0", "Minicraft+"));
+		options.put("textures", new ArrayEntry<>("Textures", "Original", "Custom"));
 		options.get("textures").setSelection(0);
 	}
 	

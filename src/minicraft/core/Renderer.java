@@ -353,7 +353,6 @@ public class Renderer extends Game {
 			info.add(""+time.toLocalDate());
 			info.add(Initializer.fra + " fps");
 			info.add("day tiks " + Updater.tickCount+" ("+Updater.getTime()+")");
-			info.add((Updater.normSpeed * Updater.gamespeed) + " tik/sec");
 			info.add((Updater.normSpeed * Updater.gamespeed) + " tps");
 			if(!isValidServer()) {
 				info.add("walk spd " + player.moveSpeed);
