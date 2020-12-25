@@ -6,6 +6,7 @@ import java.util.Arrays;
 import minicraft.core.Game;
 import minicraft.core.io.InputHandler;
 import minicraft.core.io.Localization;
+import minicraft.core.io.Sound;
 import minicraft.gfx.Color;
 import minicraft.gfx.Font;
 import minicraft.gfx.Point;
@@ -90,6 +91,10 @@ public class BookDisplay extends Display {
 		if (input.getKey("menu").clicked || input.getKey("exit").clicked)
 			Game.exitMenu(); // this is what closes the book; TODO if books were editable, I would probably remake the book here with the edited pages.
 		if (input.getKey("cursor-left").clicked) turnPage(-1); // this is what turns the page back
+		if (input.getKey("cursor-left").clicked) Sound.PageUp.play();
+		    		
 		if (input.getKey("cursor-right").clicked) turnPage(1); // this is what turns the page forward
+		if (input.getKey("cursor-right").clicked) Sound.PageUp.play();
+		    		
 	}
 }
