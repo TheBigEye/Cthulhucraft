@@ -8,7 +8,12 @@ import minicraft.core.MyUtils;
 import minicraft.core.Network;
 import minicraft.core.io.InputHandler;
 import minicraft.core.io.Localization;
+import minicraft.core.io.Settings;
 import minicraft.gfx.Color;
+import minicraft.gfx.Font;
+import minicraft.gfx.Screen;
+import minicraft.level.Level;
+import minicraft.level.LevelGen;
 import minicraft.saveload.Save;
 import minicraft.screen.entry.BlankEntry;
 import minicraft.screen.entry.ListEntry;
@@ -21,12 +26,12 @@ public class PauseDisplay extends Display {
 		String upString = Game.input.getMapping("cursor-up")+ Localization.getLocalized(" and ")+Game.input.getMapping("cursor-down")+Localization.getLocalized(" to Scroll");
 		String selectString = Game.input.getMapping("select")+Localization.getLocalized(": Choose");
 		
-		
 		ArrayList<ListEntry> entries = new ArrayList<>();
 		entries.addAll(Arrays.asList(
 			new BlankEntry(),
 			new SelectEntry("Return to Game", () -> Game.setMenu(null)),
-			new SelectEntry("Options", () -> Game.setMenu(new OptionsDisplay()))
+			new SelectEntry("Options", () -> Game.setMenu(new OptionsDisplay())),
+			new SelectEntry("Info", () -> Game.setMenu(new WorldInfoDisplay()))
 			));
 		
 		if(!Game.ISONLINE) {
@@ -78,6 +83,7 @@ public class PauseDisplay extends Display {
 				Game.setMenu(new Display(false, true, new Menu.Builder(true, 8, RelPos.CENTER, items
 				).createMenu()));
 			}),
+		
 			
 			new BlankEntry(),
 			
@@ -103,4 +109,5 @@ public class PauseDisplay extends Display {
 		if (input.getKey("pause").clicked)
 			Game.exitMenu();
 	}
+	
 }

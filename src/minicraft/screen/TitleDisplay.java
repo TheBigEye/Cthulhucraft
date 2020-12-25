@@ -73,13 +73,13 @@ public class TitleDisplay extends Display {
 		Renderer.readyToRenderGameplay = false;
 		
 		
-		if (random.nextInt(3) == 0) {
+		if (random.nextInt(2) == 0) {
 			Sound.Intro.loop(true);
 		}
-		if (random.nextInt(3) == 1) {
+		if (random.nextInt(2) == 1) {
 			Sound.Intro2.loop(true);
 		}
-		if (random.nextInt(3) == 2) {
+		if (random.nextInt(2) == 2) {
 			Sound.Intro3.loop(true);
 		}
 

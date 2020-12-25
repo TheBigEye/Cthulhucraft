@@ -2,12 +2,15 @@ package minicraft.screen;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Random;
 
 import minicraft.core.Game;
 import minicraft.core.io.InputHandler;
+import minicraft.core.io.Settings;
 import minicraft.gfx.Color;
 import minicraft.gfx.Font;
 import minicraft.gfx.Screen;
+import minicraft.item.Items;
 import minicraft.saveload.Load;
 import minicraft.saveload.Save;
 import minicraft.saveload.Version;
@@ -147,6 +150,7 @@ public class WorldSelectDisplay extends Display {
 	
 	public static boolean loadedWorld() {
 		return loadedWorld;
+		
 	}
 	
 	@Override
@@ -168,6 +172,12 @@ public class WorldSelectDisplay extends Display {
 		super.render(screen);
 		
 		int sel = menus[0].getSelection();
+		
+		Settings.getEntry("size");
+		Settings.getEntry("mode");
+		Settings.getEntry("theme");
+		Settings.getEntry("type");
+		
 		if(sel >= 0 && sel < worldVersions.size()) {
 			Version version = worldVersions.get(sel);
 			int col = Color.WHITE;
@@ -179,7 +189,8 @@ public class WorldSelectDisplay extends Display {
 		}
 		
 		Font.drawCentered(Game.input.getMapping("select")+" to confirm", screen, Screen.h - 60, Color.GRAY);
-		Font.drawCentered(Game.input.getMapping("exit")+" to return", screen, Screen.h - 40, Color.GRAY);
+		Font.drawCentered(Game.input.getMapping("exit")+" to return", screen, Screen.h - 50, Color.GRAY);
+		//Font.drawCentered(Settings.getEntry("mode")+"", screen, Screen.h - 65, Color.GRAY);
 		
 		String title = "Select World";
 		int color = Color.WHITE;
