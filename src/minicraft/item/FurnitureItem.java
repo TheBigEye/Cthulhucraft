@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import minicraft.core.Game;
 import minicraft.entity.Direction;
 import minicraft.entity.furniture.*;
+import minicraft.entity.furniture.statue.SkeletonStatue;
+import minicraft.entity.furniture.statue.SlimeStatue;
+import minicraft.entity.furniture.statue.ZombieStatue;
 import minicraft.entity.mob.*;
 import minicraft.entity.mob.boss.AirWizard;
 import minicraft.entity.mob.boss.KingZombie;
@@ -52,6 +55,7 @@ public class FurnitureItem extends Item {
 		for(Crafter.Type type: Crafter.Type.values()) {
 			items.add(new FurnitureItem(new Crafter(type)));
 		}
+		
 		// add the various lanterns
 		for(Lantern.Type type: Lantern.Type.values()) {
 			items.add(new FurnitureItem(new Lantern(type)));
@@ -59,6 +63,10 @@ public class FurnitureItem extends Item {
 		
 		items.add(new FurnitureItem(new Tnt()));
 		items.add(new FurnitureItem(new Bed()));
+		
+		items.add(new FurnitureItem(new SlimeStatue()));
+		items.add(new FurnitureItem(new ZombieStatue()));
+		items.add(new FurnitureItem(new SkeletonStatue()));
 		
 		return items;
 	}
