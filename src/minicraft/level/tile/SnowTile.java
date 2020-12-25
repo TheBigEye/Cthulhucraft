@@ -18,7 +18,7 @@ public class SnowTile extends Tile {
 	static Sprite steppedOn, normal = new Sprite(3, 10, 2, 2, 1);
 	static {
 		Sprite.Px[][] pixels = new Sprite.Px[2][2];
-		pixels[0][0] = new Sprite.Px(3, 12, 0, 1); //huellla en nieve
+		pixels[0][0] = new Sprite.Px(3, 12, 0, 1); //steps in snow
 		pixels[0][1] = new Sprite.Px(4, 10, 0, 1);
 		pixels[1][0] = new Sprite.Px(3, 11, 0, 1);
 		pixels[1][1] = new Sprite.Px(3, 12, 0, 1);
@@ -68,12 +68,16 @@ public class SnowTile extends Tile {
 		if (entity instanceof Player) {
 			level.setData(x, y, 10);
 			
-			if (random.nextInt(12) == 0) {
+			if (random.nextInt(50) == 0) {
 				Sound.Snow.play();
 			}
-			if (random.nextInt(12) == 1) {
-				Sound.Snow3.play();
+			if (random.nextInt(50) == 10) {
+				Sound.Snow.play();
 			}
+			if (random.nextInt(50) == 50) {
+				Sound.Snow.play();
+			}
+
 		}				
 	}
 
@@ -83,8 +87,8 @@ public class SnowTile extends Tile {
 			if (tool.type == ToolType.Shovel) {
 				if (player.payStamina(4 - tool.level) && tool.payDurability()) {
 					level.setTile(xt, yt, Tiles.get("dirt"));
-					Sound.monsterHurt.play();
-					level.dropItem(xt*16+8, yt*16+8, Items.get("Snow Ball"));
+					Sound.Snow.play();
+					level.dropItem(xt*16+8, yt*16+8, 1, 2, Items.get("Snow Ball"));
 					return true;
 				}
 			}

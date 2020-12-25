@@ -41,6 +41,9 @@ public class GrassTile extends Tile {
 		if (level.getTile(xn, yn) == Tiles.get("dirt")) {
 			level.setTile(xn, yn, this);
 		}
+		if (level.getTile(xn, yn) == Tiles.get("mycelium")) {
+			level.setTile(xn, yn, this);
+		}
 	}
 
 	@Override

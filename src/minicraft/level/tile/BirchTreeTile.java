@@ -64,6 +64,18 @@ public class BirchTreeTile extends Tile {
 	public void tick(Level level, int xt, int yt) {
 		int damage = level.getData(xt, yt);
 		if (damage > 0) level.setData(xt, yt, damage - 1);
+		
+		if (random.nextInt(40) != 0) return;
+		
+		int xn = xt;
+		int yn = yt;
+		
+		if (random.nextBoolean()) xn += random.nextInt(2) * 2 - 1;
+		else yn += random.nextInt(2) * 2 - 1;
+
+		if (level.getTile(xn, yn) == Tiles.get("giant red mushroom")) {
+			level.setTile(xn, yn, this);
+		}
 	}
 
 	public boolean mayPass(Level level, int x, int y, Entity e) {
