@@ -3,6 +3,7 @@ package minicraft.entity;
 import java.util.List;
 
 import minicraft.entity.mob.Mob;
+import minicraft.entity.mob.Player;
 import minicraft.entity.mob.boss.AirWizard;
 import minicraft.gfx.Rectangle;
 import minicraft.gfx.Screen;
@@ -15,7 +16,7 @@ public class Spark extends Entity {
 	private AirWizard owner; // the AirWizard that created this spark
 	
 	/**
-	 * Creates a new spark. Owner is the AirWizard which is spawning this spark.
+	 * Creates a new spark. Owner is the AirWizard 2 which is spawning this spark.
 	 * @param owner The AirWizard spawning the spark.
 	 * @param xa X velocity.
 	 * @param ya Y velocity.
@@ -30,7 +31,7 @@ public class Spark extends Entity {
 		this.ya = ya;
 		
 		// Max time = 629 ticks. Min time = 600 ticks.
-		lifeTime = 30 * 10 + random.nextInt(30);
+		lifeTime = 8 * 10 + random.nextInt(10);
 	}
 	
 	@Override
@@ -45,6 +46,17 @@ public class Spark extends Entity {
 		yy += ya;
 		x = (int) xx;
 		y = (int) yy;
+		
+		Player player = getClosestPlayer();
+		int xd = player.x - x;
+		int yd = player.y - y;
+		
+		int sig0 = 1;
+		if (xd < sig0) xa = -0.9;
+		if (xd > sig0) xa = +0.8;
+		if (yd < sig0) ya = -0.9;
+		if (yd > sig0) ya = +0.8;
+		
 		List<Entity> toHit = level.getEntitiesInRect(new Rectangle(x, y, 0, 0, Rectangle.CENTER_DIMS)); // gets the entities in the current position to hit.
 		for (int i = 0; i < toHit.size(); i++) {
 			Entity e = toHit.get(i);

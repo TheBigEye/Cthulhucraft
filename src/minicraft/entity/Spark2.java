@@ -3,6 +3,7 @@ package minicraft.entity;
 import java.util.List;
 
 import minicraft.entity.mob.Mob;
+import minicraft.entity.mob.Player;
 import minicraft.entity.mob.boss.AirWizard;
 import minicraft.entity.mob.boss.AirWizardPhase2;
 import minicraft.entity.mob.boss.AirWizardPhase3;
@@ -32,7 +33,7 @@ public class Spark2 extends Entity {
 		this.ya = ya;
 		
 		// Max time = 629 ticks. Min time = 600 ticks.
-		lifeTime = 30 * 10 + random.nextInt(30);
+		lifeTime = 15 * 10 + random.nextInt(10);
 	}
 	
 	@Override
@@ -47,10 +48,11 @@ public class Spark2 extends Entity {
 		yy += ya;
 		x = (int) xx;
 		y = (int) yy;
+		
 		List<Entity> toHit = level.getEntitiesInRect(new Rectangle(x, y, 0, 0, Rectangle.CENTER_DIMS)); // gets the entities in the current position to hit.
 		for (int i = 0; i < toHit.size(); i++) {
 			Entity e = toHit.get(i);
-			if (e instanceof Mob && !(e instanceof AirWizardPhase2 )) {
+			if (e instanceof Mob && !(e instanceof AirWizardPhase2)) {
 				 // if the entity is a mob, but not a Air Wizard, then hurt the mob with 1 damage.
 				((Mob)e).hurt(owner, 1);
 			}
