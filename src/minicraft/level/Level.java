@@ -7,6 +7,7 @@ import minicraft.core.Game;
 import minicraft.core.Network;
 import minicraft.core.Updater;
 import minicraft.core.io.Settings;
+import minicraft.core.io.Sound;
 import minicraft.entity.ClientTickable;
 import minicraft.entity.Entity;
 import minicraft.entity.ItemEntity;
@@ -26,6 +27,7 @@ import minicraft.gfx.Point;
 import minicraft.gfx.Rectangle;
 import minicraft.gfx.Screen;
 import minicraft.item.Item;
+import minicraft.item.Items;
 import minicraft.level.tile.Tile;
 import minicraft.level.tile.Tiles;
 import minicraft.level.tile.TorchTile;
@@ -286,6 +288,64 @@ public class Level {
 			}
 			entitiesToAdd.remove(entity);
 		}
+		
+		// this play random music in game
+		if (Settings.get("ambient").equals("Nice")) {
+		if (random.nextInt(3000)==1) {
+			
+			if (random.nextInt(3) == 0) {
+				Sound.Intro2.play();					
+			}	
+			if (random.nextInt(3) == 1) {
+				Sound.Intro2.play();					
+			}
+			if (random.nextInt(3) == 2) {
+				Sound.Intro2.play();					
+			}
+			if (random.nextInt(3) == 3) {
+				Sound.Intro2.play();					
+			}
+		}
+	}
+		
+		if (Settings.get("ambient").equals("Normal")) {
+		if (random.nextInt(1500)==1) {
+			
+			if (random.nextInt(3) == 0) {
+				Sound.Intro2.play();					
+			}	
+			if (random.nextInt(3) == 1) {
+				Sound.Intro2.play();					
+			}
+			if (random.nextInt(3) == 2) {
+				Sound.Intro2.play();					
+			}
+			if (random.nextInt(3) == 3) {
+				Sound.Intro2.play();					
+			}
+		}
+	}
+		
+		if (Settings.get("ambient").equals("Scary")) {
+		if (random.nextInt(3000)==1) {
+			
+			if (random.nextInt(8) == 0) {
+				Sound.Ambience1.play();					
+			}	
+			if (random.nextInt(8) == 2) {
+				Sound.Ambience2.play();					
+			}
+			if (random.nextInt(8) == 4) {
+				Sound.Ambience3.play();					
+			}
+			if (random.nextInt(8) == 6) {
+				Sound.Ambience4.play();					
+			}
+			if (random.nextInt(8) == 8) {
+				Sound.Ambience5.play();					
+			}
+		}
+	}
 		
 		if(fullTick && (!Game.isValidServer() || getPlayers().length > 0)) {
 			// this prevents any entity (or tile) tick action from happening on a server level with no players.
@@ -614,11 +674,12 @@ public class Level {
 			if(depth == 0 && VillagerMob.checkStartPos(this, nx, ny)) {
 				// spawns the villagers.
 				if (rnd <= (Updater.getTime()==Updater.Time.Night?22:33)) add((new Cleric()), nx, ny);
-				else if (rnd >= 68) add((new Cleric()), nx, ny);
+				if (rnd <= (Updater.getTime()==Updater.Time.Night?22:33)) add((new Cleric()), nx, ny);
+				else if (rnd >= 34) add((new Cleric()), nx, ny);
 				else add((new Cleric()), nx, ny);
-				if (rnd <= 75) add((new Cleric()), nx, ny);
 				
 				spawned = true;
+			
 			}
 			
 			if(depth == 0 && FrostMob.checkStartPos(this, nx, ny)) {
@@ -905,27 +966,29 @@ public class Level {
 					for (int hs = 0; hs < numHouses; hs++) {
 						boolean hasChest = random.nextBoolean();
 						boolean twoDoors = random.nextBoolean();
-						int overlay = random.nextInt(2) + 1;
+						//int overlay = random.nextInt(2) + 1;
 
 						// basically just gets what offset this house should have from the center of the village
-						int xo = hs == 0 || hs == 3 ? -4 : 4;
-						int yo = hs < 2 ? -4 : 4;
+						int xo = hs == 0 || hs == 3 ? -8 : 8;
+						int yo = hs < 2 ? -8 : 8;
 
-						xo += random.nextInt(5) - 2;
-						yo += random.nextInt(5) - 2;
+						xo += random.nextInt(5) - 4;
+						yo += random.nextInt(5) - 4;
 
 						if (twoDoors) {
-							Structure.villageHouseTwoDoor.draw(this, x + xo, y + yo);
-						} else {
 							Structure.villageHouseNormal.draw(this, x + xo, y + yo);
-						}
+							new Librarian();
+						}/** else {
+							Structure.villageHouseNormal.draw(this, x + xo, y + yo);
+						}**/
 
 						// make the village look ruined
-						if (overlay == 1) {
+						/**if (overlay == 1) {
 							Structure.villageRuinedOverlay1.draw(this, x + xo, y + yo);
 						} else if (overlay == 2) {
 							Structure.villageRuinedOverlay2.draw(this, x + xo, y + yo);
 						}
+						**/
 
 						// add a chest to some of the houses
 						if (hasChest) {

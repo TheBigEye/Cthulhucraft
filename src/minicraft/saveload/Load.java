@@ -29,6 +29,8 @@ import minicraft.entity.furniture.statue.SlimeStatue;
 import minicraft.entity.furniture.statue.ZombieStatue;
 import minicraft.entity.mob.*;
 import minicraft.entity.mob.boss.AirWizard;
+import minicraft.entity.mob.boss.AirWizardPhase2;
+import minicraft.entity.mob.boss.AirWizardPhase3;
 import minicraft.entity.mob.infected.Mooshroom;
 import minicraft.entity.mob.villager.Cleric;
 import minicraft.entity.mob.villager.Golem;
@@ -797,6 +799,8 @@ public class Load {
 			case "DeepGuardian": return new Keeper(moblvl);
 			case "Keeper": return new Keeper(moblvl);
 			case "AirWizard": return new AirWizard(moblvl>1);
+			case "AirWizardPhase2": return new AirWizardPhase2(moblvl>1);
+			case "AirWizardPhase3": return new AirWizardPhase3(moblvl>1);
 			case "Boat": return new Boat();
 			case "Spawner": return new Spawner(new Zombie(1));
 			case "Workbench": return new Crafter(Crafter.Type.Workbench);

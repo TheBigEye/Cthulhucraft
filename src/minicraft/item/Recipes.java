@@ -185,6 +185,13 @@ public class Recipes {
 		assemblerRecipes.add(new Recipe("Brewery_1", "glass_10", "Stone_10", "iron_3"));
 		
 		stonecutterRecipes.add(new Recipe("Flint_3", "Stone_3", "coal_1"));
+		stonecutterRecipes.add(new Recipe("Andesite_3", "Stone_3", "coal_1"));
+		stonecutterRecipes.add(new Recipe("Diorite_3", "Stone_3", "coal_1"));
+		stonecutterRecipes.add(new Recipe("Granite_3", "Stone_3", "coal_1"));
+		stonecutterRecipes.add(new Recipe("Silicon_3", "Stone_3", "coal_1"));
+		stonecutterRecipes.add(new Recipe("Basalt_3", "Stone_3", "coal_1"));
+		stonecutterRecipes.add(new Recipe("Quartzite_3", "Stone_3", "coal_1"));
+		stonecutterRecipes.add(new Recipe("Flint_3", "Stone_3", "coal_1"));
 		
 		breweryRecipes.add(new Recipe("xSpeed Potion_1", "speed potion_2", "coal_5"));
 		breweryRecipes.add(new Recipe("xLight Potion_1", "light potion_2", "coal_5"));

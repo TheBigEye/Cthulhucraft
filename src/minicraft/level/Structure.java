@@ -210,12 +210,23 @@ public class Structure {
 		airWizardHouse.addFurniture(0, 0, new Crafter(Crafter.Type.Enchanter));
 
 		villageHouseNormal = new Structure();
-		villageHouseNormal.setData("F:Wood Planks,W:Wood Wall,D:Wood Door,G:Grass",
-					"WWWWW\n" +
-					"WFFFW\n" +
-					"WFFFD\n" +
-					"WFFFW\n" +
-					"WWWWW"
+		villageHouseNormal.setData("F:Wood Planks,W:Wood Wall,D:Wood Door,G:Grass,O:Path",
+					"WWWWW***O***WWWWW\n" +
+					"WFFFW***O***WFFFW\n" +
+					"WFFFDOOOOOOODFFFW\n" +
+					"WFFFW***O***WFFFW\n" +
+					"WWWWW***O***WWWWW\n" +
+					"********O********\n" +
+					"*******OOO*******\n" +
+					"OOOOOOOOWOOOOOOOO\n" +
+					"*******OOO*******\n" +
+					"********O********\n" +
+					"WWWWW***O***WWWWW\n" +
+					"WFFFW***O***WFFFW\n" +
+					"WFFFDOOOOOOODFFFW\n" +
+					"WFFFW***O***WFFFW\n" +
+					"WWWWW***O***WWWWW\n" +
+					"********O********\n" 
 		);
 
 		villageHouseTwoDoor = new Structure();

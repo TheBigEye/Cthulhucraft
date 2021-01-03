@@ -55,13 +55,13 @@ public class IceSpikeTile extends Tile {
 		if(!(entity instanceof Mob)) return;
 		Mob m = (Mob) entity;
 		if (Settings.get("diff").equals("Easy")) {
-			m.hurt(this, x, y, 1);
+			m.hurt(this, x, y, 2);
 		}
 		if (Settings.get("diff").equals("Normal")) {
-			m.hurt(this, x, y, 1);
+			m.hurt(this, x, y, 3);
 		}
 		if (Settings.get("diff").equals("Hard")) {
-			m.hurt(this, x, y, 2);
+			m.hurt(this, x, y, 5);
 		}
 	}
 

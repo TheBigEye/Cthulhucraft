@@ -41,6 +41,14 @@ public class Sound {
 	public static final Sound Intro2 = new Sound("/resources/sound/Music/Intro 2.wav");
 	public static final Sound Intro3 = new Sound("/resources/sound/Music/Intro 3.wav");
 	
+	// Cave and ambience sounds
+	public static final Sound Ambience1 = new Sound("/resources/sound/Enviroment/Ambience1.wav");
+	public static final Sound Ambience2 = new Sound("/resources/sound/Enviroment/Ambience2.wav");
+	public static final Sound Ambience3 = new Sound("/resources/sound/Enviroment/Ambience3.wav");
+	public static final Sound Ambience4 = new Sound("/resources/sound/Enviroment/Ambience4.wav");
+	public static final Sound Ambience5 = new Sound("/resources/sound/Enviroment/Ambience5.wav");
+	//public static final Sound Ambience6 = new Sound("/resources/sound/Enviroment/Ambience6.wav");
+	
 	public static final Sound Snow = new Sound("/resources/sound/Tile/Snow.wav");
 	public static final Sound Snow2 = new Sound("/resources/sound/Tile/Snow 2.wav");
 	public static final Sound Snow3 = new Sound("/resources/sound/Tile/Snow 3.wav");

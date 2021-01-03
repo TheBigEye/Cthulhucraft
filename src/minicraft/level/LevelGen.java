@@ -1091,7 +1091,7 @@ public class LevelGen {
 				map[x + y * w] = Tiles.get("Cloud tree").id;			
 			}
 				
-		
+		System.out.println("Seed: " + worldSeed);
 		
 		int count = 0;
 		stairsLoop:

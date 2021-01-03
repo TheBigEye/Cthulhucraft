@@ -24,6 +24,8 @@ public class Settings {
 		options.put("sound", new BooleanEntry("Sound", true));
 		options.put("autosave", new BooleanEntry("Autosave", true));
 		
+		options.put("ambient", new ArrayEntry<>("Ambient", "Nice", "Normal", "Scary"));
+		
 		options.put("size", new ArrayEntry<>("World Size", 128, 256, 512, 2048, 64));
 		options.put("theme", new ArrayEntry<>("World Theme", "Normal", "Forest", "Desert", "Plain", "Hell"));
 		options.put("type", new ArrayEntry<>("Terrain Type", "Island", "Box", "Mountain", "Irregular"));
