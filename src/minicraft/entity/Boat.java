@@ -47,10 +47,10 @@ public class Boat extends Entity {
             double ya = 0;
             double xa = 0;
 
-            if (Game.input.getKey("move-up").down) ya -= 2;
-            if (Game.input.getKey("move-down").down) ya += 2;
-            if (Game.input.getKey("move-left").down) xa -= 2;
-            if (Game.input.getKey("move-right").down) xa += 2;
+            if (Game.input.getKey("move-up").down) ya -= 1;
+            if (Game.input.getKey("move-down").down) ya += 1;
+            if (Game.input.getKey("move-left").down) xa -= 1;
+            if (Game.input.getKey("move-right").down) xa += 1;
 
             move(xa, ya);
             playerInBoat.x = x;

@@ -14,7 +14,7 @@ public class MapDisplay extends Display {
 
         Menu.Builder builder = new Menu.Builder(true, 0, RelPos.CENTER);
 
-        builder.setSize(147, 147);
+        builder.setSize(148, 148);
 
         menus = new Menu[1];
         menus[0] = builder.createMenu();
@@ -24,7 +24,7 @@ public class MapDisplay extends Display {
 
     @Override
     public void tick(InputHandler input) {
-        if (input.getKey("menu").clicked || input.getKey("attack").clicked)
+        if (input.getKey("menu").clicked || input.getKey("attack").clicked || input.getKey("exit").clicked)
             Game.exitMenu();
     }
 
@@ -121,7 +121,7 @@ public class MapDisplay extends Display {
             screen.render(menuBounds.getLeft() - 8, menuBounds.getHeight() / 2 + menuBounds.getTop(), 5 + 13 * 32, Color.get(-1, 400, 500, 500), 0);
         }*/
         // render the marker for the player
-        screen.render((Game.player.x - 8) / 16 + menuBounds.getLeft() + 4 - (offset[0] * 128), (Game.player.y - 8) / 16 + menuBounds.getTop() + 4 - (offset[1] * 128), 4 + 13 * 32, Color.get(-1, 500), 0);
+        screen.render((Game.player.x - 8) / 16 + menuBounds.getLeft() + 2 - (offset[0] * 128), (Game.player.y - 8) / 16 + menuBounds.getTop() + 2 - (offset[1] * 128), 2 + 12 * 32, Color.get(-1, 255, 0, 0));
     }
 }
 

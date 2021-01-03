@@ -22,7 +22,7 @@ public class BookItem extends Item {
 	}
 	
 	protected String book; // TODO this is not saved yet; it could be, for editable books.
-	private final boolean hasTitlePage;
+	public final boolean hasTitlePage;
 	private Sprite sprite;
 	
 	private BookItem(String title, Sprite sprite, String book) { this(title, sprite, book, false); }

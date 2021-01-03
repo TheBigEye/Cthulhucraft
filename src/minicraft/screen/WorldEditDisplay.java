@@ -9,6 +9,7 @@ import java.util.List;
 import minicraft.core.FileHandler;
 import minicraft.core.Game;
 import minicraft.core.io.InputHandler;
+import minicraft.core.io.Sound;
 import minicraft.gfx.Color;
 import minicraft.screen.Menu.Builder;
 import minicraft.screen.WorldSelectDisplay.Action;
@@ -60,6 +61,8 @@ public class WorldEditDisplay extends Display {
 	@Override
 	public void tick(InputHandler input) {
 		super.tick(input);
+		
+		Sound.Heart.stop();
 		
 		if(input.getKey("select").clicked) {
 			// do action

@@ -19,6 +19,7 @@ public class OptionsDisplay extends Display {
 				Settings.getEntry("diff"),
 				Settings.getEntry("fps"),
 				Settings.getEntry("sound"),
+				Settings.getEntry("ambient"),
 				Settings.getEntry("autosave"),
 				Settings.getEntry("skinon"),
 				new BlankEntry(),

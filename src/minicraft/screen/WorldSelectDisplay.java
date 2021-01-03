@@ -7,6 +7,7 @@ import java.util.Random;
 import minicraft.core.Game;
 import minicraft.core.io.InputHandler;
 import minicraft.core.io.Settings;
+import minicraft.core.io.Sound;
 import minicraft.gfx.Color;
 import minicraft.gfx.Font;
 import minicraft.gfx.Screen;
@@ -165,6 +166,7 @@ public class WorldSelectDisplay extends Display {
 				break;
 			}
 		}
+		Sound.Heart.stop();
 	}
 	
 	@Override
@@ -177,6 +179,7 @@ public class WorldSelectDisplay extends Display {
 		Settings.getEntry("mode");
 		Settings.getEntry("theme");
 		Settings.getEntry("type");
+		WorldSelectDisplay.getWorldName();
 		
 		if(sel >= 0 && sel < worldVersions.size()) {
 			Version version = worldVersions.get(sel);

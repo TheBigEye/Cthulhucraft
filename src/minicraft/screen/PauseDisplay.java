@@ -9,6 +9,7 @@ import minicraft.core.Network;
 import minicraft.core.io.InputHandler;
 import minicraft.core.io.Localization;
 import minicraft.core.io.Settings;
+import minicraft.core.io.Sound;
 import minicraft.gfx.Color;
 import minicraft.gfx.Font;
 import minicraft.gfx.Screen;
@@ -23,6 +24,7 @@ import minicraft.screen.entry.StringEntry;
 public class PauseDisplay extends Display {
 	
 	public PauseDisplay() {
+		Sound.Heart.stop();
 		String upString = Game.input.getMapping("cursor-up")+ Localization.getLocalized(" and ")+Game.input.getMapping("cursor-down")+Localization.getLocalized(" to Scroll");
 		String selectString = Game.input.getMapping("select")+Localization.getLocalized(": Choose");
 		
@@ -106,6 +108,7 @@ public class PauseDisplay extends Display {
 	@Override
 	public void tick(InputHandler input) {
 		super.tick(input);
+		Sound.Heart.stop();
 		if (input.getKey("pause").clicked)
 			Game.exitMenu();
 	}

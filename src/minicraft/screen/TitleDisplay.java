@@ -72,16 +72,10 @@ public class TitleDisplay extends Display {
 		super.init(null); // The TitleScreen never has a parent.
 		Renderer.readyToRenderGameplay = false;
 		
+		Sound.Heart.stop();
 		
-		if (random.nextInt(2) == 0) {
-			Sound.Intro.loop(true);
-		}
-		if (random.nextInt(2) == 1) {
-			Sound.Intro2.loop(true);
-		}
-		if (random.nextInt(2) == 2) {
-			Sound.Intro3.loop(true);
-		}
+		Sound.Intro.loop(true);
+
 
 
 		// check version
@@ -183,8 +177,9 @@ public class TitleDisplay extends Display {
 			if (count == 0) reverse = false;
 		}
 		
-		super.tick(input);
+		Sound.Heart.stop();
 		
+		super.tick(input);		
 		
 	}
 		
@@ -210,12 +205,13 @@ public class TitleDisplay extends Display {
 		boolean isblue = splashes[rand].contains("blue");
 		boolean isGreen = splashes[rand].contains("Green");
 		boolean isRed = splashes[rand].contains("Red");
+		boolean isRed2 = splashes[rand].contains("Red");
 		boolean isOrange = splashes[rand].contains("Orange");
 		boolean isYellow = splashes[rand].contains("Yellow");
 		
 		/// this isn't as complicated as it looks. It just gets a color based off of count, which oscilates between 0 and 25.
 		int bcol = 5 - count / 5; // this number ends up being between 1 and 5, inclusive.
-		int splashColor = isblue ? Color.BLUE : isRed ? Color.RED : isGreen ? Color.GREEN : isOrange ? Color.ORANGE : isYellow ? Color.YELLOW : Color.get(1, bcol*51, bcol*51, bcol*25);
+		int splashColor = isblue ? Color.BLUE : isRed ? Color.RED : isRed2 ? Color.RED : isGreen ? Color.GREEN : isOrange ? Color.ORANGE : isYellow ? Color.YELLOW : Color.get(1, bcol*51, bcol*51, bcol*25);
 
 		
 		Font.drawCentered(splashes[rand], screen, 70, splashColor);
@@ -227,16 +223,15 @@ public class TitleDisplay extends Display {
 	}
 	
 	private static final String[] splashes = {
-		"I love A.",
 		"Happy birthday Minicraft!",
 		"Happy XMAS!",
 		"Happy birthday BigEye :)",
 		"Happy birthday Zaq :)",
 		"Happy birthday A.L.I.C.E :)",
 		
-        "Bye ben :(",
+        //"Bye ben :(",
 		
-        //Also play 
+        // Also play 
 		"Also play InfinityTale!",
 		"Also play Minicraft Deluxe!",
 		"Also play Alecraft!",
@@ -244,11 +239,12 @@ public class TitleDisplay extends Display {
 		"Also play MiniCrate!",
 		"Also play MiniCraft Mob Overload!",
 		
-		
+		// Now with...
 		"Now with better fishing!",
 		"Now with better tools!",
 		"Now with better chests!",
 		"Now with better dungeons!",
+        "Now with better sounds!",
 		"Only on PlayMinicraft.com!",
 		"Playminicraft.com is the bomb!",
 		"@MinicraftPlus on Twitter",
@@ -270,7 +266,7 @@ public class TitleDisplay extends Display {
 		"Get him, Steve!",
 		"Forty-Two!",
 		
-		//kill
+		// kill
 		"Kill Creeper, get Gunpowder!",
 		"Kill Cow, get Beef!",
 		"Kill Zombie, get Cloth!",
@@ -280,14 +276,15 @@ public class TitleDisplay extends Display {
 		"Kill Pig, get Porkchop!",
 		"Kill Chicken, get Feathers!",
 		
-		//mineral levels
+		// Mineral levels
 		"Gold > Iron",
 		"Gem > Gold",
 		
 		"Test == InDev!",
 		"Story? Uhh...",
+		"Mod on phase A",
 		
-		//What's that?
+		// What's that?
 		"Infinite terrain? What's that?",
 		"Redstone? What's that?",
 		"Minecarts? What are those?",
@@ -295,15 +292,16 @@ public class TitleDisplay extends Display {
 		"2.5D FTW!",
 		"Grab your friends!",
 		
-		//Not Included
+		// Not Included
 		"Null not included",
 		"Herobine not included",
 		"Mouse not included!",
 		"No spiders included!",
 		"No Endermen included!",
 		"3rd dimension not included!",
+		"Orange box not included",
 		
-		//Included
+		// Included
 		"Villagers included!",
 		"Creepers included!",
 		"Skeletons included!",
@@ -319,9 +317,12 @@ public class TitleDisplay extends Display {
 		"Carrots Now Included!",
 		"Boats Now Included!",
 		"Maps Now Included!",
+		"Books included!",
+		"Sad music included!",
+		"Big eye included!",
 	  //"Nether Now Included?",
 		
-		//Worlds
+		// Worlds
 		"Bigger Worlds!",
 		"World types!",
 		"World themes!",
@@ -330,7 +331,7 @@ public class TitleDisplay extends Display {
 		"Forest Biome!",
 		"Snow Biome!",
 		
-		//Ideas
+		// Ideas
 		"Sugarcane is a Idea!",
 		"Milk is an idea!",
 		"Cakes is an idea!",

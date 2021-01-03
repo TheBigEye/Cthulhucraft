@@ -23,7 +23,7 @@ public class BookDisplay extends Display {
 	private static final int minX = 15, maxX = 15+8*32, minY = 8*5, maxY = 8*5+8*16;
 	
 	private String[][] lines;
-	private int page;
+	protected int page;
 	
 	private final boolean hasTitle;
 	private final boolean showPageCount;
@@ -77,7 +77,7 @@ public class BookDisplay extends Display {
 		menus[page+pageOffset].shouldRender = true;
 	}
 	
-	private void turnPage(int dir) {
+	protected void turnPage(int dir) {
 		if(page+dir >= 0 && page+dir < lines.length) {
 			menus[page+pageOffset].shouldRender = false;
 			page += dir;

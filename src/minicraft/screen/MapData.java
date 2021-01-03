@@ -9,7 +9,7 @@ import minicraft.level.tile.Tiles;
 public enum MapData {
 	
 	GRASS(Tiles.get("Grass").id, Color.get(1, 96, 195, 96)),	
-	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 58, 198, 30)),	
+	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 52, 173, 57)),	
     LAWN(Tiles.get("Lawn").id, Color.get(1, 56, 181, 28)),
    
     DIRT(Tiles.get("Dirt").id, Color.get(1, 157, 91, 41)),  
