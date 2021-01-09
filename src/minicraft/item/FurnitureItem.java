@@ -19,7 +19,6 @@ import minicraft.entity.mob.villager.OldGolem;
 import minicraft.gfx.Sprite;
 import minicraft.level.Level;
 import minicraft.level.tile.Tile;
-import minicraft.screen.entry.BlankEntry;
 
 public class FurnitureItem extends Item {
 	

@@ -40,7 +40,6 @@ import minicraft.screen.InfoDisplay;
 import minicraft.screen.LoadingDisplay;
 import minicraft.screen.PauseDisplay;
 import minicraft.screen.PlayerInvDisplay;
-import minicraft.screen.TitleDisplay;
 import minicraft.screen.WorldSelectDisplay;
 
 import org.jetbrains.annotations.Nullable;
@@ -257,6 +256,7 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 			Sound.Heart.stop();
 		}
 		
+			
 		if(level == null || isRemoved()) return;
 		
 		if(Game.getMenu() != null && !Game.ISONLINE) return; // don't tick player when menu is open

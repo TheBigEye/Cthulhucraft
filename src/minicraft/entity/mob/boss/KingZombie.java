@@ -4,12 +4,8 @@ import minicraft.core.Updater;
 import minicraft.core.io.Settings;
 import minicraft.entity.mob.EnemyMob;
 import minicraft.entity.mob.Player;
-import minicraft.entity.mob.Slime;
 import minicraft.entity.mob.Zombie;
-import minicraft.gfx.Color;
-import minicraft.gfx.Font;
 import minicraft.gfx.MobSprite;
-import minicraft.gfx.Screen;
 import minicraft.item.Items;
 
 public class KingZombie extends EnemyMob {

@@ -1,6 +1,5 @@
 package minicraft.entity.mob;
 
-import minicraft.core.Game;
 import minicraft.core.io.Settings;
 import minicraft.gfx.Color;
 import minicraft.gfx.Font;

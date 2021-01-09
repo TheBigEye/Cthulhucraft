@@ -1,7 +1,6 @@
 package minicraft.entity.mob.infected;
 
 import minicraft.core.io.Settings;
-import minicraft.entity.mob.PassiveMob;
 import minicraft.entity.mob.Player;
 import minicraft.gfx.MobSprite;
 import minicraft.item.Items;

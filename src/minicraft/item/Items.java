@@ -3,9 +3,6 @@ package minicraft.item;
 import java.util.ArrayList;
 
 import minicraft.core.Network;
-import minicraft.item.enchanted.SharpSwordI;
-import minicraft.item.enchanted.SharpSwordII;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
