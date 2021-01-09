@@ -1,8 +1,5 @@
 package minicraft.screen;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.Random;
@@ -74,7 +71,7 @@ public class TitleDisplay extends Display {
 		
 		Sound.Heart.stop();
 		
-		Sound.Intro.loop(true);
+		Sound.Intro.play();			
 
 
 
@@ -179,7 +176,7 @@ public class TitleDisplay extends Display {
 		
 		Sound.Heart.stop();
 		
-		super.tick(input);		
+		super.tick(input);	
 		
 	}
 		

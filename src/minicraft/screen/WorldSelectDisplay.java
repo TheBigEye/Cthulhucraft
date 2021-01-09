@@ -2,8 +2,6 @@ package minicraft.screen;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Random;
-
 import minicraft.core.Game;
 import minicraft.core.io.InputHandler;
 import minicraft.core.io.Settings;
@@ -11,7 +9,6 @@ import minicraft.core.io.Sound;
 import minicraft.gfx.Color;
 import minicraft.gfx.Font;
 import minicraft.gfx.Screen;
-import minicraft.item.Items;
 import minicraft.saveload.Load;
 import minicraft.saveload.Save;
 import minicraft.saveload.Version;

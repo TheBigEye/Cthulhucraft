@@ -8,13 +8,8 @@ import minicraft.core.MyUtils;
 import minicraft.core.Network;
 import minicraft.core.io.InputHandler;
 import minicraft.core.io.Localization;
-import minicraft.core.io.Settings;
 import minicraft.core.io.Sound;
 import minicraft.gfx.Color;
-import minicraft.gfx.Font;
-import minicraft.gfx.Screen;
-import minicraft.level.Level;
-import minicraft.level.LevelGen;
 import minicraft.saveload.Save;
 import minicraft.screen.entry.BlankEntry;
 import minicraft.screen.entry.ListEntry;
@@ -33,7 +28,7 @@ public class PauseDisplay extends Display {
 			new BlankEntry(),
 			new SelectEntry("Return to Game", () -> Game.setMenu(null)),
 			new SelectEntry("Options", () -> Game.setMenu(new OptionsDisplay())),
-			new SelectEntry("Info", () -> Game.setMenu(new WorldInfoDisplay()))
+			new SelectEntry("World", () -> Game.setMenu(new WorldInfoDisplay()))
 			));
 		
 		if(!Game.ISONLINE) {

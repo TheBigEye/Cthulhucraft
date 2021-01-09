@@ -12,7 +12,7 @@ public class Settings {
 	private static HashMap<String, ArrayEntry> options = new HashMap<>();
 	
 	static {
-		options.put("fps", new RangeEntry("Max FPS", 10, 300, GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getRefreshRate()));
+		options.put("fps", new RangeEntry("Max FPS", 10, 3000, GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getRefreshRate()));
 		options.put("diff", new ArrayEntry<>("Difficulty", "Easy", "Normal", "Hard"));
 		options.get("diff").setSelection(1);
 		options.put("mode", new ArrayEntry<>("Game Mode", "Survival", "Creative", "Hardcore", "Score", "Story mode"));
@@ -26,7 +26,7 @@ public class Settings {
 		
 		options.put("ambient", new ArrayEntry<>("Ambient", "Nice", "Normal", "Scary"));
 		
-		options.put("size", new ArrayEntry<>("World Size", 128, 256, 512, 2048, 64));
+		options.put("size", new ArrayEntry<>("World Size", 128, 256, 512, 1024));
 		options.put("theme", new ArrayEntry<>("World Theme", "Normal", "Forest", "Desert", "Plain", "Hell"));
 		options.put("type", new ArrayEntry<>("Terrain Type", "Island", "Box", "Mountain", "Irregular"));
 		

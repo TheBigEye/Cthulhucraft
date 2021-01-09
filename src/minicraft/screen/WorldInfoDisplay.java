@@ -25,7 +25,7 @@ public class WorldInfoDisplay extends Display {
 				new BlankEntry(),
 				new BlankEntry(),
 				new BlankEntry(),
-				new BlankEntry(),
+				Settings.getEntry("mode"),
 				new SelectEntry("Open World Folder", () -> {
 	                try {
 	                  Desktop.getDesktop().open(new File(Game.gameDir + "/saves/" + WorldSelectDisplay.getWorldName()));
@@ -40,18 +40,18 @@ public class WorldInfoDisplay extends Display {
 				new BlankEntry()
 
 			)
-			.setTitle("World Info")
+			.setTitle("World")
 			.createMenu()
 		);
 	}
 	public void render(Screen screen) {
 		super.render(screen);
-		Font.drawCentered("Name: "+WorldSelectDisplay.getWorldName() + "", screen, Screen.h - 148, Color.WHITE);
+		Font.drawCentered("Name: "+WorldSelectDisplay.getWorldName() + "", screen, Screen.h - 150, Color.GREEN);
 		
-		Font.drawCentered(Settings.getEntry("mode")+"", screen, Screen.h - 132, Color.WHITE);		
-		Font.drawCentered(Settings.getEntry("size")+"", screen, Screen.h - 121, Color.WHITE);		
-		Font.drawCentered(Settings.getEntry("theme")+"", screen, Screen.h - 110, Color.WHITE);
-		Font.drawCentered(Settings.getEntry("type")+"", screen, Screen.h - 99, Color.WHITE);
+		Font.draw(Settings.getEntry("mode")+"", screen, Screen.w - 232, Screen.h - 130, Color.GRAY);		
+		Font.draw(Settings.getEntry("size")+"", screen, Screen.w - 232, Screen.h - 120, Color.GRAY);		
+		Font.draw(Settings.getEntry("theme")+"", screen, Screen.w - 232, Screen.h - 110, Color.GRAY);
+		Font.draw(Settings.getEntry("type")+"", screen, Screen.w - 232, Screen.h - 100, Color.GRAY);
 		
 	}
 
