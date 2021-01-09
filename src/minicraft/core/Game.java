@@ -43,7 +43,7 @@ public class Game {
 	public static List<String> notifications = new ArrayList<>();
 	
 	public static int MAX_FPS = (int) Settings.get("fps");
-	
+	public static Level level;
 	
 	static Display menu = null, newMenu = null; // the current menu you are on.
 	// Sets the current menu.
@@ -80,7 +80,7 @@ public class Game {
 	
 	// LEVEL
 	
-	public static Level[] levels = new Level[6]; // This array stores the different levels.
+	public static Level[] levels = new Level[7]; // This array stores the different levels.
 	public static int currentLevel = 3; // This is the level the player is on. It defaults to 3, the surface.
 	
 	static boolean gameOver = false; // If the player wins this is set to true.
