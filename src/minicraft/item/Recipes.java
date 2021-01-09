@@ -2,8 +2,6 @@ package minicraft.item;
 
 import java.util.ArrayList;
 
-import minicraft.gfx.Sprite;
-
 public class Recipes {
 	
 	public static final ArrayList<Recipe> anvilRecipes = new ArrayList<>();
