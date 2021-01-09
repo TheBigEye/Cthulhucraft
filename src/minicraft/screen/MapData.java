@@ -8,30 +8,31 @@ import minicraft.level.tile.Tiles;
 
 public enum MapData {
 	
-	GRASS(Tiles.get("Grass").id, Color.get(1, 96, 195, 96)),	
-	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 52, 173, 57)),	
-    LAWN(Tiles.get("Lawn").id, Color.get(1, 56, 181, 28)),
+	GRASS(Tiles.get("Grass").id, Color.get(1, 84, 168, 84)),	
+	MYCELIUM(Tiles.get("Mycelium").id, Color.get(1, 58, 142, 58)),	
+    LAWN(Tiles.get("Lawn").id, Color.get(1, 96, 165, 96)),
+    PATH(Tiles.get("Path").id, Color.get(1, 217, 160, 102)),  
    
-    DIRT(Tiles.get("Dirt").id, Color.get(1, 157, 91, 41)),  
+    DIRT(Tiles.get("Dirt").id, Color.get(1, 131, 108, 108)),  
     FLOWER(Tiles.get("Flower").id, Color.YELLOW),   
     HOLE(Tiles.get("Hole").id, Color.get(1, 61, 47, 8)),
     
-    WATER(Tiles.get("Water").id, Color.get(1, 37, 56, 198)),    
+    WATER(Tiles.get("Water").id, Color.get(1, 26, 44, 137)),    
     LAVA(Tiles.get("Lava").id, Color.RED),
     
-    ROCK(Tiles.get("Rock").id, Color.get(1, 145, 143, 122)),   
+    ROCK(Tiles.get("Rock").id, Color.get(1, 122, 122, 122)),   
     HARD_ROCK(Tiles.get("Hard Rock").id, Color.get(1, 127, 126, 107)),
     
-    CACTUS(Tiles.get("Cactus").id, Color.get(1, 198, 226, 111)),
+    CACTUS(Tiles.get("Cactus").id, Color.get(1, 183, 183, 91)),
     
-    TREE(Tiles.get("Tree").id, Color.get(1, 0, 113, 0)),
+    TREE(Tiles.get("Tree").id, Color.get(1, 37, 83, 37)),
     BIRCH_TREE(Tiles.get("Birch Tree").id, Color.get(1, 12, 117, 12)),   
     FIR_TREE(Tiles.get("Fir Tree").id, Color.get(1, 19, 139, 98)),  
     PINE_TREE(Tiles.get("Pine Tree").id, Color.get(1, 17, 127, 89)),
     
-    GIANT_RED_MUSHROOM(Tiles.get("Giant Red Mushroom").id, Color.get(1, 0, 93, 0)),
+    GIANT_RED_MUSHROOM(Tiles.get("Giant Red Mushroom").id, Color.get(1, 53, 132, 53)),
     //GIANT_BROWN_MUSHROOM(Tiles.get("Giant Brown Mushroom").id, Color.get(1, 175, 122, 96)), //Blocked for errors
-    SAND(Tiles.get("Sand").id, Color.get(1, 247, 233, 163)),
+    SAND(Tiles.get("Sand").id, Color.get(1, 226, 226, 111)),
     SNOW(Tiles.get("Snow").id, Color.get(1, 240, 240, 240)),
     STAIRS_UP(Tiles.get("Stairs Up").id, 0xffffff),
     STAIRS_DOWN(Tiles.get("Stairs Down").id, 0xffffff),
