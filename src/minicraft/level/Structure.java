@@ -183,29 +183,29 @@ public class Structure {
 
 		airWizardHouse = new Structure();
 		airWizardHouse.setData("F:Stone Bricks,W:Stone Wall,D:Stone Door",
-				    "WW****W**WWDWW**W****WW\n" +
-				    "WWWWWWWWWWFFFWWWWWWWWWW\n" +
-				    "*WFFFFFFFFFFFFFFFFFFFW*\n" +
-				    "*WFWWWDWWWFFFWWWDWWWFW*\n" +
-				    "*WFW*****WWFWW*****WFW*\n" +
-			        "*WFW******WFW******WFW*\n" +
-				    "WWFD******WFW******DFWW\n" +
-				    "*WFW***WW*WFW*WW***WFW*\n" +
-					"*WFW***WWWWFWWWW***WFW*\n" +
-					"WWFWW***WFFFFFW***WWFWW\n" +
-					"WFFFWWWWWFFFFFWWWWWFFFW\n" +
-					"DFFFFFFFFFFFFFFFFFFFFFD\n" +
-					"WFFFWWWWWFFFFFWWWWWFFFW\n" +
-					"WWFWW***WFFFFFW***WWFWW\n" +
-					"*WFW***WWWWFWWWW***WFW*\n" +
-				    "*WFW***WW*WFW*WW***WFW*\n" +
-				    "WWFD******WFW******DFWW\n" +
+				    "***********************\n" +
+				    "******WWWWWWWWWWW******\n" +
+				    "******WFFFFFFFFFW******\n" +
+				    "******WWWWFFFWWWW******\n" +
+				    "*********WWDWW*********\n" +
+			        "**********WFW**********\n" +
+				    "*WWW******WFW******WWW*\n" +
 				    "*WFW******WFW******WFW*\n" +
-				    "*WFW*****WWFWW*****WFW*\n" +
-				    "*WFWWWDWWWFFFWWWDWWWFW*\n" +
-				    "*WFFFFFFFFFFFFFFFFFFFW*\n" +
-				    "WWWWWWWWWWFFFWWWWWWWWWW\n" +
-					"WW****W**WWDWW**W****WW"
+					"*WFW****WWWDWWW****WFW*\n" +
+					"*WFWW***WFFFFFW***WWFW*\n" +
+					"*WFFWWWWWFFFFFWWWWWFFW*\n" +
+					"*WFFDFFFDFFFFFDFFFDFFW*\n" +
+					"*WFFWWWWWFFFFFWWWWWFFW*\n" +
+					"*WFWW***WFFFFFW***WWFW*\n" +
+					"*WFW****WWWDWWW****WFW*\n" +
+				    "*WFW******WFW******WFW*\n" +
+				    "*WWW******WFW******WWW*\n" +
+				    "**********WFW**********\n" +
+				    "*********WWDWW*********\n" +
+				    "******WWWWFFFWWWW******\n" +
+				    "******WFFFFFFFFFW******\n" +
+				    "******WWWWWWWWWWW******\n" +
+					"***********************"
 		);
 		airWizardHouse.addFurniture(0, 0, new Crafter(Crafter.Type.Enchanter));
 

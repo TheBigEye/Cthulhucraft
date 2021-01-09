@@ -26,8 +26,8 @@ import minicraft.entity.particle.Particle;
 import minicraft.gfx.Point;
 import minicraft.gfx.Rectangle;
 import minicraft.gfx.Screen;
+import minicraft.gfx.SpriteSheet;
 import minicraft.item.Item;
-import minicraft.item.Items;
 import minicraft.level.tile.Tile;
 import minicraft.level.tile.Tiles;
 import minicraft.level.tile.TorchTile;
@@ -35,7 +35,7 @@ import minicraft.level.tile.TorchTile;
 public class Level {
 	private Random random = new Random();
 	
-	private static final String[] levelNames = {"Sky", "Surface", "Iron", "Gold", "Lava", "Dungeon"};
+	private static final String[] levelNames = {"Heaven", "Surface", "Iron", "Gold", "Lava", "Dungeon", "Hell"};
 	public static String getLevelName(int depth) { return levelNames[-1*depth+1]; }
 	public static String getDepthString(int depth) { return "Level "+(depth<0?"B"+(-depth):depth); }
 	
@@ -168,6 +168,8 @@ public class Level {
 			while (!placedHouse) {
 				int x = random.nextInt(this.w - 7);
 				int y = random.nextInt(this.h - 5);
+				
+				//Sound.HeavenAmbience.play();	
 
 				if (this.getTile(x - 3, y - 2) == Tiles.get("Cloud") && this.getTile(x + 3, y - 2) == Tiles.get("Cloud")) {
 					if (this.getTile(x - 3, y + 2) == Tiles.get("Cloud") && this.getTile(x + 3, y + 2) == Tiles.get("Cloud")) {
@@ -270,6 +272,8 @@ public class Level {
 	public void tick(boolean fullTick) {
 		int count = 0;
 		
+		
+		
 		while(entitiesToAdd.size() > 0) {
 			Entity entity = entitiesToAdd.get(0);
 			boolean inLevel = entities.contains(entity);
@@ -291,7 +295,7 @@ public class Level {
 		
 		// this play random music in game
 		if (Settings.get("ambient").equals("Nice")) {
-		if (random.nextInt(3000)==1) {
+		if (random.nextInt(12800)==1) {
 			
 			if (random.nextInt(3) == 0) {
 				Sound.Intro2.play();					
@@ -310,19 +314,6 @@ public class Level {
 		
 		if (Settings.get("ambient").equals("Normal")) {
 		if (random.nextInt(1500)==1) {
-			
-			if (random.nextInt(3) == 0) {
-				Sound.Intro2.play();					
-			}	
-			if (random.nextInt(3) == 1) {
-				Sound.Intro2.play();					
-			}
-			if (random.nextInt(3) == 2) {
-				Sound.Intro2.play();					
-			}
-			if (random.nextInt(3) == 3) {
-				Sound.Intro2.play();					
-			}
 		}
 	}
 		
@@ -441,7 +432,19 @@ public class Level {
 		
 		if(fullTick && count < maxMobCount && !Game.isValidClient())
 			trySpawn();
+		
 	}
+	
+	
+	  public static void changeLevel(int dir) {
+		    Game.level.remove(Game.player);
+		    Game.currentLevel += dir;
+		    Game.level = Game.levels[Game.currentLevel];
+		    Game.player.x = (Game.player.x >> 4) * 16 + 8;
+		    Game.player.y = (Game.player.y >> 4) * 16 + 8;
+		    Game.level.add((Game.player));
+		  }
+	
 	
 	public void printEntityStatus(String entityMessage, Entity entity, String... searching) {
 		// "searching" can contain any number of class names I want to print when found.
@@ -535,6 +538,7 @@ public class Level {
 		}
 		screen.setOffset(0, 0);
 	}
+
 	
 	private void sortAndRender(Screen screen, List<Entity> list) {
 		list.sort(spriteSorter);
@@ -944,6 +948,9 @@ public class Level {
 	private void generateVillages() {
 		int lastVillageX = 0;
 		int lastVillageY = 0;
+		new Librarian();
+		new Librarian();
+		new Cleric();
 
 		for (int i = 0; i < w / 128 * 4; i++) {
 			// makes 2-8 villages based on world size
@@ -960,7 +967,7 @@ public class Level {
 					lastVillageY = y;
 
 					// a number between 2 and 4
-					int numHouses = random.nextInt(3) + 2;
+					int numHouses = random.nextInt(2) + 1;
 
 					// loops for each house in the village
 					for (int hs = 0; hs < numHouses; hs++) {

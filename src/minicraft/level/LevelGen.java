@@ -35,7 +35,7 @@ public class LevelGen {
 		}
 		
 		int stepSize = featureSize;
-		double scale = 2 / w;
+		double scale = 1.0 / w;
 		double scaleMod = 1;
 		do {
 			int halfStep = stepSize / 2;
@@ -122,6 +122,8 @@ public class LevelGen {
 			return createAndValidateTopMap(w, h);
 		if (level == -4)
 			return createAndValidateDungeon(w, h);
+		/**if (level == -5)
+			return createAndValidateHell(w, h);**/
 		
 		if (level > -4 && level < 0)
 			return createAndValidateUndergroundMap(w, h, -level);
@@ -142,6 +144,7 @@ public class LevelGen {
 				count[result[0][i] & 0xff]++;
 			}
 			if (count[Tiles.get("rock").id & 0xff] < 100) continue;
+			if (count[Tiles.get("rock up").id & 0xff] < 100) continue;
 			if (count[Tiles.get("sand").id & 0xff] < 100) continue;
 			if (count[Tiles.get("grass").id & 0xff] < 100) continue;
 			if (count[Tiles.get("tree").id & 0xff] < 100) continue;
@@ -204,6 +207,25 @@ public class LevelGen {
 			
 		} while (true);
 	}
+	
+	/**private static byte[][] createAndValidateHell(int w, int h) {
+		random.setSeed(worldSeed);
+		int attempt = 0;
+		do {
+			byte[][] result = createHell(w, h);
+			
+			int[] count = new int[256];
+			
+			for (int i = 0; i < w * h; i++) {
+				count[result[0][i] & 0xff]++;
+			}
+			if (count[Tiles.get("Grass").id & 0xff] < 100) continue;
+			if (count[Tiles.get("Hard rock").id & 0xff] < 100) continue;
+			
+			return result;
+			
+		} while (true);
+	}**/
 
 	private static byte[][] createAndValidateSkyMap(int w, int h) {
 		random.setSeed(worldSeed);
@@ -231,7 +253,7 @@ public class LevelGen {
 		LevelGen mnoise1 = new LevelGen(w, h, 16);
 		LevelGen mnoise2 = new LevelGen(w, h, 16);
 		LevelGen mnoise3 = new LevelGen(w, h, 16);
-		// ...and some with larger size.
+		// ...and some with larger size..
 		LevelGen noise1 = new LevelGen(w, h, 32);
 		LevelGen noise2 = new LevelGen(w, h, 32);
 		
@@ -341,6 +363,8 @@ public class LevelGen {
 				}
 			}
 		}
+
+		
 		if (Settings.get("Theme").equals("Snow")) {
 			
 			for (int i = 0; i < w * h / 2800; i++) {
@@ -525,8 +549,8 @@ public class LevelGen {
 				int x = random.nextInt(w);
 				int y = random.nextInt(h);
 				for (int j = 0; j < 10; j++) {
-					int xx = x + random.nextInt(15) - random.nextInt(15);
-					int yy = y + random.nextInt(15) - random.nextInt(15);
+					int xx = x + random.nextInt(5) - random.nextInt(5);
+					int yy = y + random.nextInt(5) - random.nextInt(5);
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
 							map[xx + yy * w] = Tiles.get("giant red mushroom").id;
@@ -541,8 +565,8 @@ public class LevelGen {
 				int x = random.nextInt(w);
 				int y = random.nextInt(h);
 				for (int j = 0; j < 10; j++) {
-					int xx = x + random.nextInt(15) - random.nextInt(15);
-					int yy = y + random.nextInt(15) - random.nextInt(15);
+					int xx = x + random.nextInt(5) - random.nextInt(5);
+					int yy = y + random.nextInt(5) - random.nextInt(5);
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
 							map[xx + yy * w] = Tiles.get("giant brown mushroom").id;
@@ -606,8 +630,8 @@ public class LevelGen {
 				int x = random.nextInt(w);
 				int y = random.nextInt(h);
 				for (int j = 0; j < 10; j++) {
-					int xx = x + random.nextInt(15) - random.nextInt(15);
-					int yy = y + random.nextInt(15) - random.nextInt(15);
+					int xx = x + random.nextInt(5) - random.nextInt(5);
+					int yy = y + random.nextInt(5) - random.nextInt(5);
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
 							map[xx + yy * w] = Tiles.get("giant red mushroom").id;
@@ -622,8 +646,8 @@ public class LevelGen {
 				int x = random.nextInt(w);
 				int y = random.nextInt(h);
 				for (int j = 0; j < 10; j++) {
-					int xx = x + random.nextInt(15) - random.nextInt(15);
-					int yy = y + random.nextInt(15) - random.nextInt(15);
+					int xx = x + random.nextInt(5) - random.nextInt(5);
+					int yy = y + random.nextInt(5) - random.nextInt(5);
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
 							map[xx + yy * w] = Tiles.get("giant brown mushroom").id;
@@ -702,8 +726,8 @@ public class LevelGen {
 				int x = random.nextInt(w);
 				int y = random.nextInt(h);
 				for (int j = 0; j < 10; j++) {
-					int xx = x + random.nextInt(15) - random.nextInt(15);
-					int yy = y + random.nextInt(15) - random.nextInt(15);
+					int xx = x + random.nextInt(5) - random.nextInt(5);
+					int yy = y + random.nextInt(5) - random.nextInt(5);
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
 							map[xx + yy * w] = Tiles.get("giant red mushroom").id;
@@ -718,8 +742,8 @@ public class LevelGen {
 				int x = random.nextInt(w);
 				int y = random.nextInt(h);
 				for (int j = 0; j < 10; j++) {
-					int xx = x + random.nextInt(15) - random.nextInt(15);
-					int yy = y + random.nextInt(15) - random.nextInt(15);
+					int xx = x + random.nextInt(5) - random.nextInt(5);
+					int yy = y + random.nextInt(5) - random.nextInt(5);
 					if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 						if (map[xx + yy * w] == Tiles.get("mycelium").id) {
 							map[xx + yy * w] = Tiles.get("giant brown mushroom").id;
@@ -792,6 +816,22 @@ public class LevelGen {
 				}
 			}
 		}
+		
+		/**for (int i = 0; i < w * h / 400; i++) {
+			int x = random.nextInt(w);
+			int y = random.nextInt(h);
+			int col = random.nextInt(4);
+			for (int j = 0; j < 100; j++) {
+				int xx = x + random.nextInt(5) - random.nextInt(5);
+				int yy = y + random.nextInt(5) - random.nextInt(5);
+				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
+					if (map[xx + yy * w] == Tiles.get("rock").id) {
+						map[xx + yy * w] = Tiles.get("rock up").id;
+						data[xx + yy * w] = (byte) (col + random.nextInt(4) * 16);
+					}
+				}
+			}
+		}**/
 			
 		for (int i = 0; i < w * h / 100; i++) {
 			int x = random.nextInt(w);
@@ -910,6 +950,53 @@ public class LevelGen {
 		
 		return new byte[][]{map, data};
 	}
+	
+	/**private static byte[][] createHell(int w, int h) {
+		LevelGen noise1 = new LevelGen(w, h, 8);
+		LevelGen noise2 = new LevelGen(w, h, 8);
+		
+		byte[] map = new byte[w * h];
+		byte[] data = new byte[w * h];
+		
+		for (int y = 0; y < h; y++) {
+			for (int x = 0; x < w; x++) {
+				int i = x + y * w;
+				
+				double val = Math.abs(noise1.values[i] - noise2.values[i]) * 3 - 2;
+				
+				double xd = x / (w - 1.1) * 2 - 1;
+				double yd = y / (h - 1.1) * 2 - 1;
+				if (xd < 0) xd = -xd;
+				if (yd < 0) yd = -yd;
+				double dist = xd >= yd ? xd : yd;
+				dist = dist * dist * dist * dist;
+				dist = dist * dist * dist * dist;
+				val = -val * 1 - 2.2;
+				val += 1 - dist * 2;
+				
+				if (val < -0.35) {
+					map[i] = Tiles.get("Hard rock").id;
+				} else {
+					map[i] = Tiles.get("Grass").id;
+				}
+			}
+		}
+		
+		lavaLoop:
+		for (int i = 0; i < w * h / 450; i++) {
+			int x = random.nextInt(w - 2) + 1;
+			int y = random.nextInt(h - 2) + 1;
+			
+			for (int yy = y - 1; yy <= y + 1; yy++)
+				for (int xx = x - 1; xx <= x + 1; xx++) {
+					if (map[xx + yy * w] != Tiles.get("Hard Rock").id) continue lavaLoop;
+				}
+			
+			Structure.lavaPool.draw(map, x, y, w);
+		 }
+		
+		return new byte[][]{map, data};
+	}**/
 	
 	private static byte[][] createUndergroundMap(int w, int h, int depth) {
 		LevelGen mnoise1 = new LevelGen(w, h, 16);

@@ -3,7 +3,6 @@ package minicraft.entity.mob.villager;
 import java.util.ArrayList;
 
 import minicraft.core.Game;
-import minicraft.entity.mob.PassiveMob;
 import minicraft.entity.mob.Player;
 import minicraft.gfx.MobSprite;
 import minicraft.item.Recipe;
