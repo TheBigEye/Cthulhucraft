@@ -11,7 +11,6 @@ import minicraft.entity.particle.TextParticle;
 import minicraft.gfx.Color;
 import minicraft.gfx.Screen;
 import minicraft.gfx.Sprite;
-import minicraft.item.Items;
 import minicraft.level.Level;
 
 public class IceSpikeTile extends Tile {
