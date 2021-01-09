@@ -19,6 +19,8 @@ public class Sound {
 	public static final Sound DestroySpawner3 = new Sound("/resources/sound/DestroySpawner 3.wav");	
 	
 	public static final Sound bossDeath = new Sound("/resources/sound/bossdeath.wav");
+	public static final Sound changePhase = new Sound("/resources/sound/changephase.wav");
+	public static final Sound wizardAttack = new Sound("/resources/sound/wizardattack.wav");
 	public static final Sound fuse = new Sound("/resources/sound/fuse.wav");
 	
 	public static final Sound explode = new Sound("/resources/sound/explode.wav");
@@ -48,6 +50,7 @@ public class Sound {
 	public static final Sound Ambience4 = new Sound("/resources/sound/Enviroment/Ambience4.wav");
 	public static final Sound Ambience5 = new Sound("/resources/sound/Enviroment/Ambience5.wav");
 	//public static final Sound Ambience6 = new Sound("/resources/sound/Enviroment/Ambience6.wav");
+	public static final Sound HeavenAmbience = new Sound("/resources/sound/Enviroment/HeavenAmbience.wav");
 	
 	public static final Sound Snow = new Sound("/resources/sound/Tile/Snow.wav");
 	public static final Sound Snow2 = new Sound("/resources/sound/Tile/Snow 2.wav");
