@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Random;
 
 import minicraft.entity.furniture.Bed;
 import minicraft.entity.mob.Player;
@@ -26,8 +27,10 @@ import minicraft.saveload.Load;
 import minicraft.screen.LoadingDisplay;
 import minicraft.screen.RelPos;
 
+
 public class Renderer extends Game {
 	private Renderer() {}
+	private static Random random = new Random();
 	
 	public static final int HEIGHT = 192;
 	public static final int WIDTH = 288;
@@ -155,12 +158,17 @@ public class Renderer extends Game {
 		level.renderBackground(screen, xScroll, yScroll); // renders current level background
 		level.renderSprites(screen, xScroll, yScroll); // renders level sprites on screen
 		
+		
 		// this creates the darkness in the caves
 		if ((currentLevel != 3 || Updater.tickCount < Updater.dayLength/4 || Updater.tickCount > Updater.dayLength/2) && !isMode("creative")) {
 			lightScreen.clear(0); // this doesn't mean that the pixel will be black; it means that the pixel will be DARK, by default; lightScreen is about light vs. dark, not necessarily a color. The light level it has is compared with the minimum light values in dither to decide whether to leave the cell alone, or mark it as "dark", which will do different things depending on the game level and time of day.
 			int brightnessMultiplier = player.potioneffects.containsKey(PotionType.Light) ? 12 : 8; // brightens all light sources by a factor of 1.5 when the player has the Light potion effect. (8 above is normal)
 			level.renderLight(lightScreen, xScroll, yScroll, brightnessMultiplier); // finds (and renders) all the light from objects (like the player, lanterns, and lava).
-			screen.overlay(lightScreen, currentLevel, xScroll, yScroll); // overlays the light screen over the main screen.
+			screen.overlay(lightScreen, currentLevel, xScroll, yScroll); // overlays the light screen over the main screen.	
+			
+			if (player != null && player.activeItem != null && player.activeItem.name.equals("Necronomicon")){
+				screen.overlayBlind(lightScreen, currentLevel, xScroll, yScroll);						
+			}
 		}
 	}
 	
@@ -349,17 +357,23 @@ public class Renderer extends Game {
 			ArrayList<String> info = new ArrayList<>();
 			//info.add("VERSION " + Initializer.VERSION);
 			
-			info.add("VERSION " + Game.BUILD);
+			info.add("VERSION " + Game.BUILD + "                 "+ time.getHour()+time.getMinute()+time.getSecond());
 			info.add(""+time.toLocalDate());
 			info.add(Initializer.fra + " fps");
-			info.add("day tiks " + Updater.tickCount+" ("+Updater.getTime()+")");
+			info.add("day tiks:" + Updater.tickCount+" ("+Updater.getTime()+")");
 			info.add((Updater.normSpeed * Updater.gamespeed) + " tps");
 			if(!isValidServer()) {
-				info.add("walk spd " + player.moveSpeed);
-				info.add("X " + (player.x / 16) + "-" + (player.x % 16));
-				info.add("Y " + (player.y / 16) + "-" + (player.y % 16));
+				info.add("walk spd:" + player.moveSpeed);
+				info.add("X:" + (player.x / 16) + "." + (player.x % 16));
+				info.add("Y:" + (player.y / 16) + "." + (player.y % 16));
+				info.add("");
 				if(levels[currentLevel] != null)
-					info.add("Tile " + levels[currentLevel].getTile(player.x>>4, player.y>>4).name);
+					info.add("Tile:" + levels[currentLevel].getTile(player.x>>4, player.y>>4).name);
+				    info.add("Id:" + levels[currentLevel].getTile(player.x>>4, player.y>>4).id);
+				    info.add("Depth:" + levels[currentLevel].depth);
+				    info.add("Data:" + levels[currentLevel].getData(player.x>>4, player.y>>4));
+				    info.add("Screen: " + java.awt.Toolkit.getDefaultToolkit().getScreenSize().getHeight() +"x"+ java.awt.Toolkit.getDefaultToolkit().getScreenSize().getWidth());
+				    info.add("Size: " + getWindowSize().getHeight() +"x"+ getWindowSize().getWidth());
 				if (isMode("score")) info.add("Score " + player.getScore());
 			}
 			if(levels[currentLevel] != null) {
