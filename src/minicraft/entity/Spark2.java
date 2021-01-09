@@ -3,10 +3,7 @@ package minicraft.entity;
 import java.util.List;
 
 import minicraft.entity.mob.Mob;
-import minicraft.entity.mob.Player;
-import minicraft.entity.mob.boss.AirWizard;
 import minicraft.entity.mob.boss.AirWizardPhase2;
-import minicraft.entity.mob.boss.AirWizardPhase3;
 import minicraft.gfx.Rectangle;
 import minicraft.gfx.Screen;
 
@@ -33,7 +30,7 @@ public class Spark2 extends Entity {
 		this.ya = ya;
 		
 		// Max time = 629 ticks. Min time = 600 ticks.
-		lifeTime = 15 * 10 + random.nextInt(10);
+		lifeTime = 25 * 10 + random.nextInt(20);
 	}
 	
 	@Override

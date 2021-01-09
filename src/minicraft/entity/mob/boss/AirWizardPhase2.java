@@ -1,11 +1,9 @@
 package minicraft.entity.mob.boss;
 
 import minicraft.core.Updater;
-import minicraft.core.io.Settings;
 import minicraft.core.io.Sound;
 import minicraft.entity.Direction;
 import minicraft.entity.Entity;
-import minicraft.entity.Spark;
 import minicraft.entity.Spark2;
 import minicraft.entity.mob.EnemyMob;
 import minicraft.entity.mob.Player;
@@ -13,7 +11,6 @@ import minicraft.gfx.Color;
 import minicraft.gfx.Font;
 import minicraft.gfx.MobSprite;
 import minicraft.gfx.Screen;
-import minicraft.saveload.Save;
 
 public class AirWizardPhase2 extends EnemyMob {
 	private static MobSprite[][][] sprites;
@@ -75,7 +72,16 @@ public class AirWizardPhase2 extends EnemyMob {
 				//attackType = 0; // attack type is set to 0, as the default.
 				if (health < maxHealth / 2) attackType = 1; // if at 1000 health (50%) or lower, attackType = 1
 				if (health < maxHealth / 10) attackType = 2; // if at 200 health (10%) or lower, attackType = 2
-				attackTime = 60 * (secondform ? 3 : 2); //attackTime set to 120 or 180 (2 or 3 seconds, at default 60 ticks/sec)
+				if (random.nextInt(3) == 0) {
+					attackTime = 60 * (secondform ? 3 : 2); //attackTime set to 120 or 180 (2 or 3 seconds, at default 60 ticks/sec)
+				}
+				if (random.nextInt(3) == 1) {
+					attackTime = 46 * (secondform ? 3 : 2); //attackTime set to 120 or 180 (2 or 3 seconds, at default 60 ticks/sec)
+				}
+				if (random.nextInt(3) == 2) {
+					attackTime = 25 * (secondform ? 3 : 2); //attackTime set to 120 or 180 (2 or 3 seconds, at default 60 ticks/sec)
+				}
+				
 			}
 			return; // skips the rest of the code (attackDelay must have been > 0)
 		}
@@ -83,7 +89,7 @@ public class AirWizardPhase2 extends EnemyMob {
 		if (attackTime > 0) {
 			xa = ya = 0;
 			attackTime--; // attackTime will decrease by 1.
-			double dir = attackTime * 0.25 * (attackTime % 2 * 2 - 1); //assigns a local direction variable from the attack time.
+			double dir = attackTime; //assigns a local direction variable from the attack time.
 			double speed = (secondform ? 1.2 : 0.7) + attackType * 0.2; // speed is dependent on the attackType. (higher attackType, faster speeds)
 			level.add(new Spark2(this, Math.cos(dir) * speed, Math.sin(dir) * speed)); // adds a spark entity with the cosine and sine of dir times speed.
 			return; // skips the rest of the code (attackTime was > 0; ie we're attacking.)
@@ -188,11 +194,13 @@ public class AirWizardPhase2 extends EnemyMob {
 	/** What happens when the air wizard dies */
 	public void die() {
 		Player[] players = level.getPlayers();
+		Sound.changePhase.play();
 		if (players.length > 0) { // if the player is still here
 			for(Player p: players)
 				p.addScore((secondform ? 500000 : 100000)); // give the player 100K or 500K points.
 		}
 		
+		Sound.changePhase.play();
 		
 		if(!secondform) {
 			level.add(new AirWizardPhase3(1), x, y);

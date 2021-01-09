@@ -1,6 +1,5 @@
 package minicraft.entity.mob.boss;
 
-import minicraft.core.Game;
 import minicraft.core.Updater;
 import minicraft.core.io.Sound;
 import minicraft.entity.Direction;
@@ -92,7 +91,7 @@ public class AirWizardPhase3 extends EnemyMob {
 		if (player != null && randomWalkTime == 0) { // if there is a player around, and the walking is not random
 			int xd = player.x - x; // the horizontal distance between the player and the air wizard.
 			int yd = player.y - y; // the vertical distance between the player and the air wizard.
-			if (xd * xd + yd * yd < 16*16 * 8*8) {
+			if (xd * xd + yd * yd < 16*16 * 4*4) {
 				/// Move away from the player if less than 2 blocks away
 				
 				xa = 0; //accelerations
@@ -116,7 +115,7 @@ public class AirWizardPhase3 extends EnemyMob {
 			int xd = player.x - x; // x dist to player
 			int yd = player.y - y; // y dist to player
 			if (random.nextInt(4) == 0 && xd * xd + yd * yd < 50 * 50 && attackDelay == 0 && attackTime == 0) { // if a random number, 0-3, equals 0, and the player is less than 50 blocks away, and attackDelay and attackTime equal 0...
-				attackDelay = 60 * 1; // ...then set attackDelay to 120 (2 seconds at default 60 ticks/sec)
+				attackDelay = 60 * 2; // ...then set attackDelay to 120 (2 seconds at default 60 ticks/sec)
 			}
 		}
 	}
@@ -194,7 +193,7 @@ public class AirWizardPhase3 extends EnemyMob {
 		Sound.bossDeath.play(); // play boss-death sound.
 		
 		if(!secondform) {
-			Updater.notifyAll("Well played");
+			Updater.notifyAll("Well played!");
 			if (!beaten) Updater.notifyAll("", 200);
 			beaten = true;
 		} else {

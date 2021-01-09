@@ -31,7 +31,9 @@ public class Spark extends Entity {
 		this.ya = ya;
 		
 		// Max time = 629 ticks. Min time = 600 ticks.
-		lifeTime = 8 * 10 + random.nextInt(10);
+		lifeTime = 9 * 10 + random.nextInt(10);
+		
+
 	}
 	
 	@Override
@@ -47,22 +49,25 @@ public class Spark extends Entity {
 		x = (int) xx;
 		y = (int) yy;
 		
+		xx += xa;
+		yy += ya;
+
 		Player player = getClosestPlayer();
 		int xd = player.x - x;
 		int yd = player.y - y;
 		
 		int sig0 = 1;
-		if (xd < sig0) xa = -0.9;
-		if (xd > sig0) xa = +0.8;
-		if (yd < sig0) ya = -0.9;
-		if (yd > sig0) ya = +0.8;
+		if (xd < sig0) xa = -0.2;
+		if (xd > sig0) xa = +0.6;
+		if (yd < sig0) ya = -0.4;
+		if (yd > sig0) ya = +0.2;
 		
 		List<Entity> toHit = level.getEntitiesInRect(new Rectangle(x, y, 0, 0, Rectangle.CENTER_DIMS)); // gets the entities in the current position to hit.
 		for (int i = 0; i < toHit.size(); i++) {
 			Entity e = toHit.get(i);
 			if (e instanceof Mob && !(e instanceof AirWizard)) {
-				 // if the entity is a mob, but not a Air Wizard, then hurt the mob with 1 damage.
-				((Mob)e).hurt(owner, 1);
+				 // if the entity is a mob, but not a Air Wizard, then hurt the mob with 2 damage.
+				((Mob)e).hurt(owner, 2);
 			}
 		}
 	}

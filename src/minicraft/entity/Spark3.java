@@ -3,8 +3,6 @@ package minicraft.entity;
 import java.util.List;
 
 import minicraft.entity.mob.Mob;
-import minicraft.entity.mob.boss.AirWizard;
-import minicraft.entity.mob.boss.AirWizardPhase2;
 import minicraft.entity.mob.boss.AirWizardPhase3;
 import minicraft.gfx.Rectangle;
 import minicraft.gfx.Screen;
