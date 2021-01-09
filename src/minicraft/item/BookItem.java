@@ -3,6 +3,7 @@ package minicraft.item;
 import java.util.ArrayList;
 
 import minicraft.core.Game;
+import minicraft.core.World;
 import minicraft.entity.Direction;
 import minicraft.entity.mob.Player;
 import minicraft.gfx.Sprite;
@@ -36,6 +37,24 @@ public class BookItem extends Item {
 	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, Direction attackDir) {
 		Game.setMenu(new BookDisplay(book, hasTitlePage));
 		//level.add(new Cthulhu(1), player.x, player.y);
+		int playerDepth = player.getLevel().depth;
+		
+		if(playerDepth == 1) {
+			if(!Game.isValidServer()) {
+				// player is in overworld
+				String note = "You can't escape from here!";
+				Game.notifications.add(note);
+			}
+			return false;
+		}
+		
+		int depthDiff = playerDepth > 0 ? 1 : -1;
+		
+		World.scheduleLevelChange(depthDiff, () -> {
+			Level plevel = World.levels[World.lvlIdx(playerDepth + depthDiff)];
+			if(plevel != null && !plevel.getTile(player.x >> 4, player.y >> 4).mayPass(plevel, player.x >> 4, player.y >> 4, player))
+				player.findStartPos(plevel, false);
+		});
 		return true;
 	}
 	
