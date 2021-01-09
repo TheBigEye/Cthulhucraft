@@ -158,4 +158,19 @@ public class Color {
 	public static String toString(int col) {
 		return java.util.Arrays.toString(Color.separateEncodedSprite(col, true));
 	}
+	  public static int createShadowCol(int col, int intensity_r, int intensity_g, int intensity_b) {
+		    int r = col / 36;
+		    int g = (col - r * 36) / 6;
+		    int b = col - r * 36 - g * 6;
+		    r -= intensity_r;
+		    if (r < 0)
+		      r = 0; 
+		    g -= intensity_g;
+		    if (g < 0)
+		      g = 0; 
+		    b -= intensity_b;
+		    if (b < 0)
+		      b = 0; 
+		    return r * 36 + g * 6 + b;
+		  }
 }
