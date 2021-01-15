@@ -144,7 +144,6 @@ public class LevelGen {
 				count[result[0][i] & 0xff]++;
 			}
 			if (count[Tiles.get("rock").id & 0xff] < 100) continue;
-			if (count[Tiles.get("rock up").id & 0xff] < 100) continue;
 			if (count[Tiles.get("sand").id & 0xff] < 100) continue;
 			if (count[Tiles.get("grass").id & 0xff] < 100) continue;
 			if (count[Tiles.get("tree").id & 0xff] < 100) continue;
@@ -816,22 +815,6 @@ public class LevelGen {
 				}
 			}
 		}
-		
-		/**for (int i = 0; i < w * h / 400; i++) {
-			int x = random.nextInt(w);
-			int y = random.nextInt(h);
-			int col = random.nextInt(4);
-			for (int j = 0; j < 100; j++) {
-				int xx = x + random.nextInt(5) - random.nextInt(5);
-				int yy = y + random.nextInt(5) - random.nextInt(5);
-				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
-					if (map[xx + yy * w] == Tiles.get("rock").id) {
-						map[xx + yy * w] = Tiles.get("rock up").id;
-						data[xx + yy * w] = (byte) (col + random.nextInt(4) * 16);
-					}
-				}
-			}
-		}**/
 			
 		for (int i = 0; i < w * h / 100; i++) {
 			int x = random.nextInt(w);
