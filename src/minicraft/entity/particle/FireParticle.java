@@ -13,6 +13,6 @@ public class FireParticle extends Particle {
 	 * @param y Y map position
 	 */
 	public FireParticle(int x, int y) {
-		super(x, y, 30, new Sprite(4, 4, 3));
+		super(x, y, 30, new Sprite(5, 4, 3));
 	}
 }

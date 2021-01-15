@@ -27,30 +27,27 @@ public class SlimyWizard extends EnemyMob {
 		super.tick();
 		
 		Player player = getClosestPlayer();
-		if (player != null && player != null) { // checks if player is on zombies level and if there is no time left on randonimity timer
+		if (player != null && player != null) {
 			int xd = player.x - x;
 			int yd = player.y - y;
-				/// if player is less than 6.25 tiles away, then set move dir towards player
-				int sig0 = 1; // this prevents too precise estimates, preventing mobs from bobbing up and down.
+				int sig0 = 1;
 				xa = ya = 0;
 				if (xd < sig0) xa = -1;
 				if (xd > sig0) xa = +1;
 				if (yd < sig0) ya = -1;
 				if (yd > sig0) ya = +1;
 			} else {
-				// if the enemy was following the player, but has now lost it, it stops moving.
-					//*that would be nice, but I'll just make it move randomly instead.
 				randomizeWalkDir(false);
 			}
 		
 	}
 	
 	public void die() {
-		if (Settings.get("diff").equals("Easy")) dropItem(2, 10, Items.get("slime"));
-		if (Settings.get("diff").equals("Normal")) dropItem(2, 10, Items.get("slime"));
+		if (Settings.get("diff").equals("Easy")) dropItem(2, 30, Items.get("slime"));
+		if (Settings.get("diff").equals("Normal")) dropItem(2, 20, Items.get("slime"));
 		if (Settings.get("diff").equals("Hard")) dropItem(1, 10, Items.get("slime"));
 		
-		if(random.nextInt(60) == 2) {
+		if(random.nextInt(10) == 2) {
 			level.dropItem(x, y, Items.get("Sticky essence"));
 		}
 		
