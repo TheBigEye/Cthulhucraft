@@ -4,6 +4,7 @@ import minicraft.core.Game;
 import minicraft.core.Updater;
 import minicraft.entity.mob.Player;
 import minicraft.entity.mob.RemotePlayer;
+import minicraft.entity.particle.SplashParticle;
 import minicraft.gfx.Rectangle;
 import minicraft.gfx.Screen;
 import minicraft.gfx.Sprite;
@@ -11,11 +12,14 @@ import minicraft.item.BoatItem;
 import minicraft.item.PowerGloveItem;
 
 import java.util.List;
+import java.util.Random;
 
 public class Boat extends Entity {
     private static final Sprite boatSprite = new Sprite(1, 30, 2, 2, 0);
 
     private Player playerInBoat = null;
+    
+    private Random rnd = new Random();
 
     private int exitTimer = 0;
 
@@ -51,6 +55,11 @@ public class Boat extends Entity {
             if (Game.input.getKey("move-down").down) ya += 1;
             if (Game.input.getKey("move-left").down) xa -= 1;
             if (Game.input.getKey("move-right").down) xa += 1;
+            
+			int randX = rnd.nextInt(10);
+			int randY = rnd.nextInt(9);
+            
+            level.add(new SplashParticle(x - 8 + randX, y - 8 + randY));
 
             move(xa, ya);
             playerInBoat.x = x;

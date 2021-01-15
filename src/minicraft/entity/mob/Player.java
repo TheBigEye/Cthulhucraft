@@ -3,6 +3,7 @@ package minicraft.entity.mob;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import minicraft.core.Game;
 import minicraft.core.Network;
@@ -24,6 +25,8 @@ import minicraft.entity.furniture.Furniture;
 import minicraft.entity.furniture.Tnt;
 import minicraft.entity.mob.villager.Cleric;
 import minicraft.entity.mob.villager.Librarian;
+import minicraft.entity.particle.FireParticle;
+import minicraft.entity.particle.SplashParticle;
 import minicraft.entity.particle.TextParticle;
 import minicraft.gfx.Color;
 import minicraft.gfx.MobSprite;
@@ -46,6 +49,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class Player extends Mob implements ItemHolder, ClientTickable {
 	protected InputHandler input;
+	
+    
+    private Random rnd = new Random();
 	
 	private static final int playerHurtTime = 30;
 	private static final int INTERACT_DIST = 12;
@@ -239,7 +245,7 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 	
 	@Override
 	public void tick() {
-		
+	/**	
 		if (Game.player.health == 3) {
 			Sound.Heart.stop();
 		}
@@ -254,7 +260,7 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 		
 		if (Game.getMenu() != null) {
 			Sound.Heart.stop();
-		}
+		}**/
 		
 			
 		if(level == null || isRemoved()) return;
@@ -809,9 +815,20 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 			if (level.getTile(x / 16, y / 16) == Tiles.get("water")) {
 				screen.render(xo + 0, yo + 3, 5 + 2 * 32, 0, 3); // render the water graphic
 				screen.render(xo + 8, yo + 3, 5 + 2 * 32, 1, 3); // render the mirrored water graphic to the right.
+				
+				int randX = rnd.nextInt(10);
+				int randY = rnd.nextInt(9);
+	            
+	            level.add(new SplashParticle(x - 8 + randX, y - 8 + randY));
+	            
 			} else if (level.getTile(x / 16, y / 16) == Tiles.get("lava")) {
 				screen.render(xo + 0, yo + 3, 6 + 2 * 32, 1, 3); // render the water graphic
 				screen.render(xo + 8, yo + 3, 6 + 2 * 32, 0, 3); // render the mirrored water graphic to the right.
+				
+				int randX = rnd.nextInt(10);
+				int randY = rnd.nextInt(9);
+	            
+	            level.add(new FireParticle(x - 8 + randX, y - 8 + randY));
 			}
 		}
 
