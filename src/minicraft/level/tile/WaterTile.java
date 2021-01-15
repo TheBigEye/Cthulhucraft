@@ -44,11 +44,11 @@ public class WaterTile extends Tile {
 		// these set only the non-diagonally adjacent lava tiles to obsidian
 		for (int x = -1; x < 2; x++) {
 			if (level.getTile(xt + x, yt) == Tiles.get("lava"))
-				level.setTile(xt + x, yt, Tiles.get("obsidian"));
+				level.setTile(xt + x, yt, Tiles.get("hard obsidian"));
 		}
 		for (int y = -1; y < 2; y++) {
 			if (level.getTile(xt, yt + y) == Tiles.get("lava"))
-				level.setTile(xt, yt + y, Tiles.get("obsidian"));
+				level.setTile(xt, yt + y, Tiles.get("hard obsidian"));
 		}
 	}
 }

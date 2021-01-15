@@ -39,6 +39,7 @@ public abstract class Tile {
 	protected Sprite sprite;
 	protected ConnectorSprite csprite;
 	protected boolean connectsToSnow = false;
+	protected boolean connectsToObsidian = false;
 	
 	
 	{

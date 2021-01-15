@@ -93,7 +93,7 @@ public final class Tiles {
 		
 		tiles.set(69, new CloudTreeTile("Cloud Tree"));
 		tiles.set(70, new IceSpikeTile("Ice Spike"));
-		tiles.set(71, new RockUpTile("Rock up"));
+		tiles.set(71, new ObsidianTile("Hard Obsidian"));
 		
 		for(int i = 0; i < tiles.size(); i++) {
 			if(tiles.get(i) == null) continue;
@@ -181,7 +181,7 @@ public final class Tiles {
 		oldids.set(152, "birch wall");
 		oldids.set(153, "birch door");
 		oldids.set(154, "birch door");
-		oldids.set(155, "rock up");
+		oldids.set(155, "hard obsidian");
 		
 		// light/torch versions, for compatibility with before 1.9.4-dev3. (were removed in making dev3)
 		oldids.set(100, "grass");
@@ -237,7 +237,7 @@ public final class Tiles {
 		oldids.set(183, "birch wall");
 		oldids.set(184, "birch door");
 		oldids.set(185, "birch door");
-		oldids.set(186, "rock up");
+		oldids.set(186, "hard obsidian");
 		
 		oldids.set(44, "torch grass");
 		oldids.set(40, "torch sand");

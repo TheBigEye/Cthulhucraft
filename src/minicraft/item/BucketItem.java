@@ -61,7 +61,7 @@ public class BucketItem extends StackableItem {
 				if (!Game.isMode("creative")) player.activeItem = editBucket(player, Fill.Empty);
 				return true;
 			} else if (fill == Fill.Lava && filling == Fill.Water) {
-				level.setTile(xt, yt, Tiles.get("Obsidian"));
+				level.setTile(xt, yt, Tiles.get("hard obsidian"));
 				if (!Game.isMode("creative")) player.activeItem = editBucket(player, Fill.Empty);
 				return true;
 			}

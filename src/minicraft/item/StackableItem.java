@@ -30,6 +30,7 @@ public class StackableItem extends Item {
 		items.add(new StackableItem("egg", new Sprite(14, 3, 0)));
 		
 		// Elements
+		items.add(new StackableItem("Obsidian", new Sprite(17, 3, 0)));
 		items.add(new StackableItem("Stone", new Sprite(2, 0, 0)));
 		
 		items.add(new StackableItem("Andesite", new Sprite(0, 38, 0)));
