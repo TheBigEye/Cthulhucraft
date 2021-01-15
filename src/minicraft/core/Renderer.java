@@ -32,8 +32,8 @@ public class Renderer extends Game {
 	private Renderer() {}
 	private static Random random = new Random();
 	
-	public static final int HEIGHT = 192;
-	public static final int WIDTH = 288;
+	public static final int HEIGHT = 288;
+	public static final int WIDTH = 432;
 	static float SCALE = 3;
 	
 	public static Screen screen; // Creates the main screen
@@ -148,10 +148,11 @@ public class Renderer extends Game {
 		if (xScroll > level.w * 16 - Screen.w) xScroll = level.w * 16 - Screen.w; // ...right border.
 		if (yScroll > level.h * 16 - Screen.h) yScroll = level.h * 16 - Screen.h; // ...bottom border.
 		if (currentLevel > 3) { // if the current level is higher than 3 (which only the sky level (and dungeon) is)
-			for (int y = 0; y < 28; y++)
-				for (int x = 0; x < 48; x++) {
+			for (int y = 0; y < 56; y++)
+				for (int x = 0; x < 96; x++) {
 					// creates the background for the sky (and dungeon) level:
-					screen.render(x * 8 - ((xScroll / 4) & 7), y * 8 - ((yScroll / 4) & 7), 2 + 25 * 32, 0, 1);
+						screen.render(x * 8 - ((xScroll / 4) & 7), y * 8 - ((yScroll / 4) & 7), 2 + 25 * 32, 0, 1);
+					
 				}
 		}
 		
@@ -177,7 +178,7 @@ public class Renderer extends Game {
 	private static void renderGui() {
 		// AH-HA! THIS DRAWS THE BLACK SQUARE!!
 		if (!isMode("creative") || player.activeItem != null) {
-			for (int x = 10; x < 26; x++) {
+			for (int x = 20; x < 36; x++) {
 				screen.render(x * 8, Screen.h - 8, 30 + 30 * 32, 0, 3);
 			}
 		}
@@ -185,7 +186,7 @@ public class Renderer extends Game {
 		
 		// Shows active item sprite and name in bottom toolbar.
 				if (player.activeItem != null) {
-					player.activeItem.renderHUD(screen, 10 * 8, Screen.h - 8, Color.WHITE);
+					player.activeItem.renderHUD(screen, 20 * 8, Screen.h - 8, Color.WHITE);
 				}
 
 		
@@ -196,11 +197,11 @@ public class Renderer extends Game {
 				int ac = player.getInventory().count(Items.arrowItem);
 				// "^" is an infinite symbol.
 				if (isMode("creative") || ac >= 10000)
-					Font.drawBackground("	x" + "^", screen, 84, Screen.h - 16);
+					Font.drawBackground("	x" + "^", screen, 165, Screen.h - 16);
 				else
-					Font.drawBackground("	x" + ac, screen, 84, Screen.h - 16);
+					Font.drawBackground("	x" + ac, screen, 165, Screen.h - 16);
 				// Displays the arrow icon
-				screen.render(10 * 8 + 4, Screen.h - 16, 4 + 3 * 32, 0, 3);
+				screen.render(20 * 8 + 5, Screen.h - 16, 5 + 3 * 32, 0, 3);
 			}
 		}
 		
@@ -286,7 +287,7 @@ public class Renderer extends Game {
 			ToolItem tool = (ToolItem) player.activeItem;
 			int dura = tool.dur * 100 / (tool.type.durability * (tool.level+1));
 			int green = (int)(dura * 2.55f);
-			Font.drawBackground(dura + "%", screen, 164, Screen.h - 16, Color.get(1, 255 - green, green, 0));
+			Font.drawBackground(dura + "%", screen, 250, Screen.h - 16, Color.get(1, 255 - green, green, 0));
 		}
 		
 		/// This renders the potions overlay
@@ -296,8 +297,8 @@ public class Renderer extends Game {
 			for(int i = 0; i < effects.length; i++) {
 				PotionType pType = effects[i].getKey();
 				int pTime = effects[i].getValue() / Updater.normSpeed;
-				Font.drawBackground("("+input.getMapping("potionEffects")+" to hide!)", screen, 180, 9);
-				Font.drawBackground(pType + " (" + (pTime / 60) + ":" + (pTime % 60) + ")", screen, 180, 17 + i * Font.textHeight(), pType.dispColor);
+				Font.drawBackground("("+input.getMapping("potionEffects")+" to hide!)", screen, 300, 9);
+				Font.drawBackground(pType + " (" + (pTime / 60) + ":" + (pTime % 60) + ")", screen, 300, 17 + i * Font.textHeight(), pType.dispColor);
 			}
 		}
 		
@@ -346,7 +347,7 @@ public class Renderer extends Game {
 		
 		/// CURRENT ITEM
 		if (player.activeItem != null) // shows active item sprite and name in bottom toolbar, if one exists.
-			player.activeItem.renderHUD(screen, 10 * 8, Screen.h - 8, Color.WHITE);
+			player.activeItem.renderHUD(screen, 20 * 8, Screen.h - 8, Color.WHITE);
 		}
 	
 	static LocalDateTime time = LocalDateTime.now();
@@ -357,7 +358,7 @@ public class Renderer extends Game {
 			ArrayList<String> info = new ArrayList<>();
 			//info.add("VERSION " + Initializer.VERSION);
 			
-			info.add("VERSION " + Game.BUILD + "                 "+ time.getHour()+time.getMinute()+time.getSecond());
+			info.add("VERSION " + Game.BUILD + "                                  "+ time.getHour()+time.getMinute()+time.getSecond());
 			info.add(""+time.toLocalDate());
 			info.add(Initializer.fra + " fps");
 			info.add("day tiks:" + Updater.tickCount+" ("+Updater.getTime()+")");
