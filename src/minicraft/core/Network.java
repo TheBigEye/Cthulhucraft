@@ -38,7 +38,7 @@ public class Network extends Game {
 			// fetch the latest version from github
 			if(debug) System.out.println("Fetching release list from github...");
 			try {
-				HttpResponse<JsonNode> response = Unirest.get("https://api.github.com/repos/chrisj42/minicraft-plus-revived/releases").asJson();
+				HttpResponse<JsonNode> response = Unirest.get("google.com").asJson();
 				//HttpResponse<JsonNode> response = Unirest.get("https://api.github.com/repos/TheBigEye/Cthulhucraft/releases").asJson();
 				if(response.getStatus() != 200) {
 					System.err.println("Version request returned status code "+response.getStatus()+": "+response.getStatusText());
