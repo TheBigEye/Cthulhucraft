@@ -179,14 +179,14 @@ public class Renderer extends Game {
 		// AH-HA! THIS DRAWS THE BLACK SQUARE!!
 		if (!isMode("creative") || player.activeItem != null) {
 			for (int x = 20; x < 36; x++) {
-				screen.render(x * 8, Screen.h - 8, 30 + 30 * 32, 0, 3);
+				screen.render(x * 8, Screen.h - 8, 31 + 30 * 32, 0, 3);
 			}
 		}
 		
 		
 		// Shows active item sprite and name in bottom toolbar.
 				if (player.activeItem != null) {
-					player.activeItem.renderHUD(screen, 20 * 8, Screen.h - 8, Color.WHITE);
+					player.activeItem.renderHUD(screen, 20 * 8, Screen.h - 8, Color.GRAY);
 				}
 
 		
@@ -197,11 +197,11 @@ public class Renderer extends Game {
 				int ac = player.getInventory().count(Items.arrowItem);
 				// "^" is an infinite symbol.
 				if (isMode("creative") || ac >= 10000)
-					Font.drawBackground("	x" + "^", screen, 165, Screen.h - 16);
+					Font.drawBackground("	x" + "^", screen, 162, Screen.h - 17);
 				else
-					Font.drawBackground("	x" + ac, screen, 165, Screen.h - 16);
+					Font.drawBackground("	x" + ac, screen, 162, Screen.h - 17);
 				// Displays the arrow icon
-				screen.render(20 * 8 + 5, Screen.h - 16, 5 + 3 * 32, 0, 3);
+				screen.render(20 * 8 + 1, Screen.h - 17, 5 + 3 * 32, 0, 3);
 			}
 		}
 		
@@ -287,7 +287,7 @@ public class Renderer extends Game {
 			ToolItem tool = (ToolItem) player.activeItem;
 			int dura = tool.dur * 100 / (tool.type.durability * (tool.level+1));
 			int green = (int)(dura * 2.55f);
-			Font.drawBackground(dura + "%", screen, 250, Screen.h - 16, Color.get(1, 255 - green, green, 0));
+			Font.drawBackground(dura + "%", screen, 250, Screen.h - 17, Color.get(1, 255 - green, green, 0));
 		}
 		
 		/// This renders the potions overlay
@@ -347,7 +347,7 @@ public class Renderer extends Game {
 		
 		/// CURRENT ITEM
 		if (player.activeItem != null) // shows active item sprite and name in bottom toolbar, if one exists.
-			player.activeItem.renderHUD(screen, 20 * 8, Screen.h - 8, Color.WHITE);
+			player.activeItem.renderHUD(screen, 20 * 8, Screen.h - 9, Color.WHITE);
 		}
 	
 	static LocalDateTime time = LocalDateTime.now();
@@ -358,7 +358,7 @@ public class Renderer extends Game {
 			ArrayList<String> info = new ArrayList<>();
 			//info.add("VERSION " + Initializer.VERSION);
 			
-			info.add("VERSION " + Game.BUILD + "                                  "+ time.getHour()+time.getMinute()+time.getSecond());
+			info.add("VERSION " + Game.BUILD + "                                   "+ time.getHour()+time.getMinute()+time.getSecond());
 			info.add(""+time.toLocalDate());
 			info.add(Initializer.fra + " fps");
 			info.add("day tiks:" + Updater.tickCount+" ("+Updater.getTime()+")");
