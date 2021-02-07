@@ -46,7 +46,7 @@ public class Level {
 	public byte[] data; // an array of the data of the tiles in the world. // ?
 	
 	public final int depth; // depth level of the level
-	public int monsterDensity = 6; // affects the number of monsters that are on the level, bigger the number the less monsters spawn.
+	public int monsterDensity = 8; // affects the number of monsters that are on the level, bigger the number the less monsters spawn.
 	public int maxMobCount;
 	public int chestCount;
 	public int mobCount = 0;
@@ -638,7 +638,7 @@ public class Level {
 			//System.out.println("trySpawn on level " + depth + " of lvl " + lvl + " mob w/ rand " + rnd + " at tile " + nx + "," + ny);
 			
 			// spawns the enemy mobs; first part prevents enemy mob spawn on surface on first day, more or less.
-			if ((Updater.getTime() == Updater.Time.Night || depth != 0) && EnemyMob.checkStartPos(this, nx, ny)) { // if night or underground, with a valid tile, spawn an enemy mob.
+			if ((Updater.getTime() == Updater.Time.Night && Updater.pastDay1 || depth != 0) && EnemyMob.checkStartPos(this, nx, ny)) { // if night or underground, with a valid tile, spawn an enemy mob.
 				if(depth != -4) { // normal mobs
 					if (rnd <= 40) add((new Slime(lvl)), nx, ny);
 					else if (rnd <= 75) add((new Zombie(lvl)), nx, ny);

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import minicraft.core.*;
 import minicraft.core.Game;
 import minicraft.core.Network;
 import minicraft.core.Updater;
@@ -238,7 +237,6 @@ public class Load {
 		Settings.setIdx("diff", diffIdx);
 		
 		AirWizard.beaten = Boolean.parseBoolean(data.remove(0));
-		
 	}
 
 	public static BufferedImage[] loadSpriteSheets() throws IOException {
