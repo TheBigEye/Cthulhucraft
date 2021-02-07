@@ -149,7 +149,6 @@ public class LevelGen {
 			if (count[Tiles.get("tree").id & 0xff] < 100) continue;
 			if (count[Tiles.get("birch tree").id & 0xff] < 100) continue;
 			if (count[Tiles.get("lawn").id & 0xff] < 100) continue;
-			if (count[Tiles.get("flower").id & 0xff] < 100) continue;
 			if (count[Tiles.get("orange tulip").id & 0xff] < 100) continue;
 			if (count[Tiles.get("snow").id & 0xff] < 100) continue;
 			if (count[Tiles.get("giant red mushroom").id & 0xff] < 100) continue;
@@ -795,7 +794,7 @@ public class LevelGen {
 				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 					if (map[xx + yy * w] == Tiles.get("grass").id) {
 						map[xx + yy * w] = Tiles.get("flower").id;
-						//map[xx + yy * w] = Tiles.get("lawn").id;
+						map[xx + yy * w] = Tiles.get("lawn").id;
 						data[xx + yy * w] = (byte) (col + random.nextInt(4) * 16); // data determines which way the flower faces
 					}
 				}

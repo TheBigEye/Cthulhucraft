@@ -1,7 +1,5 @@
 package minicraft.level.tile;
 
-import java.util.Random;
-
 import minicraft.core.io.Sound;
 import minicraft.entity.Direction;
 import minicraft.entity.mob.Player;
@@ -43,11 +41,8 @@ public class GrassTile extends Tile {
 		if (level.getTile(xn, yn) == Tiles.get("dirt")) {
 			level.setTile(xn, yn, this);
 		}
-		
-		if (random.nextInt(10) == 0) {
 		if (level.getTile(xn, yn) == Tiles.get("mycelium")) {
 			level.setTile(xn, yn, this);
-		}
 		}
 	}
 

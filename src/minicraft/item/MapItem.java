@@ -22,7 +22,7 @@ public class MapItem extends Item {
 
     @Override
     public boolean interact(Player player, Entity entity, Direction attackDir) {
-        if (!Game.isValidServer()) {
+        if (!Game.isValidServer() && !Game.isConnectedClient()) {
             Game.setMenu(new MapDisplay());
         }
         return false;
