@@ -76,7 +76,7 @@ public class TitleDisplay extends Display {
 
 
 		// check version
-		//checkVersion();
+		checkVersion();
 
 		/// this is useful to just ensure that everything is really reset as it should be. 
 		if (Game.server != null) {
