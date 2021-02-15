@@ -10,6 +10,7 @@ import java.util.List;
 
 import minicraft.core.Game;
 import minicraft.core.Renderer;
+import minicraft.core.UnlockableRecipes;
 import minicraft.core.Updater;
 import minicraft.core.World;
 import minicraft.core.io.Localization;
@@ -166,6 +167,7 @@ public class Save {
 		data.add(String.valueOf(Settings.getIdx("diff")));
 		data.add(String.valueOf(AirWizard.beaten));
 		writeToFile(location + filename + extension, data);
+
 	}
 	
 	private void writePrefs() {

@@ -1,14 +1,10 @@
 package minicraft.core;
-
 import minicraft.item.Recipe;
 import minicraft.item.Recipes;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class UnlockableRecipes {
     public final ArrayList<UnlockableRecipe> recipes = new ArrayList<UnlockableRecipe>();
-
     public UnlockableRecipes() {
         recipes.add(
             new UnlockableRecipe(
@@ -21,15 +17,12 @@ public class UnlockableRecipes {
             )
         );
     }
-
     public UnlockableRecipe getRecipe(String name) {
         for (UnlockableRecipe r : recipes)
             if (r.name.equalsIgnoreCase(name))
                 return r;
-
         return null;
     }
-
     private static List<Recipe> getRecipeList(RecipeType type) {
         switch (type) {
             case ANVIL:
@@ -47,10 +40,8 @@ public class UnlockableRecipes {
             case LOOM:
                 return Recipes.loomRecipes;
         }
-
         return null;
     }
-
     public enum RecipeType {
         ANVIL,
         OVEN,
@@ -72,7 +63,6 @@ public class UnlockableRecipes {
             this.type = type;
             this.recipe = recipe;
         }
-
         public void unlock() {
             List<Recipe> recipeList = getRecipeList(this.type);
             assert recipeList != null;
@@ -86,6 +76,7 @@ public class UnlockableRecipes {
         public void lock() {
             List<Recipe> recipeList = getRecipeList(this.type);
             assert recipeList != null;
+
             this.unlocked = false;
             recipeList.remove(this.recipe);
             // TODO: If networked game, update other players.
