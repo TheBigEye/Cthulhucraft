@@ -135,6 +135,13 @@ public class Creeper extends EnemyMob {
 
 	@Override
 	public void render(Screen screen) {
+		/*if (fuseLit && fuseTime % 6 == 0) {
+			super.lvlcols[lvl-1] = Color.get(-1, 252);
+		}
+		else
+			super.lvlcols[lvl-1] = Creeper.lvlcols[lvl-1];
+
+		sprites[0] = walkDist == 0 ? standing : walking;*/
 		
 		super.render(screen);
 	}
