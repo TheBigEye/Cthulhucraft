@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import minicraft.core.io.InputHandler;
 import minicraft.core.io.Settings;
@@ -33,8 +34,8 @@ public class Game {
 	public static boolean HAS_GUI = true;
 	
 	public static final String NAME = "CthulhuCraft"; // This is the name on the application window
-	public static final String BUILD = "0.06a"; //Cthulhucraft version
-	public static final Version VERSION = new Version("2.0.6");//Minicraft mod base version
+	public static final String BUILD = "0.06a"; // Cthulhucraft version
+	public static final Version VERSION = new Version("2.0.6");// Minicraft mod base version
 	
 	public static InputHandler input; // input used in Game, Player, and just about all the *Menu classes.
 	public static Player player;
@@ -44,6 +45,8 @@ public class Game {
 	
 	public static int MAX_FPS = (int) Settings.get("fps");
 	public static Level level;
+	
+	private static Random random = new Random();
 	
 	static Display menu = null, newMenu = null; // the current menu you are on.
 	// Sets the current menu.
@@ -74,9 +77,8 @@ public class Game {
 	public static boolean isValidServer() { return ISONLINE && ISHOST && server != null; }
 	public static boolean hasConnectedClients() { return isValidServer() && server.hasClients(); }
 	
-	//
-	public static final UnlockableRecipes unlockableRecipes = new UnlockableRecipes();
-
+	// Unlocks
+	//public static final UnlockableRecipes unlockableRecipes = new UnlockableRecipes();
 	
 	// LEVEL
 	
@@ -106,7 +108,16 @@ public class Game {
 			JTextArea errorDisplay = new JTextArea(string.toString());
 			errorDisplay.setEditable(false);
 			JScrollPane errorPane = new JScrollPane(errorDisplay);
-			JOptionPane.showMessageDialog(null, errorPane, "An error has occurred", JOptionPane.ERROR_MESSAGE);
+			
+			if (random.nextInt(2) == 0) {
+				JOptionPane.showMessageDialog(null, errorPane, "Something went wrong!", JOptionPane.ERROR_MESSAGE);
+			}
+			if (random.nextInt(2) == 1) {
+				JOptionPane.showMessageDialog(null, errorPane, "Unexpected error", JOptionPane.ERROR_MESSAGE);
+			}
+			if (random.nextInt(2) == 2) {
+				JOptionPane.showMessageDialog(null, errorPane, "An error has occurred", JOptionPane.ERROR_MESSAGE);
+			}
 		});
 		
 		Initializer.parseArgs(args);
