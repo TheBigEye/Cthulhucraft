@@ -13,9 +13,10 @@ public class MapDisplay extends Display {
     public MapDisplay() {
 
         Menu.Builder builder = new Menu.Builder(true, 0, RelPos.CENTER);
-
-        builder.setSize(148, 148);
-
+        builder.setSize(148, 148);      
+        builder.setFrame(443, 1, 443);      
+        builder.setTitle("map");
+        
         menus = new Menu[1];
         menus[0] = builder.createMenu();
 
@@ -32,12 +33,16 @@ public class MapDisplay extends Display {
     @Override
     public void render(Screen screen) {
         menus[0].render(screen);
+
         Level level = Game.levels[Game.currentLevel];
+
         Rectangle menuBounds = menus[0].getBounds();
-        // used for world sizes bigger than 128, since the map can only render 128x128 pixels
+
+        // used for world sizes bigger than 128, since the map can only render 128x128 tiles
         int[] offset = new int[2];
         offset[0] = 0;
         offset[1] = 0;
+
         // used to indicate which directions can be traveled in
         // North : 0
         // West : 1
@@ -49,9 +54,10 @@ public class MapDisplay extends Display {
         }
 
         // player tile coords
-        int ptx = (Game.player.x - 8) / 16;
-        int pty = (Game.player.y - 8) / 16;
+        int ptx = (Game.player.x) / 16;
+        int pty = (Game.player.y) / 16;
 
+        // determines which 128x128 "chunk" the player is in
         if (level.w == 256) {
             if (ptx  >= 128) {
                 offset[0] = 1;
@@ -68,11 +74,11 @@ public class MapDisplay extends Display {
         }
 
         if (level.w == 512) {
-            if (ptx >= 128 && ptx < 257) {
+            if (ptx >= 128 && ptx < 256) {
                 offset[0] = 1;
                 arrows[3] = true;
                 arrows[1] = true;
-            } else if (ptx >= 257 && ptx < 385) {
+            } else if (ptx >= 256 && ptx < 385) {
                 offset[0] = 2;
                 arrows[3] = true;
                 arrows[1] = true;
@@ -83,11 +89,11 @@ public class MapDisplay extends Display {
                 arrows[1] = true;
             }
 
-            if (pty >= 128 && pty < 257) {
+            if (pty >= 128 && pty < 256) {
                 offset[1] = 1;
                 arrows[0] = true;
                 arrows[2] = true;
-            } else if (pty >= 257 && pty < 385) {
+            } else if (pty >= 256 && pty < 385) {
                 offset[1] = 2;
                 arrows[0] = true;
                 arrows[2] = true;
@@ -98,9 +104,10 @@ public class MapDisplay extends Display {
                 arrows[2] = true;
             }
         }
-        for (int i = 1; i < 128; i++) {
-            for (int c = 1; c < 128; c++) {
-                int color = 1;
+
+        for (int i = 0; i < 128; i++) {
+            for (int c = 0; c < 128; c++) {
+                int color = 0;
                 Tile tile = level.getTile(i + (offset[0] * 128), c + (offset[1] * 128));
                 
                 MapData mapData = MapData.getById(tile.id);
