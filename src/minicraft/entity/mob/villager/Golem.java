@@ -17,7 +17,7 @@ public class Golem extends DefenderMob{
 	
 	public void die() {
 		int min = 0, max = 0;
-		if (Settings.get("diff").equals("Easy")) {min = 0; max = 0;}
+		if (Settings.get("diff").equals("Easy")) {min = 0; max = 1;}
 		if (Settings.get("diff").equals("Normal")) {min = 0; max = 1;}
 		if (Settings.get("diff").equals("Hard")) {min = 1; max = 1;}
 		
