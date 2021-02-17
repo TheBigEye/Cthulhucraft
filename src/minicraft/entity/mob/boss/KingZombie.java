@@ -56,6 +56,18 @@ public class KingZombie extends EnemyMob {
 		}
 	
 	
+/*	@Override
+	public void render(Screen screen) {
+		
+	int textcol = Color.get(-1, Color.rgb(255, 0, 0));
+	int textcol2 = Color.get(-1, Color.rgb(200, 0, 0));
+	String h = health + "/" + maxHealth;
+	
+	int textwidth = Font.textWidth(h);
+	Font.draw(h, screen, (x - textwidth/2) + 1, y - 17, textcol2);
+	Font.draw(h, screen, (x - textwidth/2), y - 18, textcol);
+}*/
+	
 	public void die() {
 		if (Settings.get("diff").equals("Easy")) dropItem(20, 20, Items.get("cloth"));
 		if (Settings.get("diff").equals("Normal")) dropItem(15, 15, Items.get("cloth"));

@@ -245,6 +245,23 @@ public class Player extends Mob implements ItemHolder, ClientTickable {
 	
 	@Override
 	public void tick() {
+	/**	
+		if (Game.player.health == 3) {
+			Sound.Heart.stop();
+		}
+		
+		if (Game.player.health == 2) {
+			Sound.Heart.loop(true);
+		}
+		
+		if (Game.player.health == 0) {
+			Sound.Heart.stop();
+		}
+		
+		if (Game.getMenu() != null) {
+			Sound.Heart.stop();
+		}**/
+		
 			
 		if(level == null || isRemoved()) return;
 		
