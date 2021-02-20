@@ -27,3 +27,9 @@ hs_err_pid*
 
 #Classpath files
 *.classpath
+
+#Intellij idea
+.idea/
+
+#IML file
+*.iml
