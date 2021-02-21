@@ -33,3 +33,6 @@ hs_err_pid*
 
 #IML file
 *.iml
+
+#Out folder
+out/
