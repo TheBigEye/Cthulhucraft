@@ -21,7 +21,7 @@ public class Chicken extends PassiveMob {
 		if (Settings.get("diff").equals("Normal")) {min = 1; max = 1;}
 		if (Settings.get("diff").equals("Hard")) {min = 0; max = 1;}
 		
-		if (random.nextInt(1500)==1) { //drop eggs each 15 secs
+		if (random.nextInt(1000)==1) { //drop eggs each 10 secs
 			dropItem(min, max, Items.get("egg"));
 			
 		}
