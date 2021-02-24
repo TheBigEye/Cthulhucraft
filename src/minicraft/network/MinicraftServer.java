@@ -1,21 +1,6 @@
 package minicraft.network;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.SocketException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import minicraft.core.Game;
-import minicraft.core.MyUtils;
-import minicraft.core.Network;
-import minicraft.core.Updater;
-import minicraft.core.World;
+import minicraft.core.*;
 import minicraft.core.io.Settings;
 import minicraft.entity.Direction;
 import minicraft.entity.Entity;
@@ -26,21 +11,21 @@ import minicraft.entity.furniture.DeathChest;
 import minicraft.entity.furniture.Furniture;
 import minicraft.entity.mob.Player;
 import minicraft.entity.mob.RemotePlayer;
-import minicraft.item.Item;
-import minicraft.item.Items;
-import minicraft.item.PotionItem;
-import minicraft.item.PotionType;
-import minicraft.item.StackableItem;
-import minicraft.item.UnknownItem;
+import minicraft.item.*;
 import minicraft.level.Level;
 import minicraft.level.tile.Tile;
 import minicraft.saveload.Load;
 import minicraft.saveload.Save;
 import minicraft.saveload.Version;
 import minicraft.screen.WorldSelectDisplay;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.SocketException;
+import java.util.*;
 
 public class MinicraftServer extends Thread implements MinicraftProtocol {
 	
@@ -127,12 +112,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 		List<String> playerStrings = new ArrayList<>();
 		for(MinicraftServerThread serverThread: getThreads()) {
 			RemotePlayer clientPlayer = serverThread.getClient();
-			/*if(clientPlayer.getUsername().length() == 0) {
-				if(Game.debug) System.out.println("SERVER: client player " + clientPlayer + " has no username; not " +
-						"adding to status listing.");
-				continue; // they aren't done logging in yet.
-			}*/
-			
 			playerStrings.add(clientPlayer.getUsername() + ": " + clientPlayer.getIpAddress().getHostAddress() + (Game.debug?" ("+(clientPlayer.x>>4)+","+(clientPlayer.y>>4)+")":""));
 		}
 		
@@ -205,7 +184,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 		
 		if(thread == null) {
 			System.err.println("SERVER could not find thread for remote player " + player/* + "; stack trace:"*/);
-			//Thread.dumpStack();
 			thread = new MinicraftServerThread(player, this);
 		}
 		
@@ -234,10 +212,9 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 			return;
 		}
 		List<RemotePlayer> players = getPlayersInRange(e, false);
-		//if(Game.debug && e instanceof Player) System.out.println("SERVER found " + players.size() + " players in range of " + e + ", inc self.");
+
 		if(!updateSelf) {
 			players.remove(getIfPlayer(e));
-			//if(Game.debug && e instanceof Player) System.out.println("Server removed player "+e+" of update: " + removed);
 		}
 		
 		for(MinicraftServerThread thread: getAssociatedThreads(players)) {
@@ -331,7 +308,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 		updateGameVars(new MinicraftServerThread[] {sendTo});
 	}
 	public void updateGameVars(MinicraftServerThread[] sendTo) {
-		//if (Game.debug) System.out.println("SERVER: updating game vars...");
 		if(sendTo.length == 0) return;
 		
 		String[] varArray = {
@@ -369,8 +345,7 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 	
 	boolean parsePacket(MinicraftServerThread serverThread, InputType inType, String alldata) {
 		String[] data = alldata.split(";");
-		
-		//if (Game.debug) System.out.println("received packet");
+
 		
 		RemotePlayer clientPlayer = serverThread.getClient();
 		if(clientPlayer == null) {
@@ -426,7 +401,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 					if(Game.player != null) {
 						// save the player, and then remove it. It is leftover from when this was a single player world.
 						playerdata = Game.player.getPlayerData();
-						//if (Game.debug) System.out.println("SERVER: setting main player as remote from login.");
 						Game.player.remove(); // all the important data has been saved.
 						Game.player = null;
 					} else {
@@ -566,7 +540,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 				return true;
 			
 			case DROP:
-				//if(Game.debug) System.out.println("SERVER: received item drop: " + alldata);
 				Item dropped = Items.get(alldata);
 				Level playerLevel = clientPlayer.getLevel();
 				if(playerLevel != null)
@@ -625,7 +598,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 				return true;
 			
 			case CHESTIN: case CHESTOUT:
-				//if (Game.debug) System.out.println("SERVER: received chest request: " + inType);
 				int eid = Integer.parseInt(data[0]);
 				Entity e = Network.getEntity(eid);
 				if(e == null || !(e instanceof Chest)) {
@@ -659,8 +631,7 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 						itemIdx = chest.getInventory().invSize();
 					chest.getInventory().add(itemIdx, item);
 				}
-				else { /// inType == InputType.CHESTOUT
-					//if (Game.debug) System.out.println("SERVER: received CHESTOUT request");
+				else {
 					
 					if(itemIdx >= chest.getInventory().invSize() || itemIdx < 0) {
 						System.err.println("SERVER error with CHESTOUT request: specified chest inv index is out of bounds: "+itemIdx+"; inv size:"+chest.getInventory().invSize());
@@ -675,8 +646,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 						((StackableItem)toRemove).count--;
 					} else
 						chest.getInventory().remove(itemIdx);
-					
-					//if(Game.debug) System.out.println("SERVER sending chestout with item data: \"" + itemToSend.getData() + "\"");
 					serverThread.sendData(InputType.CHESTOUT, itemToSend.getData()+";"+data[3]); // send back the item that the player should put in their inventory.
 				}
 				
@@ -684,7 +653,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 				
 				// remove it if it is a death chest and there are no more items
 				if(chest instanceof DeathChest && chest.getInventory().invSize() == 0) {
-					//if (Game.debug) System.out.println("removed final item from death chest; removing chest");
 					chest.remove();
 				}
 				return true;
@@ -704,7 +672,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 				return true;
 			
 			case PICKUP:
-				//if (Game.debug) System.out.println("SERVER: received itementity pickup request");
 				int ieid = Integer.parseInt(alldata);
 				Entity entity = Network.getEntity(ieid);
 				if(entity == null || !(entity instanceof ItemEntity) || entity.isRemoved()) {
@@ -714,7 +681,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 				}
 				
 				entity.remove();
-				//if(Game.debug) System.out.println("SERVER: item entity pickup approved: " + entity);
 				serverThread.sendData(inType, alldata);
 				broadcastData(InputType.REMOVE, String.valueOf(entity.eid), serverThread);
 				return true;
@@ -769,7 +735,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 			
 			case MOVE:
 				/// the player moved.
-				//if (Game.debug) System.out.println(serverThread+": received move packet");
 				int plvlidx = Integer.parseInt(data[3]);
 				if(plvlidx >= 0 && plvlidx < World.levels.length && World.levels[plvlidx] != clientPlayer.getLevel()) {
 					clientPlayer.remove();
@@ -788,9 +753,6 @@ public class MinicraftServer extends Thread implements MinicraftProtocol {
 				
 				broadcastEntityUpdate(clientPlayer, !moved); // this will make it so that if the player is prevented from moving, the server will update the client, forcing it back to the last place the server recorded the player at. TODO this breaks down with a slow connection...
 				clientPlayer.walkDist++; // hopefully will make walking animations work. Actually, they should be sent with Mob's update... no, it doesn't update, it just feeds back.
-				
-				//if (Game.debug) System.out.println("SERVER: "+(moved?"moved player to":"stopped player at")+" ("+clientPlayer.x+","+clientPlayer.y+"): " + clientPlayer);
-				
 				return true;
 			
 			/// I'm thinking this should end up never being used... oh, well maybe for notifications, actually.
