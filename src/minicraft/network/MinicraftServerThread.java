@@ -1,16 +1,5 @@
 package minicraft.network;
 
-import javax.swing.Timer;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
-
 import minicraft.core.Game;
 import minicraft.core.World;
 import minicraft.entity.Direction;
@@ -24,6 +13,12 @@ import minicraft.level.tile.Tile;
 import minicraft.saveload.Load;
 import minicraft.saveload.Save;
 import minicraft.saveload.Version;
+
+import javax.swing.*;
+import java.io.*;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MinicraftServerThread extends MinicraftConnection {
 	
@@ -75,8 +70,6 @@ public class MinicraftServerThread extends MinicraftConnection {
 				pingTimer.stop();
 				return;
 			}
-			
-			//if(Game.debug) System.out.println("received ping from "+this+": "+receivedPing+". Previously missed "+missedPings+" pings.");
 			
 			if(!receivedPing) {
 				missedPings++;
