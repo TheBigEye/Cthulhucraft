@@ -41,6 +41,7 @@ public class Items {
 		//addAll(Enchanted.getAllInstances());
 		//addAll(SharpSwordI.getAllInstances());
 		//addAll(SharpSwordII.getAllInstances());
+		//addAll(SharpSwordIII.getAllInstances());
 		addAll(FoodItem.getAllInstances());
 		addAll(StackableItem.getAllInstances());
 		addAll(ClothingItem.getAllInstances());
