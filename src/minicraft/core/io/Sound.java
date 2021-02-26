@@ -9,9 +9,9 @@ import minicraft.core.Game;
 
 public class Sound {
 	//creates sounds from their respective files
-	public static final Sound playerHurt = new Sound("/player/playerhurt.wav");
-	public static final Sound playerDeath = new Sound("/player/death.wav");
-	public static final Sound Heart = new Sound("/player/hearth.wav");
+	public static final Sound playerHurt = new Sound("/resources/sound/playerhurt.wav");
+	public static final Sound playerDeath = new Sound("/resources/sound/death.wav");
+	public static final Sound Heart = new Sound("/resources/sound/hearth.wav");
 	public static final Sound monsterHurt = new Sound("/resources/sound/monsterhurt.wav");
 	
 	public static final Sound DestroySpawner = new Sound("/resources/sound/DestroySpawner.wav");
@@ -33,8 +33,8 @@ public class Sound {
 	public static final Sound pickup3 = new Sound("/resources/sound/pickup 3.wav");
 	public static final Sound pickup4 = new Sound("/resources/sound/pickup 4.wav");
 	
-	public static final Sound craft = new Sound("/player/playercraft.wav");
-	public static final Sound back = new Sound("/player/craft.wav");
+	public static final Sound craft = new Sound("/resources/sound/craft.wav");
+	public static final Sound back = new Sound("/resources/sound/craft.wav");
 	public static final Sound select = new Sound("/resources/sound/select.wav");
 	public static final Sound confirm = new Sound("/resources/sound/confirm.wav");
 	public static final Sound PageUp = new Sound("/resources/sound/Page Up.wav");
