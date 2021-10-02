@@ -1,0 +1,10 @@
+--------------------------- Things to fix first -----------------------------
+
+* Rewrite from scratch using the Aircraft base code or, continue using the same base but you will no longer receive updates to the Minicraft plus base mod (Thinking...)
+* Redesign the sky or turn it into a completely different dimension
+
++ Update the textures
++ Update the code and solve Minciraft plus bugs (again)
++ Trying to add a body to cthulhu XD
+
+- Correct the version control (for some strange reason the .jar of 0.05 is recognized as 0.06, what an error xd)
